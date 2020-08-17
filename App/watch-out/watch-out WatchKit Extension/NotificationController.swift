@@ -15,7 +15,7 @@ class NotificationController: WKUserNotificationHostingController<NotificationVi
     override var body: NotificationView {
         return NotificationView()
     }
-
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
