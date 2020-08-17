@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		74202FDB0281E93CC6D51B41 /* Pods_SpeechCommands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904D4AEDDA5AAFF1325F4550 /* Pods_SpeechCommands.framework */; };
+		93235ACC24E6DEFF00C098A7 /* tiny_conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 93235ACB24E6DEFF00C098A7 /* tiny_conv.tflite */; };
+		935A4B9524E9983900E85615 /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 935A4B9424E9983900E85615 /* conv.tflite */; };
+		935A4B9724EA6AAE00E85615 /* 32_conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 935A4B9624EA6AAE00E85615 /* 32_conv.tflite */; };
+		935A4B9924EA7F4800E85615 /* micro_conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 935A4B9824EA7F4800E85615 /* micro_conv.tflite */; };
 		AA055D862162210E00B25948 /* conv_actions_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA055D842162210E00B25948 /* conv_actions_labels.txt */; };
 		AA055D872162210E00B25948 /* conv_actions_frozen.tflite in Resources */ = {isa = PBXBuildFile; fileRef = AA055D852162210E00B25948 /* conv_actions_frozen.tflite */; };
 		AA1C17622186E2F0006F9564 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C17612186E2F0006F9564 /* WordCell.swift */; };
@@ -26,6 +30,10 @@
 /* Begin PBXFileReference section */
 		0F0517F15721434AC6FCC72F /* Pods-SpeechCommands.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechCommands.release.xcconfig"; path = "Target Support Files/Pods-SpeechCommands/Pods-SpeechCommands.release.xcconfig"; sourceTree = "<group>"; };
 		904D4AEDDA5AAFF1325F4550 /* Pods_SpeechCommands.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeechCommands.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93235ACB24E6DEFF00C098A7 /* tiny_conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = tiny_conv.tflite; path = ../../../../../../tiny_conv.tflite; sourceTree = "<group>"; };
+		935A4B9424E9983900E85615 /* conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv.tflite; sourceTree = "<group>"; };
+		935A4B9624EA6AAE00E85615 /* 32_conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 32_conv.tflite; sourceTree = "<group>"; };
+		935A4B9824EA7F4800E85615 /* micro_conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = micro_conv.tflite; sourceTree = "<group>"; };
 		AA055D842162210E00B25948 /* conv_actions_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_actions_labels.txt; sourceTree = "<group>"; };
 		AA055D852162210E00B25948 /* conv_actions_frozen.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv_actions_frozen.tflite; sourceTree = "<group>"; };
 		AA1C17612186E2F0006F9564 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
@@ -70,7 +78,6 @@
 				FCD7BF4CD5758B905BCCB1D0 /* Pods-SpeechCommands.debug.xcconfig */,
 				0F0517F15721434AC6FCC72F /* Pods-SpeechCommands.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,6 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				AA055D852162210E00B25948 /* conv_actions_frozen.tflite */,
+				935A4B9624EA6AAE00E85615 /* 32_conv.tflite */,
+				935A4B9824EA7F4800E85615 /* micro_conv.tflite */,
+				93235ACB24E6DEFF00C098A7 /* tiny_conv.tflite */,
+				935A4B9424E9983900E85615 /* conv.tflite */,
 				AA055D842162210E00B25948 /* conv_actions_labels.txt */,
 			);
 			path = Model;
@@ -214,10 +225,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935A4B9524E9983900E85615 /* conv.tflite in Resources */,
 				AA73C15E216120FA0063142C /* Main.storyboard in Resources */,
+				93235ACC24E6DEFF00C098A7 /* tiny_conv.tflite in Resources */,
 				AA055D872162210E00B25948 /* conv_actions_frozen.tflite in Resources */,
+				935A4B9924EA7F4800E85615 /* micro_conv.tflite in Resources */,
 				AA055D862162210E00B25948 /* conv_actions_labels.txt in Resources */,
 				AA7006DA21526757003E34C0 /* LaunchScreen.storyboard in Resources */,
+				935A4B9724EA6AAE00E85615 /* 32_conv.tflite in Resources */,
 				AA7006D721526757003E34C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

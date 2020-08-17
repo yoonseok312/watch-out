@@ -26,7 +26,7 @@ typealias FileInfo = (name: String, extension: String)
 
 /// Information about the ConvActions model.
 enum ConvActions {
-  static let modelInfo: FileInfo = (name: "conv_actions_frozen", extension: "tflite")
+  static let modelInfo: FileInfo = (name: "32_conv", extension: "tflite")
   static let labelsInfo: FileInfo = (name: "conv_actions_labels", extension: "txt")
 }
 
