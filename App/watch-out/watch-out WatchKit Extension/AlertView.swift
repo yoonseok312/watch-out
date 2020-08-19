@@ -8,13 +8,6 @@
 
 import Foundation
 import SwiftUI
-import UIKit
-
-extension UIDevice {
-    static func vibrate() {
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-    }
-}
 
 struct AlertView: View {
     
@@ -29,7 +22,7 @@ struct AlertView: View {
     var type: String
     
     var body: some View {
-        UIDevice.vibrate()
+    
         VStack {
             VStack {
                 HStack(alignment: .center) {
@@ -50,6 +43,8 @@ struct AlertView: View {
                                 endPoint: .trailing))
                 )
             }
+        }.onAppear {
+            WKInterfaceDevice.current().play(.notification)
         }
     }
 }
@@ -59,3 +54,4 @@ struct AlertView_Previews: PreviewProvider {
         AlertView(type: "fire")
     }
 }
+
