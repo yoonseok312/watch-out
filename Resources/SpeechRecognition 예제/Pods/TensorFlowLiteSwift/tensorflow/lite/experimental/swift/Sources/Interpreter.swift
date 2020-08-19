@@ -93,6 +93,7 @@ public final class Interpreter {
   /// - Throws: An error if the model was not ready because the tensors were not allocated.
   public func invoke() throws {
     guard TfLiteInterpreterInvoke(cInterpreter) == kTfLiteOk else {
+      print("🏅\(kTfLiteOk)")
       throw InterpreterError.allocateTensorsRequired
     }
   }

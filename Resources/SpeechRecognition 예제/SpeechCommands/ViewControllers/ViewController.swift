@@ -113,7 +113,9 @@ class ViewController: UIViewController {
     result = modelDataHandler?.runModel(onBuffer: buffer)
 
     // Updates the results on the screen.
+    //After(deadline: .now() + 1)
     DispatchQueue.main.async {
+      print("🟥")
       self.refreshInferenceTime()
       guard let recognizedCommand = self.result?.recognizedCommand else {
         return
