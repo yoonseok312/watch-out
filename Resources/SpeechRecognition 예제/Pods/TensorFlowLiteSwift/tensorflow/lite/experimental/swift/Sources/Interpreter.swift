@@ -93,6 +93,7 @@ public final class Interpreter {
   /// - Throws: An error if the model was not ready because the tensors were not allocated.
   public func invoke() throws {
     guard TfLiteInterpreterInvoke(cInterpreter) == kTfLiteOk else {
+      print("🏅")
       throw InterpreterError.allocateTensorsRequired
     }
   }
@@ -224,14 +225,17 @@ public final class Interpreter {
   public func copy(_ data: Data, toInputAt index: Int) throws -> Tensor {
     let maxIndex = inputTensorCount - 1
     guard case 0...maxIndex = index else {
+      print("🟥")
       throw InterpreterError.invalidTensorIndex(index: index, maxIndex: maxIndex)
     }
     guard let cTensor = TfLiteInterpreterGetInputTensor(cInterpreter, Int32(index)) else {
+      print("🟥🟥")
       throw InterpreterError.allocateTensorsRequired
     }
 
     let byteCount = TfLiteTensorByteSize(cTensor)
-    guard data.count == byteCount else {
+    guard data.count == byteCount/2 else {
+      print("🟥🟥🟥 \(data.count)")
       throw InterpreterError.invalidTensorDataCount(provided: data.count, required: byteCount)
     }
 
