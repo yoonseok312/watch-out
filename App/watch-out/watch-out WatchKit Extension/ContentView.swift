@@ -9,13 +9,67 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, Application Team!")
+  
+  @State private var animateStrokeStart = true
+  @State private var animateStrokeEnd = true
+  @State private var isRotating = true
+  
+  struct FontStyle: ViewModifier {
+    
+    func body(content: Content) -> some View {
+      return content
+        .foregroundColor(Color.white)
+        .font(Font.custom("Arial Rounded MT Bold", size: 15))
     }
+  }
+  
+  var body: some View {
+    VStack {
+      ZStack {
+        Image("microphone")
+        
+        Circle()
+          .trim(from: animateStrokeStart ? 1/3 : 1/9, to: animateStrokeEnd ? 2/5 : 1)
+          .stroke(lineWidth: 10)
+          .frame(width: 150, height: 150)
+          .foregroundColor(Color(red: 0.0, green: 0.588, blue: 1.0))
+          .rotationEffect(.degrees(isRotating ? 360 : 0))
+          .onAppear() {
+            
+            withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+              self.isRotating.toggle()
+            }
+            
+            withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
+              self.animateStrokeStart.toggle()
+            }
+            
+            withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
+              self.animateStrokeEnd.toggle()
+            }
+        }
+      }
+      Spacer()
+      Text("Watch-out이 듣고 있습니다...")
+        .fontWeight(.bold)
+        .modifier(FontStyle())
+      
+      HStack {
+        
+        NavigationLink(destination: Alert(type: "car")) {
+          Text(/*@START_MENU_TOKEN@*/"자동차"/*@END_MENU_TOKEN@*/)
+        }
+        
+        NavigationLink(destination: Alert(type: "fire")) {
+          Text(/*@START_MENU_TOKEN@*/"불이야!"/*@END_MENU_TOKEN@*/)
+        }
+      }
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
