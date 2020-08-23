@@ -11,7 +11,7 @@ import SwiftUI
 // Pods - 의존성 관리 해주는 친구
 // SwiftPackage Manager
 
-struct MainView: View {
+struct SwiftUIView: View {
     
     @State private var animateStrokeStart = true
     @State private var animateStrokeEnd = true
@@ -58,11 +58,11 @@ struct MainView: View {
 //                .modifier(FontStyle())
             
 //            HStack {
-//                
+//
 //                NavigationLink(destination: Alert(type: "car")) {
 //                    Text(/*@START_MENU_TOKEN@*/"자동차"/*@END_MENU_TOKEN@*/)
 //                }
-//                
+//
 //                NavigationLink(destination: Alert(type: "fire")) {
 //                    Text(/*@START_MENU_TOKEN@*/"불이야!"/*@END_MENU_TOKEN@*/)
 //                }
@@ -70,3 +70,4 @@ struct MainView: View {
         }
     }
 }
+
