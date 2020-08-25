@@ -24,15 +24,18 @@ struct ContentView: View {
   }
   
   var body: some View {
+    
     VStack {
+     Spacer()
+        Spacer()
+        Spacer()
       ZStack {
-        Image("microphone")
-        
+          Image(systemName: "antenna.radiowaves.left.and.right").foregroundColor(.white).font(.system(size: 50))
         Circle()
           .trim(from: animateStrokeStart ? 1/3 : 1/9, to: animateStrokeEnd ? 2/5 : 1)
           .stroke(lineWidth: 10)
-          .frame(width: 150, height: 150)
-          .foregroundColor(Color(red: 0.0, green: 0.588, blue: 1.0))
+          .frame(width: 100, height: 100)
+          .foregroundColor(Color(red: 255, green: 0, blue:1))
           .rotationEffect(.degrees(isRotating ? 360 : 0))
           .onAppear() {
             
@@ -48,22 +51,30 @@ struct ContentView: View {
               self.animateStrokeEnd.toggle()
             }
         }
+             
       }
-      Spacer()
-      Text("Watch-out이 듣고 있습니다...")
-        .fontWeight(.bold)
-        .modifier(FontStyle())
+    Spacer()
+          Spacer()
+      Spacer()  
+        NavigationLink(destination: Alert_A()){
+            Text("위험 소리 탐지중...")
+                  .fontWeight(.bold)
+                  .modifier(FontStyle())
+        }
+        //            Text("Click").font(.system(size: 10, weight: .black))
+        //        }
+//        NavigationLink(destination: Alert(type: "fire")) {
+//            Text("Click").font(.system(size: 10, weight: .black))
+//        }
       
-      HStack {
+//      HStack {
+//
+//        NavigationLink(destination: Alert(type: "car")) {
+//          Text(/*@START_MENU_TOKEN@*/"자동차"/*@END_MENU_TOKEN@*/)
+//        }
+//
         
-        NavigationLink(destination: Alert(type: "car")) {
-          Text(/*@START_MENU_TOKEN@*/"자동차"/*@END_MENU_TOKEN@*/)
-        }
-        
-        NavigationLink(destination: Alert(type: "fire")) {
-          Text(/*@START_MENU_TOKEN@*/"불이야!"/*@END_MENU_TOKEN@*/)
-        }
-      }
+    
     }
   }
 }

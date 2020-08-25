@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3404944924E570AB00E457CD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404944824E570AB00E457CD /* Alert.swift */; };
 		3404944B24E573B200E457CD /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404944A24E573B200E457CD /* NotificationManager.swift */; };
+		3682C48424F5380400858A62 /* Alert_A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682C48324F5380400858A62 /* Alert_A.swift */; };
+		3682C48624F53A5300858A62 /* Alert_B.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682C48524F53A5300858A62 /* Alert_B.swift */; };
+		3682C48C24F5685A00858A62 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682C48B24F5685A00858A62 /* Setting.swift */; };
+		3682C48E24F5744600858A62 /* drafrUI.png in Resources */ = {isa = PBXBuildFile; fileRef = 3682C48D24F5744600858A62 /* drafrUI.png */; };
 		9321B2CB24EE95AE00140174 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B2CA24EE95AE00140174 /* StartView.swift */; };
 		934AAC2424DFE6790020EE1D /* watch-out WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 934AAC2324DFE6790020EE1D /* watch-out WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		934AAC2A24DFE6790020EE1D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934AAC2824DFE6790020EE1D /* Interface.storyboard */; };
@@ -68,6 +72,10 @@
 /* Begin PBXFileReference section */
 		3404944824E570AB00E457CD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3404944A24E573B200E457CD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		3682C48324F5380400858A62 /* Alert_A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert_A.swift; sourceTree = "<group>"; };
+		3682C48524F53A5300858A62 /* Alert_B.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert_B.swift; sourceTree = "<group>"; };
+		3682C48B24F5685A00858A62 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		3682C48D24F5744600858A62 /* drafrUI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drafrUI.png; path = ../../../../Downloads/downloadFile/drafrUI.png; sourceTree = "<group>"; };
 		9321B2CA24EE95AE00140174 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		934AAC1F24DFE6780020EE1D /* watch-out.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		934AAC2324DFE6790020EE1D /* watch-out WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +137,7 @@
 		934AAC3624DFE6790020EE1D /* watch-out WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3682C48D24F5744600858A62 /* drafrUI.png */,
 				3404944A24E573B200E457CD /* NotificationManager.swift */,
 				3404944824E570AB00E457CD /* Alert.swift */,
 				934AAC3724DFE6790020EE1D /* ContentView.swift */,
@@ -137,10 +146,13 @@
 				934AAC3B24DFE6790020EE1D /* ExtensionDelegate.swift */,
 				934AAC3D24DFE6790020EE1D /* NotificationController.swift */,
 				934AAC3F24DFE6790020EE1D /* NotificationView.swift */,
+				3682C48324F5380400858A62 /* Alert_A.swift */,
+				3682C48524F53A5300858A62 /* Alert_B.swift */,
 				934AAC4124DFE67A0020EE1D /* Assets.xcassets */,
 				934AAC4624DFE67A0020EE1D /* Info.plist */,
 				934AAC4724DFE67A0020EE1D /* PushNotificationPayload.apns */,
 				934AAC4324DFE67A0020EE1D /* Preview Content */,
+				3682C48B24F5685A00858A62 /* Setting.swift */,
 			);
 			path = "watch-out WatchKit Extension";
 			sourceTree = "<group>";
@@ -269,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3682C48E24F5744600858A62 /* drafrUI.png in Resources */,
 				934AAC4524DFE67A0020EE1D /* Preview Assets.xcassets in Resources */,
 				934AAC4224DFE67A0020EE1D /* Assets.xcassets in Resources */,
 			);
@@ -283,12 +296,15 @@
 			files = (
 				3404944924E570AB00E457CD /* Alert.swift in Sources */,
 				934AAC3A24DFE6790020EE1D /* HostingController.swift in Sources */,
+				3682C48424F5380400858A62 /* Alert_A.swift in Sources */,
 				934AAC3824DFE6790020EE1D /* ContentView.swift in Sources */,
 				9321B2CB24EE95AE00140174 /* StartView.swift in Sources */,
 				934AAC3E24DFE6790020EE1D /* NotificationController.swift in Sources */,
+				3682C48C24F5685A00858A62 /* Setting.swift in Sources */,
 				3404944B24E573B200E457CD /* NotificationManager.swift in Sources */,
 				934AAC3C24DFE6790020EE1D /* ExtensionDelegate.swift in Sources */,
 				934AAC4024DFE6790020EE1D /* NotificationView.swift in Sources */,
+				3682C48624F53A5300858A62 /* Alert_B.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

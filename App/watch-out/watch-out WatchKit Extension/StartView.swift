@@ -5,31 +5,16 @@ struct StartView: View {
   @State var nextScreenShown = false
   
   var body: some View {
-    
-    ZStack {
-      Circle()
-        .fill(Color(000099))
-      Circle()
-        .fill(Color(0x0000ff))
-        .frame(width: 120, height: 120)
-      Circle()
-        .fill(Color(0x6666ff))
-        .frame(width: 80, height: 80)
-      VStack {
+
+    VStack{
+        Image("3_c_r")
+        .resizable()
+        .frame(width: 112.0, height: 112.0)
+        Spacer()
         NavigationLink(destination: ContentView()) {
-          Text("Start")
-            .bold()
-            .onTapGesture {
-              self.nextScreenShown = true
-              WKInterfaceDevice.current().play(.notification)
-              
-          }
+            Text("위험신호 감지 시작 ").bold()
         }
-      }
-      //.buttonStyle(PlainButtonStyle())
-      
     }
-    
   }
 }
 
