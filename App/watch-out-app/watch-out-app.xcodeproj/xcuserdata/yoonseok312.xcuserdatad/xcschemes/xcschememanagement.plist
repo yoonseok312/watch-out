@@ -12,12 +12,20 @@
 		<key>watch-out-app WatchKit App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>2</integer>
+=======
+			<integer>3</integer>
+>>>>>>> 729d84dadab3d2470f8fcdb37bcd3ad44fb0f5c6
 		</dict>
 		<key>watch-out-app.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>5</integer>
+=======
+			<integer>2</integer>
+>>>>>>> 729d84dadab3d2470f8fcdb37bcd3ad44fb0f5c6
 		</dict>
 	</dict>
 </dict>

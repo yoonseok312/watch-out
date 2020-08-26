@@ -20,10 +20,9 @@ import UIKit
 import SwiftUI
 import WatchConnectivity
 
-
 class ViewController: UIViewController {
 
-  var contentView = UIHostingController(rootView: MainView())
+  let contentView = UIHostingController(rootView: MainView())
   var session: WCSession?
   
   // MARK: Objects Handling Core Functionality
@@ -34,7 +33,7 @@ class ViewController: UIViewController {
   // MARK: Instance Variables
   private var words: [String] = []
   private var result: Result?
-  private var highlightedCommand: String? = "듣는 중..."
+  private var highlightedCommand: String?
   private var bufferSize: Int = 0
 
   // MARK: View Handling Methods
@@ -131,17 +130,14 @@ class ViewController: UIViewController {
     // Updates the results on the screen.
     DispatchQueue.main.async {
       guard let recognizedCommand = self.result?.recognizedCommand else {
-
-//        ModelResult.word = "Watch-out이 듣고 있습니다..."
         return
       }
       // 인식이 잘되는지 console에 출력 합니다.
       print(self.result?.recognizedCommand)
-      self.highlightedCommand =  String(recognizedCommand.name)
+      self.highlightedCommand =  recognizedCommand.name
       
       if let validSession = self.session, validSession.isReachable {//5.1
         let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"] // Create your Dictionay as per uses
-         
          validSession.sendMessage(data, replyHandler: nil, errorHandler: nil)
        }
     }
