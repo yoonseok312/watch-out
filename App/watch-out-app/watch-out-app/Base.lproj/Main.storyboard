@@ -14,21 +14,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoh-Lh-mTW">
-                                <rect key="frame" x="20" y="433" width="374" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapSendDataToWatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4eB-t5-YiL"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aoh-Lh-mTW" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="657-5h-Ply"/>
-                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="aoh-Lh-mTW" secondAttribute="trailing" constant="20" id="FaX-Sj-13J"/>
-                            <constraint firstItem="aoh-Lh-mTW" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" constant="400" id="GXx-Rj-Zfg"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                 </viewController>

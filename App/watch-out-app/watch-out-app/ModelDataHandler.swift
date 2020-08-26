@@ -112,6 +112,7 @@ class ModelDataHandler {
 
   /// Invokes the `Interpreter` and processes and returns the inference results.
   func runModel(onBuffer buffer: [Int16]) -> Result? {
+    print("🟥")
     let interval: TimeInterval
     let outputTensor: Tensor
     do {
