@@ -93,6 +93,7 @@ class ViewController: UIViewController {
     super.prepare(for: segue, sender: sender)
   }
 
+  
   /**
    Initializes the AudioInputManager and starts recognizing on the output buffers.
    */
