@@ -18,15 +18,15 @@ struct Alert_A: View {
         
             HStack{
                 ZStack{
-                    NavigationLink(destination: Alert_B()){
-                    RoundedRectangle(cornerRadius: 23, style: .continuous)
-                               .fill(LinearGradient(
-                                 gradient: .init(colors: [Self.gradientStart, Self.gradientEnd]),
-                                 startPoint: .init(x: 0.0, y: 0.0),
-                                 endPoint: .init(x: 0.5, y: 0.6)
-                               ))
-                               .frame(width: 185, height: 120)
-                    }
+//                    NavigationLink(destination: Alert_B()){
+//                    RoundedRectangle(cornerRadius: 23, style: .continuous)
+//                               .fill(LinearGradient(
+//                                 gradient: .init(colors: [Self.gradientStart, Self.gradientEnd]),
+//                                 startPoint: .init(x: 0.0, y: 0.0),
+//                                 endPoint: .init(x: 0.5, y: 0.6)
+//                               ))
+//                               .frame(width: 185, height: 120)
+//                    }
                     VStack(alignment: .leading) {
                         Text("근처에서").font(.system(size: 18, weight: .black)).padding(.vertical,7).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
                         

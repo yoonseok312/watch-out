@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
+import SwiftUI
 
 class InterfaceController: WKInterfaceController {
 
@@ -37,6 +38,7 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
 
 }
 
@@ -46,7 +48,6 @@ extension InterfaceController: WCSessionDelegate {
   }
   
   func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-    
     print("received data: \(message)")
     if let t = message["title"] as? String {
         self.alertTitle.setText(t)
@@ -54,5 +55,7 @@ extension InterfaceController: WCSessionDelegate {
     if let c = message["content"] as? String {
         self.content.setText(c)
     }
+
+
   }
 }
