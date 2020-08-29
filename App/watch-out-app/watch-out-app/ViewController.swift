@@ -149,17 +149,19 @@ class ViewController: UIViewController {
 
 
 extension ViewController: AudioInputManagerDelegate {
-
+  
   func didOutput(channelData: [Int16]) {
-
+    var isToggled = false
+    
     guard let handler = modelDataHandler else {
       return
     }
     
-//    print("didOutput");
-
-    self.runModel(onBuffer: Array(channelData[0..<handler.sampleRate]))
-    self.runModel(onBuffer: Array(channelData[handler.sampleRate..<bufferSize]))
+    print("didOutput");
+    if(isToggled){
+      self.runModel(onBuffer: Array(channelData[0..<handler.sampleRate]))
+      self.runModel(onBuffer: Array(channelData[handler.sampleRate..<bufferSize]))
+    }
   }
 
   func showCameraPermissionsDeniedAlert() {

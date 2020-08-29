@@ -10,11 +10,12 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UISwitch.appearance().onTintColor = .init(red: 145.0 / 255.0, green: 190.0 / 255.0, blue: 212.0 / 255.0, alpha: 1)
+            //let skyblue = Color(red: 145.0 / 255.0, green: 190.0 / 255.0, blue: 212.0 / 255.0)
         return true
     }
 
