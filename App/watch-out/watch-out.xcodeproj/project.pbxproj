@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A6B84DC24EC9F4D0064702E /* InOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B84DB24EC9F4D0064702E /* InOperation.swift */; };
-		5A6B84DE24ECA5790064702E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B84DD24ECA5790064702E /* AlertView.swift */; };
+		3404944924E570AB00E457CD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404944824E570AB00E457CD /* Alert.swift */; };
+		3404944B24E573B200E457CD /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404944A24E573B200E457CD /* NotificationManager.swift */; };
+		9321B2CB24EE95AE00140174 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B2CA24EE95AE00140174 /* StartView.swift */; };
 		934AAC2424DFE6790020EE1D /* watch-out WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 934AAC2324DFE6790020EE1D /* watch-out WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		934AAC2A24DFE6790020EE1D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934AAC2824DFE6790020EE1D /* Interface.storyboard */; };
 		934AAC2C24DFE6790020EE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934AAC2B24DFE6790020EE1D /* Assets.xcassets */; };
@@ -65,8 +66,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5A6B84DB24EC9F4D0064702E /* InOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOperation.swift; sourceTree = "<group>"; };
-		5A6B84DD24ECA5790064702E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		3404944824E570AB00E457CD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		3404944A24E573B200E457CD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		9321B2CA24EE95AE00140174 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		934AAC1F24DFE6780020EE1D /* watch-out.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		934AAC2324DFE6790020EE1D /* watch-out WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		934AAC2924DFE6790020EE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -127,9 +129,10 @@
 		934AAC3624DFE6790020EE1D /* watch-out WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3404944A24E573B200E457CD /* NotificationManager.swift */,
+				3404944824E570AB00E457CD /* Alert.swift */,
 				934AAC3724DFE6790020EE1D /* ContentView.swift */,
-				5A6B84DB24EC9F4D0064702E /* InOperation.swift */,
-				5A6B84DD24ECA5790064702E /* AlertView.swift */,
+				9321B2CA24EE95AE00140174 /* StartView.swift */,
 				934AAC3924DFE6790020EE1D /* HostingController.swift */,
 				934AAC3B24DFE6790020EE1D /* ExtensionDelegate.swift */,
 				934AAC3D24DFE6790020EE1D /* NotificationController.swift */,
@@ -278,12 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3404944924E570AB00E457CD /* Alert.swift in Sources */,
 				934AAC3A24DFE6790020EE1D /* HostingController.swift in Sources */,
 				934AAC3824DFE6790020EE1D /* ContentView.swift in Sources */,
-				5A6B84DE24ECA5790064702E /* AlertView.swift in Sources */,
+				9321B2CB24EE95AE00140174 /* StartView.swift in Sources */,
 				934AAC3E24DFE6790020EE1D /* NotificationController.swift in Sources */,
+				3404944B24E573B200E457CD /* NotificationManager.swift in Sources */,
 				934AAC3C24DFE6790020EE1D /* ExtensionDelegate.swift in Sources */,
-				5A6B84DC24EC9F4D0064702E /* InOperation.swift in Sources */,
 				934AAC4024DFE6790020EE1D /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

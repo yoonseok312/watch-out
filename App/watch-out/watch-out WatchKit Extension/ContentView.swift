@@ -10,53 +10,66 @@ import SwiftUI
 
 struct ContentView: View {
   
-  @State var nextScreenShown = false
+  @State private var animateStrokeStart = true
+  @State private var animateStrokeEnd = true
+  @State private var isRotating = true
   
-    var body: some View {
-      
-      ZStack {
-        Circle()
-          .fill(Color(000099))
-        Circle()
-          .fill(Color(0x0000ff))
-          .frame(width: 120, height: 120)
-        Circle()
-          .fill(Color(0x6666ff))
-          .frame(width: 80, height: 80)
-        
-        NavigationLink(destination: InOperation()) {
-            Text("Start").bold()
-        }
-        .contentShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-      }
-      
+  struct FontStyle: ViewModifier {
     
+    func body(content: Content) -> some View {
+      return content
+        .foregroundColor(Color.white)
+        .font(Font.custom("Arial Rounded MT Bold", size: 15))
     }
+  }
+  
+  var body: some View {
+    VStack {
+      ZStack {
+        Image("microphone")
+        
+        Circle()
+          .trim(from: animateStrokeStart ? 1/3 : 1/9, to: animateStrokeEnd ? 2/5 : 1)
+          .stroke(lineWidth: 10)
+          .frame(width: 150, height: 150)
+          .foregroundColor(Color(red: 0.0, green: 0.588, blue: 1.0))
+          .rotationEffect(.degrees(isRotating ? 360 : 0))
+          .onAppear() {
+            
+            withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+              self.isRotating.toggle()
+            }
+            
+            withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
+              self.animateStrokeStart.toggle()
+            }
+            
+            withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
+              self.animateStrokeEnd.toggle()
+            }
+        }
+      }
+      Spacer()
+      Text("Watch-out이 듣고 있습니다...")
+        .fontWeight(.bold)
+        .modifier(FontStyle())
+      
+      HStack {
+        
+        NavigationLink(destination: Alert(type: "car")) {
+          Text(/*@START_MENU_TOKEN@*/"자동차"/*@END_MENU_TOKEN@*/)
+        }
+        
+        NavigationLink(destination: Alert(type: "fire")) {
+          Text(/*@START_MENU_TOKEN@*/"불이야!"/*@END_MENU_TOKEN@*/)
+        }
+      }
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-struct AlarmView: View {
-  
-  //@Binding var nextScreenShown : Bool
-  
-  var body: some View {
-    Text("Alarm view")
+  static var previews: some View {
+    ContentView()
   }
 }
-
-extension Color {
-  init(_ hex: UInt32, opacity:Double = 1.0) {
-    let red = Double((hex & 0xff0000) >> 16) / 255.0
-    let green = Double((hex & 0xff00) >> 8) / 255.0
-    let blue = Double((hex & 0xff) >> 0) / 255.0
-    self.init(.sRGB, red: red, green: green, blue: blue, opacity: opacity)
-  }
-}
-
-
