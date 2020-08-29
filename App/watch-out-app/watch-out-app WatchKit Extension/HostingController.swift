@@ -13,14 +13,14 @@ import SwiftUI
 import WatchConnectivity
 
 class HostingController: WKHostingController<AnyView> {
-  //let session = WCSession.default
+
+  let session = WCSession.default
+  
   override func awake(withContext context: Any?) {
       super.awake(withContext: context)
-
-      // Configure interface objects here.
-      //session.delegate = WatchConnectivityProvider()
-      //session.activate()
-    WatchConnectivityProvider()
+  
+      session.delegate = self
+      session.activate()
   }
   var environment = WatchEnvironment(connectivityProvider: WatchConnectivityProvider())
     override var body: AnyView {
@@ -28,43 +28,19 @@ class HostingController: WKHostingController<AnyView> {
     }
 }
 
-//public var title: String = "default"
+extension HostingController: WCSessionDelegate {
 
-//class HostingController: WKHostingController<WatchView> {
-//    override var body: WatchView {
-//        return WatchView()
-//    }
-//}
-//
-//extension HostingController: WCSessionDelegate {
-//
-//  func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-//  }
-//
-//  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-//
-//    print("received data: \(message)")
-//    if let t = message["title"] as? String {
-//        title = t
-//    }
-////    if let c = message["content"] as? String {
-////        self.content.setText(c)
-////    }
-//  }
-//}
+  func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+  }
 
-//class WatchViewModel: ObservableObject, WCSessionDelegate {
-//  func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-//  }
-//
-//  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-//
-//    print("received data: \(message)")
-//    if let t = message["title"] as? String {
-//        self.alertTitle.setText(t)
-//    }
-//    if let c = message["content"] as? String {
-//        self.content.setText(c)
-//    }
-//  }
-//}
+  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+
+    print("received data: \(message)")
+    if let t = message["title"] as? String {
+      DispatchQueue.main.async {
+        self.environment.changeWord(word:t)
+      }
+    }
+
+  }
+}

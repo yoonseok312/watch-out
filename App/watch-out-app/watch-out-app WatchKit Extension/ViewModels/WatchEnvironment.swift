@@ -19,5 +19,9 @@ class WatchEnvironment: ObservableObject {
     self.connectivityProvider = connectivityProvider
     
   }
+  
+  func changeWord(word: String) {
+    self.word = word
+  }
 
 }
