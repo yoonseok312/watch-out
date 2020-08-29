@@ -9,18 +9,7 @@
         <!--Interface Controller-->
         <scene sceneID="geG-5Z-33l">
             <objects>
-                <controller fullBounds="YES" id="0Hp-Yf-gvx" customClass="InterfaceController" customModule="watch_out_app_WatchKit_Extension">
-                    <items>
-                        <imageView alignment="left" id="Mbl-yl-Ir0"/>
-                        <label alignment="left" text="Label" id="v2C-cM-oQy"/>
-                        <label alignment="left" text="Label" id="MXy-YW-owq"/>
-                    </items>
-                    <connections>
-                        <outlet property="alertTitle" destination="v2C-cM-oQy" id="c4x-1P-byy"/>
-                        <outlet property="content" destination="MXy-YW-owq" id="awi-HN-R7c"/>
-                        <outlet property="img" destination="Mbl-yl-Ir0" id="LTN-bo-5x5"/>
-                    </connections>
-                </controller>
+                <controller fullBounds="YES" id="0Hp-Yf-gvx" customClass="InterfaceController" customModule="watch_out_app_WatchKit_Extension"/>
             </objects>
             <point key="canvasLocation" x="85" y="324"/>
         </scene>
