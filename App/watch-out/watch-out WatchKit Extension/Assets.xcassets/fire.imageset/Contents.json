@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "microphone.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "fire-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     
     if WCSession.isSupported() {//4.1
       session = WCSession.default//4.2
-      session?.delegate = self//4.3
+//      session?.delegate = self//4.3
       session?.activate()//4.4
     }
   }
@@ -138,9 +138,6 @@ class ViewController: UIViewController {
       
       if let validSession = self.session, validSession.isReachable {//5.1
         let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"] // Create your Dictionay as per uses
-         
-        print("!")
-         print(data)
          validSession.sendMessage(data, replyHandler: nil, errorHandler: nil)
        }
     }
@@ -177,32 +174,3 @@ extension ViewController: AudioInputManagerDelegate {
     present(alertController, animated: true, completion: nil)
   }
 }
-
-// WCSession delegate functions
-extension ViewController: WCSessionDelegate {
-  
-  func sessionDidBecomeInactive(_ session: WCSession) {
-  }
-  
-  func sessionDidDeactivate(_ session: WCSession) {
-  }
-  
-  func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-  }
-  
-//  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-//    print("received message: \(message)")
-//    DispatchQueue.main.async { //6
-//      if let value = message["watch"] as? String {
-//        self.label.text = value
-//      }
-//    }
-//  }
-}
-
-struct ViewController_Previews: PreviewProvider {
-  static var previews: some View {
-    /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-  }
-}
-
