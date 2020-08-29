@@ -15,7 +15,6 @@
 		3493595624EE9C1C004F6DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3493595524EE9C1C004F6DF1 /* Assets.xcassets */; };
 		3493595924EE9C1C004F6DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3493595724EE9C1C004F6DF1 /* LaunchScreen.storyboard */; };
 		3493595E24EE9C1C004F6DF1 /* watch-out-app WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3493595D24EE9C1C004F6DF1 /* watch-out-app WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3493596424EE9C1C004F6DF1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3493596224EE9C1C004F6DF1 /* Interface.storyboard */; };
 		3493596624EE9C1D004F6DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3493596524EE9C1D004F6DF1 /* Assets.xcassets */; };
 		3493596D24EE9C1D004F6DF1 /* watch-out-app WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3493596C24EE9C1D004F6DF1 /* watch-out-app WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3493597424EE9C1D004F6DF1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493597324EE9C1D004F6DF1 /* ExtensionDelegate.swift */; };
@@ -40,6 +39,12 @@
 		9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45524F2AB7E00140174 /* SwiftUIView.swift */; };
 		9330BD3F24FA0626009C4D06 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BD3E24FA0626009C4D06 /* MainViewModel.swift */; };
 		9330BDB124FA3139009C4D06 /* ConectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */; };
+		9330BDBB24FA49EF009C4D06 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDBA24FA49EF009C4D06 /* HostingController.swift */; };
+		9330BDBD24FA4A6D009C4D06 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9330BDBC24FA4A6D009C4D06 /* Interface.storyboard */; };
+		9330BDBE24FA4A6D009C4D06 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9330BDBC24FA4A6D009C4D06 /* Interface.storyboard */; };
+		9330BDC024FA4D42009C4D06 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDBF24FA4D42009C4D06 /* WatchView.swift */; };
+		9330BDC224FA4EBF009C4D06 /* WatchEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDC124FA4EBF009C4D06 /* WatchEnvironment.swift */; };
+		9330BDC424FA59C8009C4D06 /* WatchConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDC324FA59C8009C4D06 /* WatchConnectivityProvider.swift */; };
 		ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +101,6 @@
 		3493595824EE9C1C004F6DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3493595A24EE9C1C004F6DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3493595D24EE9C1C004F6DF1 /* watch-out-app WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out-app WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3493596324EE9C1C004F6DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3493596524EE9C1D004F6DF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3493596724EE9C1D004F6DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3493596C24EE9C1D004F6DF1 /* watch-out-app WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watch-out-app WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,11 @@
 		9321B45524F2AB7E00140174 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		9330BD3E24FA0626009C4D06 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectivityProvider.swift; sourceTree = "<group>"; };
+		9330BDBA24FA49EF009C4D06 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		9330BDBC24FA4A6D009C4D06 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		9330BDBF24FA4D42009C4D06 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
+		9330BDC124FA4EBF009C4D06 /* WatchEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchEnvironment.swift; sourceTree = "<group>"; };
+		9330BDC324FA59C8009C4D06 /* WatchConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityProvider.swift; sourceTree = "<group>"; };
 		ABA51547C12D4BDC645CA3C5 /* Pods-watch-out-app WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_out_app_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FAAAC9156744306ECC0D66 /* Pods-watch-out-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app/Pods-watch-out-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,7 +218,7 @@
 		3493596124EE9C1C004F6DF1 /* watch-out-app WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				3493596224EE9C1C004F6DF1 /* Interface.storyboard */,
+				9330BDBC24FA4A6D009C4D06 /* Interface.storyboard */,
 				3493596524EE9C1D004F6DF1 /* Assets.xcassets */,
 				3493596724EE9C1D004F6DF1 /* Info.plist */,
 			);
@@ -226,6 +235,10 @@
 				3493597A24EE9C1E004F6DF1 /* PushNotificationPayload.apns */,
 				3493599924EEBCF9004F6DF1 /* Alert.swift */,
 				349359A124EECB5C004F6DF1 /* InterfaceController.swift */,
+				9330BDBA24FA49EF009C4D06 /* HostingController.swift */,
+				9330BDBF24FA4D42009C4D06 /* WatchView.swift */,
+				9330BDC124FA4EBF009C4D06 /* WatchEnvironment.swift */,
+				9330BDC324FA59C8009C4D06 /* WatchConnectivityProvider.swift */,
 			);
 			path = "watch-out-app WatchKit Extension";
 			sourceTree = "<group>";
@@ -410,7 +423,7 @@
 				9321B3FD24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
 				9321B40124F2978800140174 /* conv_actions_labels.txt in Resources */,
 				3493596624EE9C1D004F6DF1 /* Assets.xcassets in Resources */,
-				3493596424EE9C1C004F6DF1 /* Interface.storyboard in Resources */,
+				9330BDBD24FA4A6D009C4D06 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9330BDBE24FA4A6D009C4D06 /* Interface.storyboard in Resources */,
 				9321B40224F2978800140174 /* conv_actions_labels.txt in Resources */,
 				3493597824EE9C1E004F6DF1 /* Assets.xcassets in Resources */,
 				9321B3FE24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
@@ -519,8 +533,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3493597624EE9C1D004F6DF1 /* NotificationController.swift in Sources */,
+				9330BDC424FA59C8009C4D06 /* WatchConnectivityProvider.swift in Sources */,
 				349359A224EECB5C004F6DF1 /* InterfaceController.swift in Sources */,
+				9330BDC224FA4EBF009C4D06 /* WatchEnvironment.swift in Sources */,
+				9330BDBB24FA49EF009C4D06 /* HostingController.swift in Sources */,
 				9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */,
+				9330BDC024FA4D42009C4D06 /* WatchView.swift in Sources */,
 				3493597424EE9C1D004F6DF1 /* ExtensionDelegate.swift in Sources */,
 				3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */,
 				9321B45424F2A90B00140174 /* StartView.swift in Sources */,
@@ -557,14 +575,6 @@
 				3493595824EE9C1C004F6DF1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		3493596224EE9C1C004F6DF1 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3493596324EE9C1C004F6DF1 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

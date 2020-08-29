@@ -22,6 +22,7 @@ class ConnectivityProvider: NSObject, WCSessionDelegate {
 
     func send(message: [String:Any]) -> Void {
         session.sendMessage(message, replyHandler: nil) { (error) in
+          print("🗽")
             print(error.localizedDescription)
         }
     }
