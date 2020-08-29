@@ -12,11 +12,13 @@ import SwiftUI
 // SwiftPackage Manager
 
 struct MainView: View {
+  
+  @ObservedObject var viewModel: MainViewModel
     
     @State private var animateStrokeStart = true
     @State private var animateStrokeEnd = true
     @State private var isRotating = true
-    @State private var isToggled = false
+    //@State private var isToggled = false
     
     let navy = Color(red: 48.0 / 255.0, green: 66.0 / 255.0, blue: 105.0 / 255.0)
     let light = Color(red: 252.0 / 255.0, green: 240.0 / 255.0, blue: 237.0 / 255.0)
@@ -60,7 +62,7 @@ struct MainView: View {
                 //Spacer()
                 Text("Watch Out").modifier(titleStyle())
                 Spacer()
-                if(isToggled){
+              if viewModel.isToggled {
                     ZStack {
                         Circle()
                             .trim(from: animateStrokeStart ? 1/3 : 1/9, to: animateStrokeEnd ? 2/5 : 1)
@@ -108,13 +110,13 @@ struct MainView: View {
                         
                 }
                 
-                Toggle(isOn: $isToggled) {
+              Toggle(isOn: $viewModel.isToggled) {
                     Text("Start")
                 }
                 .labelsHidden()
                 .frame(width: 100.0, height: 150.0)
 
-                if(isToggled) {
+              if viewModel.isToggled {
                     Text("Watch Out이 위험한 소리를 듣고 있습니다!").modifier(textStyle())
                     Text("버튼을 누르면 종료됩니다.").modifier(textSmallStyle())
                 }
@@ -137,8 +139,8 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//    }
+//}

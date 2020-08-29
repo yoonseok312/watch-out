@@ -11,7 +11,6 @@
 		34526EDA24EF8386005BC1B3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34526ED924EF8386005BC1B3 /* MainView.swift */; };
 		3493594D24EE9C17004F6DF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493594C24EE9C17004F6DF1 /* AppDelegate.swift */; };
 		3493594F24EE9C17004F6DF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493594E24EE9C17004F6DF1 /* SceneDelegate.swift */; };
-		3493595124EE9C17004F6DF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493595024EE9C17004F6DF1 /* ViewController.swift */; };
 		3493595424EE9C17004F6DF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3493595224EE9C17004F6DF1 /* Main.storyboard */; };
 		3493595624EE9C1C004F6DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3493595524EE9C1C004F6DF1 /* Assets.xcassets */; };
 		3493595924EE9C1C004F6DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3493595724EE9C1C004F6DF1 /* LaunchScreen.storyboard */; };
@@ -39,6 +38,9 @@
 		9321B45424F2A90B00140174 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45224F2A90B00140174 /* StartView.swift */; };
 		9321B45624F2AB7E00140174 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45524F2AB7E00140174 /* SwiftUIView.swift */; };
 		9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45524F2AB7E00140174 /* SwiftUIView.swift */; };
+		9330BD3F24FA0626009C4D06 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BD3E24FA0626009C4D06 /* MainViewModel.swift */; };
+		9330BDB124FA3139009C4D06 /* ConectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */; };
+		9330BDB224FA3139009C4D06 /* ConectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */; };
 		ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +92,6 @@
 		3493594924EE9C17004F6DF1 /* watch-out-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3493594C24EE9C17004F6DF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3493594E24EE9C17004F6DF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3493595024EE9C17004F6DF1 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3493595324EE9C17004F6DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3493595524EE9C1C004F6DF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3493595824EE9C1C004F6DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,6 +120,8 @@
 		9321B3FF24F2978800140174 /* conv_actions_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_actions_labels.txt; sourceTree = "<group>"; };
 		9321B45224F2A90B00140174 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		9321B45524F2AB7E00140174 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		9330BD3E24FA0626009C4D06 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectivityProvider.swift; sourceTree = "<group>"; };
 		ABA51547C12D4BDC645CA3C5 /* Pods-watch-out-app WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_out_app_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FAAAC9156744306ECC0D66 /* Pods-watch-out-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app/Pods-watch-out-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,7 +198,8 @@
 				3493598824EE9CEB004F6DF1 /* Model */,
 				3493594C24EE9C17004F6DF1 /* AppDelegate.swift */,
 				3493594E24EE9C17004F6DF1 /* SceneDelegate.swift */,
-				3493595024EE9C17004F6DF1 /* ViewController.swift */,
+				9330BD3E24FA0626009C4D06 /* MainViewModel.swift */,
+				9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */,
 				3493595224EE9C17004F6DF1 /* Main.storyboard */,
 				3493595524EE9C1C004F6DF1 /* Assets.xcassets */,
 				3493595724EE9C1C004F6DF1 /* LaunchScreen.storyboard */,
@@ -352,6 +356,7 @@
 					};
 					3493595C24EE9C1C004F6DF1 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					3493596B24EE9C1D004F6DF1 = {
 						CreatedOnToolsVersion = 11.6;
@@ -488,16 +493,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3493595124EE9C17004F6DF1 /* ViewController.swift in Sources */,
 				511BE38F24F7767D00FFABDE /* SettingView.swift in Sources */,
 				34526EDA24EF8386005BC1B3 /* MainView.swift in Sources */,
 				9321B45624F2AB7E00140174 /* SwiftUIView.swift in Sources */,
+				9330BDB124FA3139009C4D06 /* ConectivityProvider.swift in Sources */,
 				9321B45324F2A90B00140174 /* StartView.swift in Sources */,
 				3493594D24EE9C17004F6DF1 /* AppDelegate.swift in Sources */,
 				3493599424EE9D5B004F6DF1 /* RecognizeCommands.swift in Sources */,
 				3493594F24EE9C17004F6DF1 /* SceneDelegate.swift in Sources */,
 				3493599224EE9D3B004F6DF1 /* ModelDataHandler.swift in Sources */,
 				3493598F24EE9D22004F6DF1 /* AudioInputManager.swift in Sources */,
+				9330BD3F24FA0626009C4D06 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +515,7 @@
 				349359A224EECB5C004F6DF1 /* InterfaceController.swift in Sources */,
 				9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */,
 				3493597424EE9C1D004F6DF1 /* ExtensionDelegate.swift in Sources */,
+				9330BDB224FA3139009C4D06 /* ConectivityProvider.swift in Sources */,
 				3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */,
 				9321B45424F2A90B00140174 /* StartView.swift in Sources */,
 			);
@@ -723,14 +730,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UNVQ33RRMX;
 				IBSC_MODULE = watch_out_app_WatchKit_Extension;
 				INFOPLIST_FILE = "watch-out-app WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.watchout.watch-out-app.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.2;
@@ -743,10 +757,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UNVQ33RRMX;
 				IBSC_MODULE = watch_out_app_WatchKit_Extension;
 				INFOPLIST_FILE = "watch-out-app WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.watchout.watch-out-app.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
