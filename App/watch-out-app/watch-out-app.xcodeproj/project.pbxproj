@@ -40,7 +40,6 @@
 		9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45524F2AB7E00140174 /* SwiftUIView.swift */; };
 		9330BD3F24FA0626009C4D06 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BD3E24FA0626009C4D06 /* MainViewModel.swift */; };
 		9330BDB124FA3139009C4D06 /* ConectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */; };
-		9330BDB224FA3139009C4D06 /* ConectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */; };
 		ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -192,14 +191,13 @@
 		3493594B24EE9C17004F6DF1 /* watch-out-app */ = {
 			isa = PBXGroup;
 			children = (
+				3493594C24EE9C17004F6DF1 /* AppDelegate.swift */,
+				3493594E24EE9C17004F6DF1 /* SceneDelegate.swift */,
+				9330BDB324FA422E009C4D06 /* ViewModels */,
 				34526ED824EF8358005BC1B3 /* Views */,
 				3493599024EE9D32004F6DF1 /* ModelDataHandler */,
 				3493598D24EE9CFD004F6DF1 /* AudioInputManager */,
 				3493598824EE9CEB004F6DF1 /* Model */,
-				3493594C24EE9C17004F6DF1 /* AppDelegate.swift */,
-				3493594E24EE9C17004F6DF1 /* SceneDelegate.swift */,
-				9330BD3E24FA0626009C4D06 /* MainViewModel.swift */,
-				9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */,
 				3493595224EE9C17004F6DF1 /* Main.storyboard */,
 				3493595524EE9C1C004F6DF1 /* Assets.xcassets */,
 				3493595724EE9C1C004F6DF1 /* LaunchScreen.storyboard */,
@@ -256,6 +254,15 @@
 				3493599324EE9D5B004F6DF1 /* RecognizeCommands.swift */,
 			);
 			name = ModelDataHandler;
+			sourceTree = "<group>";
+		};
+		9330BDB324FA422E009C4D06 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9330BD3E24FA0626009C4D06 /* MainViewModel.swift */,
+				9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		953CEE6D28C9B4A51392F50D /* Frameworks */ = {
@@ -515,7 +522,6 @@
 				349359A224EECB5C004F6DF1 /* InterfaceController.swift in Sources */,
 				9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */,
 				3493597424EE9C1D004F6DF1 /* ExtensionDelegate.swift in Sources */,
-				9330BDB224FA3139009C4D06 /* ConectivityProvider.swift in Sources */,
 				3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */,
 				9321B45424F2A90B00140174 /* StartView.swift in Sources */,
 			);
