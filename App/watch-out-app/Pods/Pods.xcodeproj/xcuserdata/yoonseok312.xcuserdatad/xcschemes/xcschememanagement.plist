@@ -12,22 +12,38 @@
 		<key>Pods-watch-out-app WatchKit Extension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
+			<integer>4</integer>
+=======
 			<integer>5</integer>
+>>>>>>> master
 		</dict>
 		<key>Pods-watch-out-app.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
+			<integer>5</integer>
+=======
 			<integer>6</integer>
+>>>>>>> master
 		</dict>
 		<key>TensorFlowLiteC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
+			<integer>6</integer>
+=======
 			<integer>3</integer>
+>>>>>>> master
 		</dict>
 		<key>TensorFlowLiteSwift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
+			<integer>7</integer>
+=======
 			<integer>4</integer>
+>>>>>>> master
 		</dict>
 	</dict>
 </dict>
