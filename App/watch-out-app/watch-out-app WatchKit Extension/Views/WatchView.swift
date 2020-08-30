@@ -68,8 +68,8 @@ struct WatchView: View {
                     Spacer()
                     Spacer()
                     Text("위험 소리 탐지중...")
-                              .fontWeight(.bold)
-                              .modifier(FontStyle())
+                        .fontWeight(.bold)
+                        .modifier(FontStyle())
                 
                 }
             }
@@ -95,7 +95,11 @@ struct WatchView: View {
                                 VStack(alignment: .leading) {
                                     Text("근처에서").font(.system(size: 18, weight: .black)).padding(.vertical,7).foregroundColor(Color.init(red: 255, green: 255, blue: 255))
                                     
-                                    Text(viewModel.word).font(.system(size: 37, weight: .black)).padding(.horizontal,10).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
+                                    HStack(alignment:.center){
+                                        Text(viewModel.word).font(.system(size: 37, weight: .black)).padding(.horizontal,10).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
+                                    }.onAppear {
+                                      WKInterfaceDevice.current().play(.notification)
+                                    }
                                     
                                     HStack(alignment:.lastTextBaseline){
                                         Text("가 들렸습니다").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.leading,60).foregroundColor(Color.init(red: 255, green: 255, blue: 255))
@@ -103,8 +107,6 @@ struct WatchView: View {
                                 }
                             }
                         }
-                    }.onAppear {
-                      WKInterfaceDevice.current().play(.notification)
                     }
             }
         }
