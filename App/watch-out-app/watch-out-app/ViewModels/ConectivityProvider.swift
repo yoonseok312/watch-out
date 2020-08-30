@@ -21,6 +21,7 @@ class ConnectivityProvider: NSObject, WCSessionDelegate {
     }
 
     func send(message: [String:Any]) -> Void {
+      //toggle 상태에 따라 분기
         session.sendMessage(message, replyHandler: nil) { (error) in
           print("🗽")
             print(error.localizedDescription)

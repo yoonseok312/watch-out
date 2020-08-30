@@ -12,6 +12,7 @@ import WatchConnectivity
 
 class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   
+  //ConnectivityProvider 에서 접근 가능하도록 environment object 로 변수 선언
   @Published var isToggled = false
   
   private(set) var connectivityProvider: ConnectivityProvider
