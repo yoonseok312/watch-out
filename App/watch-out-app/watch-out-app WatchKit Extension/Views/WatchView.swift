@@ -19,6 +19,9 @@ struct WatchView: View {
     static let gradientStart = Color(red: 255.0 / 255, green: 60.0 / 255, blue: 0.0 / 255)
     static let gradientEnd =  Color(red: 255 / 255, green: 108 / 255, blue: 63 / 255)
 
+    static let gradientStart_ = Color(red: 255.0 / 255, green: 168.0 / 255, blue: 0.0 / 255)
+    static let gradientEnd_ =  Color(red: 255 / 255, green: 198 / 255, blue: 0 / 255)
+
 //    var detectedWord : String = viewModel.word
       var finalIcon : String = "map"
 
@@ -49,20 +52,45 @@ var body: some View {
         
             HStack{
                 ZStack{
-                    RoundedRectangle(cornerRadius: 23, style: .continuous)
-                               .fill(LinearGradient(
-                                 gradient: .init(colors: [Self.gradientStart, Self.gradientEnd]),
-                                 startPoint: .init(x: 0.0, y: 0.0),
-                                 endPoint: .init(x: 0.5, y: 0.6)
-                               ))
-                               .frame(width: 185, height: 120)
+              
+                    if( viewModel.word == "yes"){
+                       //yes 소리만 노랑색으로 박스가 바뀜
+                        RoundedRectangle(cornerRadius: 23, style: .continuous)
+                                           .fill(LinearGradient(
+                                             gradient: .init(colors: [Self.gradientStart_, Self.gradientEnd_]),
+                                             startPoint: .init(x: 0.0, y: 0.0),
+                                             endPoint: .init(x: 0.5, y: 0.6)
+                                           ))
+                                           .frame(width: 185, height: 120)
+                        
+                    }else{
+                        // 나머지는 주황색
+                        RoundedRectangle(cornerRadius: 23, style: .continuous)
+                                           .fill(LinearGradient(
+                                             gradient: .init(colors: [Self.gradientStart, Self.gradientEnd]),
+                                             startPoint: .init(x: 0.0, y: 0.0),
+                                             endPoint: .init(x: 0.5, y: 0.6)
+                                           ))
+                                           .frame(width: 185, height: 120)
+                    }
+        
                     
                     VStack(alignment: .center) {
-                        Text("근처에서 소리").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
-                        Text(viewModel.word+"소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
-                        HStack(alignment:.lastTextBaseline){
+                       if( viewModel.word == "yes"){
+                            Text("근처에서 소리").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
+                        Text(viewModel.word+" 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 0.0, green: 0.0, blue: 0.0))
+                            HStack(alignment:.lastTextBaseline){
+                            Text("가 들렸습니다").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.leading,60).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
+                            }
+                            
+                        }else{
+                            Text("근처에서 소리").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
+                            Text(viewModel.word+" 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
+                            HStack(alignment:.lastTextBaseline){
                             Text("가 들렸습니다").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.leading,60).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
+                            }
                         }
+                     
                     }
                    
                     
