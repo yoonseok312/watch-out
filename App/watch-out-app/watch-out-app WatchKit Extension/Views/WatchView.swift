@@ -12,12 +12,11 @@ import Foundation
 import SwiftUI
 import WatchConnectivity
 
-var title: String = "default"
 struct WatchView: View {
   
-  @EnvironmentObject var viewModel: WatchEnvironment
+  @EnvironmentObject var environment: WatchEnvironment
   
     var body: some View {
-      Text(viewModel.word)
+      Text(environment.word)
     }
 }

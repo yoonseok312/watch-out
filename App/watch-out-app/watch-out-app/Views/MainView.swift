@@ -50,7 +50,6 @@ struct MainView: View {
     
     var body: some View {
         NavigationView{
-            
             ZStack {
                 navy.edgesIgnoringSafeArea(.all)
                 
