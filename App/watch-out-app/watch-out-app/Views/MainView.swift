@@ -18,7 +18,6 @@ struct MainView: View {
     @State private var animateStrokeStart = true
     @State private var animateStrokeEnd = true
     @State private var isRotating = true
-    //@State private var isToggled = false
     
     let navy = Color(red: 48.0 / 255.0, green: 66.0 / 255.0, blue: 105.0 / 255.0)
     let light = Color(red: 252.0 / 255.0, green: 240.0 / 255.0, blue: 237.0 / 255.0)
@@ -59,7 +58,6 @@ struct MainView: View {
             navy.edgesIgnoringSafeArea(.all)
     
             VStack {
-                //Spacer()
                 Text("Watch Out").modifier(titleStyle())
                 Spacer()
               if viewModel.isToggled {
