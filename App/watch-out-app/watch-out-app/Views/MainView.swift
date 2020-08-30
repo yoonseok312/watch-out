@@ -10,69 +10,126 @@ import SwiftUI
 
 struct MainView: View {
     
+    @ObservedObject var viewModel: MainViewModel
+    
     @State private var animateStrokeStart = true
     @State private var animateStrokeEnd = true
     @State private var isRotating = true
     
-    struct GradientButtonStyle: ButtonStyle {
-        func makeBody(configuration: Self.Configuration) -> some View {
-            configuration.label
+    let navy = Color(red: 48.0 / 255.0, green: 66.0 / 255.0, blue: 105.0 / 255.0)
+    let light = Color(red: 252.0 / 255.0, green: 240.0 / 255.0, blue: 237.0 / 255.0)
+    let orange = Color(red: 242.0 / 255.0, green: 97.0 / 255.0, blue: 1.0 / 255.0, opacity: 1)
+    let orangeOFF = Color(red: 240.0 / 255.0, green: 67.0 / 255.0, blue: 67.0 / 255.0, opacity: 0.5)
+    let orangeON = Color(red: 240.0 / 255.0, green: 67.0 / 255.0, blue: 67.0 / 255.0, opacity: 1)
+    let skyblue = Color(red: 145.0 / 255.0, green: 190.0 / 255.0, blue: 212.0 / 255.0)
+    let whiteblue = Color(red: 217.0 / 255.0, green: 232.0 / 255.0, blue: 245.0 / 255.0)
+    
+    struct titleStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
                 .foregroundColor(Color.white)
-                .padding()
-                .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(15.0)
+                .font(Font.custom("AppleSDGothicNeo-Bold", size: 30))
+            
         }
     }
-    
+    struct textStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.white)
+                .font(Font.custom("AppleSDGothicNeo-SemiBold", size: 18))
+            
+        }
+    }
+    struct textSmallStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.white)
+                .font(Font.custom("AppleSDGothicNeo-Light", size: 15))
+        }
+    }
     
     var body: some View {
-        VStack {
-            HStack() {
-                Button(action: {
-                    print("Button action")
-                }) {
-                    Text("설정")
-                }.buttonStyle(GradientButtonStyle())
-            }
-            Spacer()
-            
+        NavigationView{
             ZStack {
+                navy.edgesIgnoringSafeArea(.all)
                 
-                Image("microphone").overlay(
-                    Circle()
-                        .trim(from: animateStrokeStart ? 1/3 : 1/9, to: animateStrokeEnd ? 2/5 : 1)
-                        .stroke(lineWidth: 50)
-                        .frame(width: 300, height: 300)
-                        .foregroundColor(Color(red: 0.0, green: 0.588, blue: 1.0))
-                        .rotationEffect(.degrees(isRotating ? 360 : 0))
-                        .onAppear() {
-                            
-                            withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-                                self.isRotating.toggle()
+                VStack {
+                    //Spacer()
+                    Text("Watch Out").modifier(titleStyle())
+                    Spacer()
+                    if viewModel.isToggled {
+                        ZStack {
+                            Circle()
+                                .trim(from: animateStrokeStart ? 1/3 : 1/9, to: animateStrokeEnd ? 2/5 : 1)
+                                .stroke(lineWidth: 3)
+                                .frame(width: 200.0, height: 200.0)
+                                .foregroundColor(light)
+                                .rotationEffect(.degrees(isRotating ? 360 : 0))
+                                .onAppear() {
+                                    
+                                    withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+                                        self.isRotating.toggle()
+                                    }
+                                    
+                                    withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
+                                        self.animateStrokeStart.toggle()
+                                    }
+                                    
+                                    withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
+                                        self.animateStrokeEnd.toggle()
+                                    }
                             }
                             
-                            withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
-                                self.animateStrokeStart.toggle()
+                            Circle()
+                                .frame(width: 200.0, height: 200.0)
+                                .foregroundColor(orangeON)
+                            VStack {
+                                Image("antenna")
+                                Text("ON").modifier(textStyle())
                             }
+                        }
+                    }
+                    else {
+                        ZStack {
+                            VStack {
+                                Image("antenna")
+                                Text("OFF")
+                                    .modifier(textStyle())
+                            }
+                            Circle()
+                                .frame(width: 200.0, height: 200.0)
+                                .foregroundColor(orangeOFF)
                             
-                            withAnimation(Animation.linear(duration: 1).delay(0.5).repeatForever(autoreverses: true)) {
-                                self.animateStrokeEnd.toggle()
-                            }
-                }, alignment: .center)
+                        }
+                        
+                        
+                    }
+                    
+                    Toggle(isOn: $viewModel.isToggled) {
+                        Text("Start")
+                    }
+                    .labelsHidden()
+                    .frame(width: 100.0, height: 150.0)
+                    
+                    if viewModel.isToggled {
+                        Text("Watch Out이 위험한 소리를 듣고 있습니다!").modifier(textStyle())
+                        Text("버튼을 누르면 종료됩니다.").modifier(textSmallStyle())
+                    }
+                    else{
+                        Text("위험한 소리를 대신 들어드립니다.").modifier(textStyle())
+                        Text("버튼을 눌러 Watch Out을 시작하세요!").modifier(textSmallStyle())
+                    }
+                    Spacer()
+                    NavigationLink(destination: SettingView()) {
+                        Image("settings")
+                    }
+                    .accentColor(Color.white)
+                    
+                    Spacer()
+                }
                 
-                
-            }
-            Spacer()
-            Text("Watch-out이 듣고 있습니다...")
-                .font(.system(size: 25))
-                .fontWeight(.heavy)
-                .multilineTextAlignment(.center)
-        }
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+            } //ZStack End
+        } //Navigation View End
+        
     }
 }

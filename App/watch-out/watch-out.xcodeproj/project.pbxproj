@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3404944924E570AB00E457CD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404944824E570AB00E457CD /* Alert.swift */; };
 		3404944B24E573B200E457CD /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404944A24E573B200E457CD /* NotificationManager.swift */; };
+<<<<<<< HEAD
+=======
+		9321B2CB24EE95AE00140174 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B2CA24EE95AE00140174 /* StartView.swift */; };
+>>>>>>> 95a32440cb8e9306478c89953cb81f1898a44b5e
 		934AAC2424DFE6790020EE1D /* watch-out WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 934AAC2324DFE6790020EE1D /* watch-out WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		934AAC2A24DFE6790020EE1D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934AAC2824DFE6790020EE1D /* Interface.storyboard */; };
 		934AAC2C24DFE6790020EE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934AAC2B24DFE6790020EE1D /* Assets.xcassets */; };
@@ -67,6 +71,10 @@
 /* Begin PBXFileReference section */
 		3404944824E570AB00E457CD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3404944A24E573B200E457CD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		9321B2CA24EE95AE00140174 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+>>>>>>> 95a32440cb8e9306478c89953cb81f1898a44b5e
 		934AAC1F24DFE6780020EE1D /* watch-out.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		934AAC2324DFE6790020EE1D /* watch-out WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		934AAC2924DFE6790020EE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 				3404944A24E573B200E457CD /* NotificationManager.swift */,
 				3404944824E570AB00E457CD /* Alert.swift */,
 				934AAC3724DFE6790020EE1D /* ContentView.swift */,
+				9321B2CA24EE95AE00140174 /* StartView.swift */,
 				934AAC3924DFE6790020EE1D /* HostingController.swift */,
 				934AAC3B24DFE6790020EE1D /* ExtensionDelegate.swift */,
 				934AAC3D24DFE6790020EE1D /* NotificationController.swift */,
@@ -281,6 +290,7 @@
 				3404944924E570AB00E457CD /* Alert.swift in Sources */,
 				934AAC3A24DFE6790020EE1D /* HostingController.swift in Sources */,
 				934AAC3824DFE6790020EE1D /* ContentView.swift in Sources */,
+				9321B2CB24EE95AE00140174 /* StartView.swift in Sources */,
 				934AAC3E24DFE6790020EE1D /* NotificationController.swift in Sources */,
 				3404944B24E573B200E457CD /* NotificationManager.swift in Sources */,
 				934AAC3C24DFE6790020EE1D /* ExtensionDelegate.swift in Sources */,
