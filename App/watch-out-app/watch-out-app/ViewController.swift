@@ -22,7 +22,7 @@ import WatchConnectivity
 
 class ViewController: UIViewController {
 
-  let contentView = UIHostingController(rootView: MainView())
+//  let contentView = UIHostingController(rootView: MainView())
   var session: WCSession?
   
   // MARK: Objects Handling Core Functionality
@@ -40,9 +40,9 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    addChild(contentView)
-    view.addSubview(contentView.view)
-    self.setupConstraints()
+//    addChild(contentView)
+//    view.addSubview(contentView.view)
+//    self.setupConstraints()
 
     guard let handler = modelDataHandler else {
       return
@@ -55,19 +55,19 @@ class ViewController: UIViewController {
     self.configureWatchKitSesstion()
   }
   
-  fileprivate func setupConstraints() {
-    contentView.view.translatesAutoresizingMaskIntoConstraints = false
-    contentView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-    contentView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    contentView.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-    contentView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-  }
+//  fileprivate func setupConstraints() {
+//    contentView.view.translatesAutoresizingMaskIntoConstraints = false
+//    contentView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//    contentView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//    contentView.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//    contentView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//  }
   
   func configureWatchKitSesstion() {
     
     if WCSession.isSupported() {//4.1
       session = WCSession.default//4.2
-//      session?.delegate = self//4.3
+      session?.delegate = self//4.3
       session?.activate()//4.4
     }
   }
@@ -142,6 +142,28 @@ class ViewController: UIViewController {
        }
     }
   }
+}
+
+// WCSession delegate functions
+extension ViewController: WCSessionDelegate {
+  
+  func sessionDidBecomeInactive(_ session: WCSession) {
+  }
+  
+  func sessionDidDeactivate(_ session: WCSession) {
+  }
+  
+  func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+  }
+  
+//  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+//    print("received message: \(message)")
+//    DispatchQueue.main.async { //6
+//      if let value = message["watch"] as? String {
+//        self.label.text = value
+//      }
+//    }
+//  }
 }
 
 
