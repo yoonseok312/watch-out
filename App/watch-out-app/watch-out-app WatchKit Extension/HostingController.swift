@@ -41,6 +41,5 @@ extension HostingController: WCSessionDelegate {
         self.environment.changeWord(word:t)
       }
     }
-
   }
 }
