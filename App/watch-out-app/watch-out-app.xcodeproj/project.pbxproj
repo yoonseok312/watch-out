@@ -23,7 +23,6 @@
 		3493598F24EE9D22004F6DF1 /* AudioInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493598E24EE9D22004F6DF1 /* AudioInputManager.swift */; };
 		3493599224EE9D3B004F6DF1 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */; };
 		3493599424EE9D5B004F6DF1 /* RecognizeCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599324EE9D5B004F6DF1 /* RecognizeCommands.swift */; };
-		3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599924EEBCF9004F6DF1 /* Alert.swift */; };
 		511BE38F24F7767D00FFABDE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511BE38E24F7767D00FFABDE /* SettingView.swift */; };
 		79C343D8238AA7EA818DEECC /* Pods_watch_out_app_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */; };
 		9321B3FC24F2977D00140174 /* conv_actions_frozen.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */; };
@@ -111,7 +110,6 @@
 		3493598E24EE9D22004F6DF1 /* AudioInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInputManager.swift; sourceTree = "<group>"; };
 		3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
 		3493599324EE9D5B004F6DF1 /* RecognizeCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeCommands.swift; sourceTree = "<group>"; };
-		3493599924EEBCF9004F6DF1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4ADC7C12B117986B0264C8D5 /* Pods-watch-out-app WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_out_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		511BE38E24F7767D00FFABDE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -276,7 +274,6 @@
 		9330BDC524FA681E009C4D06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3493599924EEBCF9004F6DF1 /* Alert.swift */,
 				9330BDBF24FA4D42009C4D06 /* WatchView.swift */,
 			);
 			path = Views;
@@ -552,7 +549,6 @@
 				9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */,
 				9330BDC024FA4D42009C4D06 /* WatchView.swift in Sources */,
 				3493597424EE9C1D004F6DF1 /* ExtensionDelegate.swift in Sources */,
-				3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */,
 				9321B45424F2A90B00140174 /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

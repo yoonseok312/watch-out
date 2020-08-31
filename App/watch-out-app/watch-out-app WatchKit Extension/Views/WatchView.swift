@@ -12,7 +12,6 @@ import Foundation
 import SwiftUI
 import WatchConnectivity
 
-var title: String = "default"
 struct WatchView: View {
   
   @EnvironmentObject var viewModel: WatchEnvironment
@@ -95,7 +94,7 @@ struct WatchView: View {
                                 VStack(alignment: .leading) {
                                     Text("근처에서").font(.system(size: 18, weight: .black)).padding(.vertical,7).foregroundColor(Color.init(red: 255, green: 255, blue: 255))
                                     
-                                    HStack(alignment:.center){
+                                    VStack(alignment:.center){
                                         Text(viewModel.word).font(.system(size: 37, weight: .black)).padding(.horizontal,10).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
                                     }.onAppear {
                                       WKInterfaceDevice.current().play(.notification)
