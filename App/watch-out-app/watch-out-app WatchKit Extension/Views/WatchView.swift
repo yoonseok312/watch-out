@@ -12,8 +12,6 @@ import Foundation
 import SwiftUI
 import WatchConnectivity
 
-
-
 struct WatchView: View {
     @EnvironmentObject var viewModel: WatchEnvironment
     static let gradientStart = Color(red: 255.0 / 255, green: 60.0 / 255, blue: 0.0 / 255)
@@ -27,6 +25,7 @@ struct WatchView: View {
 
  
   
+<<<<<<< HEAD
 var body: some View {
         VStack{
             if (viewModel.word == "default"){
