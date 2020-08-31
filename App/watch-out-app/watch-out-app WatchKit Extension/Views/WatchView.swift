@@ -28,8 +28,12 @@ struct WatchView: View {
  
   
 var body: some View {
-   
         VStack{
+            if (viewModel.word == "default"){
+                Text("아이폰에서 소리 탐지중...")
+                //다른 뷰로 연결 
+               }
+            else{
             Spacer()
             HStack{
                 // 아이콘 변경 코드
@@ -107,4 +111,4 @@ var body: some View {
 //}
 
     }}
-
+}
