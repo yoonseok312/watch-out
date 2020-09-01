@@ -12,28 +12,12 @@
 		<key>watch-out-app WatchKit App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD:App/watch-out-app/watch-out-app.xcodeproj/xcuserdata/yoonseok312.xcuserdatad/xcschemes/xcschememanagement.plist
-<<<<<<< HEAD
-			<integer>2</integer>
-=======
-			<integer>3</integer>
->>>>>>> 729d84dadab3d2470f8fcdb37bcd3ad44fb0f5c6
-=======
 			<integer>5</integer>
->>>>>>> 95a32440cb8e9306478c89953cb81f1898a44b5e:App/watch-out-app/watch-out-app.xcodeproj/xcuserdata/0ys.xcuserdatad/xcschemes/xcschememanagement.plist
 		</dict>
 		<key>watch-out-app.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD:App/watch-out-app/watch-out-app.xcodeproj/xcuserdata/yoonseok312.xcuserdatad/xcschemes/xcschememanagement.plist
-<<<<<<< HEAD
-			<integer>5</integer>
-=======
-			<integer>2</integer>
->>>>>>> 729d84dadab3d2470f8fcdb37bcd3ad44fb0f5c6
-=======
 			<integer>6</integer>
->>>>>>> 95a32440cb8e9306478c89953cb81f1898a44b5e:App/watch-out-app/watch-out-app.xcodeproj/xcuserdata/0ys.xcuserdatad/xcschemes/xcschememanagement.plist
 		</dict>
 	</dict>
 </dict>
