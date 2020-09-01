@@ -15,6 +15,15 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     //ConnectivityProvider 에서 접근 가능하도록 environment object 로 변수 선언
     @Published var isToggled = false
     
+    /**
+     사용자 설정 값을 가져오는 변수 입니다.
+     
+     없음
+     - Author
+     김창윤
+     */
+    @State private var storeData = UserDefaultsManager()
+    
     private(set) var connectivityProvider: ConnectivityProvider
     var session: WCSession?
     private var modelDataHandler: ModelDataHandler? =
@@ -70,19 +79,25 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
      */
     private func checkSettingOptions(result: String) -> Bool {
         
+        print("checkcheck \(result)")
+        
+        if result == nil {
+            return false
+        }
+        
         if result == "fire" {
-            return !UserDefaults.standard.bool(forKey: "fire")
+            return storeData.fireToggle
         }
         else if result == "car" {
-            return !UserDefaults.standard.bool(forKey: "car")
+            return storeData.carToggle
         }
         else if result == "yes" {
-            return !UserDefaults.standard.bool(forKey: "yes")
+            return storeData.yesToggle
         }
         else if result == "no" {
-            return !UserDefaults.standard.bool(forKey: "no")
+            return storeData.noToggle
         }
-        return !UserDefaults.standard.bool(forKey: "right")
+        return storeData.rightToggle
     }
     
     private func runModel(onBuffer buffer: [Int16]) {
@@ -99,14 +114,14 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
             
             // Watch로 메세지를 보내기전 알림 설정을 확인 합니다.
             if !self.checkSettingOptions(result: recognizedCommand.name) {
-                
-                print("\t🔕 BLOCKED: \(recognizedCommand.name)")
                 return
             }
-            print("🔈 Listen: \(recognizedCommand.name)")
-            // 인식된 단어를 highlightedCommand에 저장합니다.
+            // 인식이 잘되는지 console에 출력 합니다.
+            print(self.result?.recognizedCommand)
             self.highlightedCommand =  recognizedCommand.name
-            let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"]
+            
+            let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"] // Create your Dictionay as per uses
+            print(data)
             self.connectivityProvider.send(message: data)
         }
     }
