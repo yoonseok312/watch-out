@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class WatchEnvironment: ObservableObject {
   
-  @Published var word: String = "changed"
+  @Published var word: String = "default"
   private(set) var connectivityProvider: WatchConnectivityProvider
   
   init(connectivityProvider: WatchConnectivityProvider) {
