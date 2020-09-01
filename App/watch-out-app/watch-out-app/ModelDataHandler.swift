@@ -34,17 +34,17 @@ enum ConvActions {
 /// buffer by invoking the TensorFlow Lite `Interpreter`. It then formats the inferences obtained
 /// and averages the recognized commands by running them through RecognizeCommands.
 class ModelDataHandler {
-
+  
   // MARK: - Internal Properties
-
+  
   /// The current thread count used by the TensorFlow Lite Interpreter.
   let threadCount: Int
-
+  
   let threadCountLimit = 10
   let sampleRate = 16000
-
+  
   // MARK: - Private Properties
-
+  
   private var buffer:[Int] = []
   private var recognizeCommands: RecognizeCommands?
   private let audioBufferInputTensorIndex = 0
@@ -57,33 +57,33 @@ class ModelDataHandler {
   private let threshold = 0.5
   private let minTimeBetweenSamples = 30.0
   private let maxInt16AsFloat32: Float32 = 32767.0
-
+  
   /// List of labels from the given labels file.
   private var labels: [String] = []
-
+  
   /// TensorFlow Lite `Interpreter` object for performing inference on a given model.
   private var interpreter: Interpreter
-
+  
   private var recordingLength: Int {
     return (sampleRate * sampleDuration) / 1000
   }
-
+  
   // MARK: - Initialization
-
+  
   /// A failable initializer for `ModelDataHandler`. A new instance is created if the model and
   /// labels files are successfully loaded from the app's main bundle. Default `threadCount` is 1.
   init?(modelFileInfo: FileInfo, labelsFileInfo: FileInfo, threadCount: Int = 1) {
     let modelFilename = modelFileInfo.name
-
+    
     // Construct the path to the model file.
     guard let modelPath = Bundle.main.path(
       forResource: modelFilename,
       ofType: modelFileInfo.extension
-    ) else {
-      print("Failed to load the model file with name: \(modelFilename).")
-      return nil
+      ) else {
+        print("Failed to load the model file with name: \(modelFilename).")
+        return nil
     }
-
+    
     // Specify the options for the `Interpreter`.
     self.threadCount = threadCount
     var options = InterpreterOptions()
@@ -107,93 +107,93 @@ class ModelDataHandler {
       classLabels: labels
     )
   }
-
+  
   // MARK: - Internal Methods
-
+  
   /// Invokes the `Interpreter` and processes and returns the inference results.
   func runModel(onBuffer buffer: [Int16]) -> Result? {
-//    print("🟥")
+    //    print("🟥")
     let interval: TimeInterval
     let outputTensor: Tensor
     do {
       // Copy the `[Int16]` buffer data as an array of `Float`s to the audio buffer input `Tensor`'s.
       let audioBufferData = Data(copyingBufferOf: buffer.map { Float($0) / maxInt16AsFloat32 })
       try interpreter.copy(audioBufferData, toInputAt: audioBufferInputTensorIndex)
-
+      
       // Copy the sample rate data to the sample rate input `Tensor`.
       var rate = Int32(sampleRate)
       let sampleRateData = Data(bytes: &rate, count: MemoryLayout.size(ofValue: rate))
       try interpreter.copy(sampleRateData, toInputAt: sampleRateInputTensorIndex)
-
+      
       // Run inference by invoking the `Interpreter`.
       let startDate = Date()
       try interpreter.invoke()
       interval = Date().timeIntervalSince(startDate) * 1000
-
+      
       // Get the output `Tensor` to process the inference results.
       outputTensor = try interpreter.output(at: 0)
     } catch let error {
       print("Failed to invoke the interpreter with error: \(error.localizedDescription)")
       return nil
     }
-
+    
     // Gets the formatted and averaged results.
     let scores = [Float32](unsafeData: outputTensor.data) ?? []
     let command =  getResults(withScores: scores)
-
+    
     // Returns result.
     let result = Result(recognizedCommand: command, inferenceTime: interval)
-
+    
     return result
   }
-
+  
   /// Returns the labels other than silence and unknown for display.
   func offsetLabelsForDisplay() -> [String] {
     return Array(labels[labelOffset..<labels.count])
   }
-
+  
   // MARK: - Private Methods
-
+  
   /// Formats the results and runs them through Recognize Commands to average the results over a
   /// window duration.
   private func getResults(withScores scores: [Float]) -> RecognizedCommand? {
-
+    
     var results: [Float] = []
     for i in 0..<labels.count {
       results.append(scores[i])
     }
-
+    
     // Runs results through recognize commands.
     let command = recognizeCommands?.process(
       latestResults: results,
       currentTime: Date().timeIntervalSince1970 * 1000
     )
-
+    
     // Check if command is new and the identified result is not silence or unknown.
     guard let newCommand = command,
       let index = labels.index(of: newCommand.name),
       newCommand.isNew,
       index >= labelOffset
-    else {
+      else {
         return nil
     }
     return newCommand
   }
-
+  
   /// Loads the labels from the labels file and stores them in the `labels` property.
   private func loadLabels(fileInfo: FileInfo) {
     let filename = fileInfo.name
     let fileExtension = fileInfo.extension
     guard let fileURL = Bundle.main.url(forResource: filename, withExtension: fileExtension) else {
       fatalError("Labels file not found in bundle. Please add a labels file with name " +
-                   "\(filename).\(fileExtension) and try again.")
+        "\(filename).\(fileExtension) and try again.")
     }
     do {
       let contents = try String(contentsOf: fileURL, encoding: .utf8)
       labels = contents.components(separatedBy: .newlines)
     } catch {
       fatalError("Labels file named \(filename).\(fileExtension) cannot be read. Please add a " +
-                   "valid labels file and try again.")
+        "valid labels file and try again.")
     }
   }
 }

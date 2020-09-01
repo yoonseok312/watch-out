@@ -3,11 +3,11 @@ import UIKit
 import Foundation
 
 struct StartView: View {
-
+  
   @State var nextScreenShown = false
-
+  
   var body: some View {
-
+    
     ZStack {
       Circle()
         .fill(Color(000099))
@@ -21,26 +21,26 @@ struct StartView: View {
         NavigationLink(destination: SwiftUIView()) {
           Text("Start")
             .bold()
-          .font(Font.custom("Arial Rounded MT Bold", size: 15))
+            .font(Font.custom("Arial Rounded MT Bold", size: 15))
           
         }
       }
       //.buttonStyle(PlainButtonStyle())
       
     }
-
+    
   }
 }
 
 
 struct StartView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartView()
-    }
+  static var previews: some View {
+    StartView()
+  }
 }
 
 struct AlarmView: View {
-
+  
   //@Binding var nextScreenShown : Bool
   
   var body: some View {

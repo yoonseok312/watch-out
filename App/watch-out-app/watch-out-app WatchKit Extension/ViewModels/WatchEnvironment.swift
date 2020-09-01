@@ -23,6 +23,6 @@ class WatchEnvironment: ObservableObject {
   func changeWord(word: String) {
     self.word = word
   }
-
-
+  
+  
 }
