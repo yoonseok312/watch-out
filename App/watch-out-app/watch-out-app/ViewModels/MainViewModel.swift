@@ -19,10 +19,6 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   @Published var isToggled = false
   @Published var popUpShow = false
   
-  @Published var permssionCheck = false
-  
-  let controller = UIHostingController(rootView: SecondView())
-  
   private(set) var connectivityProvider: ConnectivityProvider
   var session: WCSession?
   private var modelDataHandler: ModelDataHandler? =
@@ -36,6 +32,8 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   private var bufferSize: Int = 0
   
   init(connectivityProvider: ConnectivityProvider) {
+
+    UserDefaults.standard.set(false, forKey: "microphonePermission")
     self.connectivityProvider = connectivityProvider
     self.startAudioRecognition()
   }
@@ -135,56 +133,22 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   }
   
   func showCameraPermissionsDeniedAlert() {
-    //
+    
     switch AVAudioSession.sharedInstance().recordPermission {
     case AVAudioSessionRecordPermission.granted:
       print("Permission granted")
     case AVAudioSessionRecordPermission.denied:
       print("Pemission denied")
-      // UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-//      self.popUpShow = true
-//      self.permssionCheck = true
+      UserDefaults.standard.set(true, forKey: "microphonePermission")
+      UserDefaults.standard.synchronize()
       
     case AVAudioSessionRecordPermission.undetermined:
       print("Request permission here")
       AVAudioSession.sharedInstance().requestRecordPermission({ (granted) in
         // Handle granted
       })
+    @unknown default:
+      UserDefaults.standard.set(false, forKey: "microphonePermission")
     }
-    //Todo: presentView 적용하여 AlertView 만들기
-    //
-    //    let alertController = UIAlertController(title: "Microphone Permissions Denied", message: "Microphone permissions have been denied for this app. You can change this by going to Settings", preferredStyle: .alert)
-    //
-    //    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    //    let settingsAction = UIAlertAction(title: "Settings", style: .default) { (action) in
-    //      UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-    //    }
-    //
-    //    alertController.addAction(cancelAction)
-    //    alertController.addAction(settingsAction)
-    
-    //presentView(alertController, animated: true)
-  }
-}
-
-//func presentView<V>(view: V, animated: Bool, backgroundColor: UIColor? = UIColor(named: "grey4")?.withAlphaComponent(0.4)) where V: View {
-//  let controller = UIHostingController(rootView: view)
-//  controller.view.backgroundColor = backgroundColor
-//  controller.modalPresentationStyle = .overFullScreen
-//  UIApplication.shared.windows.first?.rootViewController?.present(controller, animated: true)
-//}
-
-struct SecondView: View {
-  var body: some View {
-      VStack {
-          Text("Second View").font(.system(size: 36))
-          Text("Loaded by SecondView").font(.system(size: 14))
-      }
-  }
-}
-
-class SecondViewHostingController: UIHostingController<SecondView> {
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder, rootView: SecondView())
   }
 }

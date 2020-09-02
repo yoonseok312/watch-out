@@ -17,6 +17,14 @@ struct MainView: View {
   @State private var animateStrokeEnd = true
   @State private var isRotating = true
   
+  @State private var permission = UserDefaults.standard.bool(forKey: "microphonePermission")  {
+         didSet {
+             UserDefaults.standard.set(self.permission, forKey: "microphonePermission")
+             UserDefaults.standard.synchronize()
+         }
+     }
+     
+  
   let navy = Color(red: 48.0 / 255.0, green: 66.0 / 255.0, blue: 105.0 / 255.0)
   let light = Color(red: 252.0 / 255.0, green: 240.0 / 255.0, blue: 237.0 / 255.0)
   let orange = Color(red: 242.0 / 255.0, green: 97.0 / 255.0, blue: 1.0 / 255.0, opacity: 1)
@@ -73,7 +81,7 @@ struct MainView: View {
         VStack {
           //Spacer()
           Text("Watch Out").modifier(titleStyle())
-//          Spacer()
+          //          Spacer()
           if viewModel.isToggled {
             ZStack {
               Circle()
@@ -181,23 +189,39 @@ struct MainView: View {
             
           )
         }
-        
+      }.popup(isPresented: $permission) {
+        VStack(spacing: 10) {
+          
+          Image("microphone").padding(.top, 30)
+          
+          Button(action: {
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+          }) {
+            
+            VStack {
+              Spacer()
+                
+              Text("마이크를 사용할 수 있도록 해주세요!")
+                  .foregroundColor(.white)
+                  .fontWeight(.bold)
+              
+              Text("현재 마이크가 허용되어 있지 않습니다. 설정에서 허용 해주세요. (해당 텍스트를 클릭하시면 이동합니다)")
+                  .padding()
+                  .font(.system(size: 13))
+                  .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9))
+
+              Spacer()
+            }
+          }
+        }
+        .frame(minWidth: 300,
+               maxWidth: .infinity,
+               minHeight: 300,
+               maxHeight: 350)
+          .background(Color(red: 255.0 / 255.0, green: 69.0 / 255.0, blue: 58.0 / 255.0))
+          .cornerRadius(30.0)
       }
-//      .popup(isPresented: .constant(true), autohideIn: 0) {
-//        HStack {
-//          Button(action: {
-//            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-//          }) {
-//            Text("HAHA")
-//          }
-//        }
-//        .frame(minWidth: 0,
-//               maxWidth: .infinity,
-//               minHeight: 0,
-//               maxHeight: .infinity)
-//          .background(Color.black.opacity(0.5))
-      } //ZStack End
-    } //Navigation View End
-    
-  }
+    } //ZStack End
+  } //Navigation View End
+  
 }

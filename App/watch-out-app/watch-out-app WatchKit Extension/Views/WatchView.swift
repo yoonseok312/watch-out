@@ -22,17 +22,18 @@ struct WatchView: View {
   
   //    var detectedWord : String = viewModel.word
   var finalIcon : String = "map"
+
   
   
   var body: some View {
     VStack{
-      if (viewModel.word == "default"){
-        Text("아이폰에서 소리 탐지중...")
-        //다른 뷰로 연결 
-      }
-      else{
+    //NavigationLink(destination: defaultView(), isActive: self.$viewModel.isActive) {EmptyView()}
+            // viewModel.word = "changed"
+            // 5초 지난 후 뷰 이동
+            // 다른 뷰로 연결
         Spacer()
         HStack{
+            
           // 아이콘 변경 코드
           if(viewModel.word == "yes"){
             Image(systemName: "car").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
@@ -73,7 +74,8 @@ struct WatchView: View {
                   endPoint: .init(x: 0.5, y: 0.6)
                 ))
                 .frame(width: 185, height: 120)
-            }
+                
+                }
             
             
             VStack(alignment: .center) {
@@ -93,19 +95,14 @@ struct WatchView: View {
               }
               
             }
-            
-            
+
           }
           
         }
-      }
       
-      
-      //struct Alert_A_Previews: PreviewProvider {
-      //    static var previews: some View {
-      //        Alert_A()
-      //    }
-      //}
-      
-    }}
+    }
+    .onAppear{
+        self.viewModel.activated()
+    }
+ }
 }
