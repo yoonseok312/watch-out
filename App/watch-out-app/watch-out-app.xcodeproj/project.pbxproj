@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		288EAD59E6EF4898D636C4F4 /* Pods_watch_out_app_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C3031203F7DF0823981744 /* Pods_watch_out_app_WatchKit_App.framework */; };
 		340A860324FBAFB200D00E63 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A860224FBAFB200D00E63 /* UserDefaultsManager.swift */; };
+		3451D42324FFC9E1006371F2 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 3451D42224FFC9E1006371F2 /* PopupView */; };
 		34526EDA24EF8386005BC1B3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34526ED924EF8386005BC1B3 /* MainView.swift */; };
 		34878E7224FB41AE00AD9358 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34878E7124FB41AE00AD9358 /* SettingView.swift */; };
 		3493594D24EE9C17004F6DF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493594C24EE9C17004F6DF1 /* AppDelegate.swift */; };
@@ -127,7 +128,7 @@
 		9321B3FF24F2978800140174 /* conv_actions_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_actions_labels.txt; sourceTree = "<group>"; };
 		9321B45224F2A90B00140174 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		9321B45524F2AB7E00140174 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		9330BD3E24FA0626009C4D06 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9330BD3E24FA0626009C4D06 /* MainViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectivityProvider.swift; sourceTree = "<group>"; };
 		9330BDBA24FA49EF009C4D06 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		9330BDBC24FA4A6D009C4D06 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3451D42324FFC9E1006371F2 /* PopupView in Frameworks */,
 				ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +353,9 @@
 				3493596024EE9C1C004F6DF1 /* PBXTargetDependency */,
 			);
 			name = "watch-out-app";
+			packageProductDependencies = (
+				3451D42224FFC9E1006371F2 /* PopupView */,
+			);
 			productName = "watch-out-app";
 			productReference = 3493594924EE9C17004F6DF1 /* watch-out-app.app */;
 			productType = "com.apple.product-type.application";
@@ -423,6 +428,9 @@
 				Base,
 			);
 			mainGroup = 3493594024EE9C17004F6DF1;
+			packageReferences = (
+				3451D42124FFC9E1006371F2 /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 3493594A24EE9C17004F6DF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -921,6 +929,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3451D42124FFC9E1006371F2 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3451D42224FFC9E1006371F2 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3451D42124FFC9E1006371F2 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3493594124EE9C17004F6DF1 /* Project object */;
 }

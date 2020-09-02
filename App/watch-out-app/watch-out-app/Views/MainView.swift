@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MainView: View {
   
@@ -32,10 +33,26 @@ struct MainView: View {
       
     }
   }
+  struct titleBlackStyle: ViewModifier {
+    func body(content: Content) -> some View {
+      return content
+        .foregroundColor(Color.black)
+        .font(Font.custom("AppleSDGothicNeo-Bold", size: 30))
+      
+    }
+  }
   struct textStyle: ViewModifier {
     func body(content: Content) -> some View {
       return content
         .foregroundColor(Color.white)
+        .font(Font.custom("AppleSDGothicNeo-SemiBold", size: 18))
+      
+    }
+  }
+  struct textBlackStyle: ViewModifier {
+    func body(content: Content) -> some View {
+      return content
+        .foregroundColor(Color.black)
         .font(Font.custom("AppleSDGothicNeo-SemiBold", size: 18))
       
     }
@@ -56,7 +73,7 @@ struct MainView: View {
         VStack {
           //Spacer()
           Text("Watch Out").modifier(titleStyle())
-          Spacer()
+//          Spacer()
           if viewModel.isToggled {
             ZStack {
               Circle()
@@ -127,6 +144,58 @@ struct MainView: View {
           
           Spacer()
         }
+        if self.viewModel.popUpShow {
+          
+          GeometryReader{_ in
+            VStack {
+              //Text("팝업입니다.")
+              
+              VStack {
+                VStack(alignment: .leading, spacing: 12) {
+                  if(self.viewModel.highlightedCommand != nil){
+                    Text("\(self.viewModel.highlightedCommand ?? "default text") 소리").modifier(titleBlackStyle())
+                    Text("가 들렸습니다.").modifier(textBlackStyle())
+                  }
+                }
+                Image("cone")
+              }.frame(width: 250, height: 300)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(23)
+              
+              Text("바탕을 터치하면 화면이 사라집니다.").modifier(textSmallStyle())
+            }
+            
+            
+          }.background(
+            
+            Color.black.opacity(0.65)
+              .edgesIgnoringSafeArea(.all)
+              .onTapGesture {
+                
+                withAnimation{
+                  
+                  self.viewModel.popUpShow.toggle()
+                }
+            }
+            
+          )
+        }
+        
+      }
+//      .popup(isPresented: .constant(true), autohideIn: 0) {
+//        HStack {
+//          Button(action: {
+//            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+//          }) {
+//            Text("HAHA")
+//          }
+//        }
+//        .frame(minWidth: 0,
+//               maxWidth: .infinity,
+//               minHeight: 0,
+//               maxHeight: .infinity)
+//          .background(Color.black.opacity(0.5))
       } //ZStack End
     } //Navigation View End
     
