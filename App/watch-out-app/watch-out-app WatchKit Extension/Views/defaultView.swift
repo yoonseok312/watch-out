@@ -17,6 +17,8 @@ struct defaultView: View {
             // 디폴트 뷰로 구현
             Text("아이폰에서\nwatch-out 앱을\n켜주셨나요?")
                 .fontWeight(.semibold).multilineTextAlignment(.center)
+            Text("\n그렇다면,\n아이폰에서 소리 탐지 중입니다.")
+            .fontWeight(.semibold).multilineTextAlignment(.center)
                 
             // viewModel.word에 텍스트가 들어오면 -> WatchView
             if (viewModel.word != "default"){

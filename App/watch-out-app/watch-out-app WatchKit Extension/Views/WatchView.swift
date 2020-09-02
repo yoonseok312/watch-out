@@ -97,3 +97,9 @@ struct WatchView: View {
     }
     
 }
+
+func GoBack() {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        defaultView()
+    }
+}
