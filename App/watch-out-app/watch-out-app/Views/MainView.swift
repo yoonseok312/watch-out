@@ -46,6 +46,30 @@ struct MainView: View {
                 .foregroundColor(Color.white)
                 .font(Font.custom("AppleSDGothicNeo-SemiBold", size: 18))
             
+          }
+          
+          Toggle(isOn: $viewModel.isToggled) {
+            Text("Start")
+          }
+          .labelsHidden()
+          .frame(width: 100.0, height: 150.0)
+          
+          if viewModel.isToggled {
+            Text("Watch Out이 위험한 소리를 듣고 있습니다!").modifier(textStyle())
+            Text("버튼을 누르면 종료됩니다.").modifier(textSmallStyle())
+          }
+          else{
+            Text("위험한 소리를 대신 들어드립니다.").modifier(textStyle())
+            Text("버튼을 눌러 Watch Out을 시작하세요!").modifier(textSmallStyle())
+          }
+          Spacer()
+          NavigationLink(destination: SettingView()) {
+            Image("settings")
+          }
+            
+          .accentColor(Color.white)
+          
+          Spacer()
         }
     }
     struct textBlackStyle: ViewModifier {
