@@ -27,7 +27,7 @@ struct WatchView: View {
   
   var body: some View {
     VStack{
-    NavigationLink(destination: defaultView(), isActive: self.$viewModel.isActive) {EmptyView()}
+    //NavigationLink(destination: defaultView(), isActive: self.$viewModel.isActive) {EmptyView()}
             // viewModel.word = "changed"
             // 5초 지난 후 뷰 이동
             // 다른 뷰로 연결
