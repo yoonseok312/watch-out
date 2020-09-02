@@ -12,11 +12,7 @@ import WatchConnectivity
 
 class WatchEnvironment: ObservableObject {
   
-  @Published var word: String = "default"
-  @Published var isActive : Bool = false
-    
-    
-    
+  @Published var word: String = "changed"
   private(set) var connectivityProvider: WatchConnectivityProvider
   
   init(connectivityProvider: WatchConnectivityProvider) {
@@ -26,14 +22,7 @@ class WatchEnvironment: ObservableObject {
   
   func changeWord(word: String) {
     self.word = word
-    self.isActive = true
   }
-    
-    func activated() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.isActive = false
-       }
-     }
-  
-  
+
+
 }
