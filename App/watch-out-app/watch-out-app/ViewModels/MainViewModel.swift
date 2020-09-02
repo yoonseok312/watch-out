@@ -14,6 +14,7 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   
   //ConnectivityProvider 에서 접근 가능하도록 environment object 로 변수 선언
   @Published var isToggled = false
+  @Published var popUpShow = false
   
   private(set) var connectivityProvider: ConnectivityProvider
   var session: WCSession?
@@ -24,7 +25,7 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   // MARK: Instance Variables
   private var words: [String] = []
   private var result: Result?
-  private var highlightedCommand: String?
+  @Published var highlightedCommand: String?
   private var bufferSize: Int = 0
   
   init(connectivityProvider: ConnectivityProvider) {
@@ -70,12 +71,20 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
       // 인식이 잘되는지 console에 출력 합니다.
       print(self.result?.recognizedCommand)
       self.highlightedCommand =  recognizedCommand.name
+        self.popUpShow = true
+        self.popUpFasleinSecond()
       
       let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"] // Create your Dictionay as per uses
       print(data)
       self.connectivityProvider.send(message: data)
     }
   }
+    
+    private func popUpFasleinSecond() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.popUpShow = false
+        }
+    }
   
   func didOutput(channelData: [Int16]) {
     

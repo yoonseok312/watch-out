@@ -24,8 +24,6 @@ struct WatchView: View {
       var finalIcon : String = "map"
 
  
-  
-<<<<<<< HEAD
 var body: some View {
         VStack{
             if (viewModel.word == "default"){
