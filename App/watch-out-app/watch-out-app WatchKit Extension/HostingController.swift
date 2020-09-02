@@ -24,12 +24,8 @@ class HostingController: WKHostingController<AnyView> {
   }
   var environment = WatchEnvironment(connectivityProvider: WatchConnectivityProvider())
 
-    override var body: AnyView {
-      return AnyView(defaultView().environmentObject(environment))
-    }
-
   override var body: AnyView {
-    return AnyView(ContainerView().environmentObject(environment))
+    return AnyView(DefaultView().environmentObject(environment))
   }
 
 }

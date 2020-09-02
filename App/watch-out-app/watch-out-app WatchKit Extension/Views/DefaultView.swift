@@ -14,10 +14,10 @@ struct ContainerView: View {
   var body: some View {
 
     Group {
-      if viewModel.word != "changed" && viewModel.isActive {
+      if viewModel.word != "default" && viewModel.isActive {
       WatchView()
     } else {
-      defaultView()
+      DefaultView()
     }
     }
   }

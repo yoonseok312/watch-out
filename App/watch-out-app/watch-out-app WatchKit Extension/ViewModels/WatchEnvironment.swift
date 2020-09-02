@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class WatchEnvironment: ObservableObject {
   
-  @Published var word: String = "changed"
+  @Published var word: String = "default"
   @Published var isActive : Bool = false
     
     
