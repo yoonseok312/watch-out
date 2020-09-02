@@ -128,6 +128,17 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     
     //Todo: presentView 적용하여 AlertView 만들기
     
+    let view = BaseAlertView(
+      title: "Microphone Permissions Denied",
+      description: "Microphone permissions have been denied for this app. You can change this by going to Settings",
+      button: (title: "Settings", action: {
+        UIAlertAction(title: "Settings", style: .default) { (action) in
+          UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+        }
+        
+      })
+    )
+    
     let alertController = UIAlertController(title: "Microphone Permissions Denied", message: "Microphone permissions have been denied for this app. You can change this by going to Settings", preferredStyle: .alert)
     
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -138,7 +149,7 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     alertController.addAction(cancelAction)
     alertController.addAction(settingsAction)
     
-    //presentView(alertController, animated: true)
+    presentView(view: view, animated: true, backgroundColor: UIColor.black)
   }
 }
 

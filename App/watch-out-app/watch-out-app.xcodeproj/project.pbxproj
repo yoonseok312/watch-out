@@ -29,6 +29,7 @@
 		36E99DD924FD004100605786 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E99DD824FD004100605786 /* ContainerView.swift */; };
 		519CCC4F24FB46B900935336 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CCC4E24FB46B900935336 /* Information.swift */; };
 		79C343D8238AA7EA818DEECC /* Pods_watch_out_app_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */; };
+		93131DE724FFC9650065914B /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93131DE624FFC9650065914B /* BaseAlertView.swift */; };
 		9321B3FC24F2977D00140174 /* conv_actions_frozen.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */; };
 		9321B3FD24F2977D00140174 /* conv_actions_frozen.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */; };
 		9321B3FE24F2977D00140174 /* conv_actions_frozen.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */; };
@@ -123,6 +124,7 @@
 		519CCC4E24FB46B900935336 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		6C537AC70AC60BA25943F21D /* Pods-watch-out-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app.debug.xcconfig"; path = "Target Support Files/Pods-watch-out-app/Pods-watch-out-app.debug.xcconfig"; sourceTree = "<group>"; };
 		85F1ECDF8301894AC5568642 /* Pods-watch-out-app WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit App/Pods-watch-out-app WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		93131DE624FFC9650065914B /* BaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertView.swift; sourceTree = "<group>"; };
 		9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv_actions_frozen.tflite; sourceTree = "<group>"; };
 		9321B3FF24F2978800140174 /* conv_actions_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_actions_labels.txt; sourceTree = "<group>"; };
 		9321B45224F2A90B00140174 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				9321B45224F2A90B00140174 /* StartView.swift */,
 				9321B45524F2AB7E00140174 /* SwiftUIView.swift */,
 				34878E7124FB41AE00AD9358 /* SettingView.swift */,
+				93131DE624FFC9650065914B /* BaseAlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				3493599424EE9D5B004F6DF1 /* RecognizeCommands.swift in Sources */,
 				3493594F24EE9C17004F6DF1 /* SceneDelegate.swift in Sources */,
 				3493599224EE9D3B004F6DF1 /* ModelDataHandler.swift in Sources */,
+				93131DE724FFC9650065914B /* BaseAlertView.swift in Sources */,
 				3493598F24EE9D22004F6DF1 /* AudioInputManager.swift in Sources */,
 				9330BD3F24FA0626009C4D06 /* MainViewModel.swift in Sources */,
 				34878E7224FB41AE00AD9358 /* SettingView.swift in Sources */,
