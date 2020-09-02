@@ -25,9 +25,11 @@ struct WatchView: View {
 
  
   
-var body: some View {
+    var body: some View {
         VStack{
+            
             HStack{
+                
                 // 아이콘 변경 코드
                 if(viewModel.word == "yes"){
                      Image(systemName: "car").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
@@ -43,12 +45,10 @@ var body: some View {
                 }
                 Text("위험 신호감지!").font(.system(size: 23, weight: .bold))
             }
-            
-            Spacer()
         
             HStack{
                 ZStack{
-              
+                    VStack{
                     if( viewModel.word == "yes"){
                        //yes 소리만 노랑색으로 박스가 바뀜
                         RoundedRectangle(cornerRadius: 23, style: .continuous)
@@ -58,7 +58,7 @@ var body: some View {
                                              endPoint: .init(x: 0.5, y: 0.6)
                                            ))
                                            .frame(width: 185, height: 120)
-                        
+                        Spacer()
                     }else{
                         // 나머지는 주황색
                         RoundedRectangle(cornerRadius: 23, style: .continuous)
@@ -68,31 +68,32 @@ var body: some View {
                                              endPoint: .init(x: 0.5, y: 0.6)
                                            ))
                                            .frame(width: 185, height: 120)
+                        Spacer()
                     }
-        
+                    }
+                    
                     
                     VStack(alignment: .center) {
                        if( viewModel.word == "yes"){
-                            Text("근처에서 소리").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
+                            Text("근처에서").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
                         Text(viewModel.word+" 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 0.0, green: 0.0, blue: 0.0))
                             HStack(alignment:.lastTextBaseline){
                             Text("가 들렸습니다").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.leading,60).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
                             }
                             
                         }else{
-                            Text("근처에서 소리").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
+                            Text("근처에서").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
                             Text(viewModel.word+" 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
                             HStack(alignment:.lastTextBaseline){
                             Text("가 들렸습니다").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.leading,60).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
                             }
                         }
-                     
+                     Spacer()
                     }
-                   
-                    
                 }
-           
         }
-        //
-    }}
+    }
+    
+    }
+    
 }

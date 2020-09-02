@@ -13,18 +13,20 @@ struct defaultView: View {
     let alert = WatchView()
     
     var body: some View {
-        VStack {
+        VStack{
             // 디폴트 뷰로 구현
-            Text("아이폰에서\nwatch-out 앱을\n켜주셨나요?").multilineTextAlignment(.center)
-        
+            Text("아이폰에서\nwatch-out 앱을\n켜주셨나요?")
+                .fontWeight(.semibold).multilineTextAlignment(.center)
+                
             // viewModel.word에 텍스트가 들어오면 -> WatchView
             if (viewModel.word != "default"){
                 //다른 뷰로 연결
                 WatchView()
-                
             }
         }
-    }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
+        .edgesIgnoringSafeArea(.all)    }
 }
 
 
