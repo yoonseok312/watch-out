@@ -16,25 +16,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  // MARK: Storyboard Outlets
-  @IBOutlet weak var collectionView: UICollectionView!
-
-  // MARK: Constants
-  private let unselectedFontColor = UIColor(
-      displayP3Red: 124.0/255.0, green: 136.0/255.0, blue: 144.0/255.0, alpha: 1.0)
-  private let selectedFontColor = UIColor(
-      displayP3Red: 250.0/255.0, green: 141.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-  private let unselectedBorderColor = UIColor(
-      displayP3Red: 199.0/255.0, green: 208.0/255.0, blue: 216.0/255.0, alpha: 1.0)
-  private let collectionViewPadding: CGFloat = 15.0
-  private let highlightTime: Double = 0.5
-  private let imageInset: CGFloat = 8.0
-
   // MARK: Objects Handling Core Functionality
   private var modelDataHandler: ModelDataHandler? =
     ModelDataHandler(modelFileInfo: ConvActions.modelInfo, labelsFileInfo: ConvActions.labelsInfo)
   private var audioInputManager: AudioInputManager?
-  private var inferenceViewController: InferenceViewController?
 
   // MARK: Instance Variables
   private var words: [String] = []
@@ -52,8 +37,6 @@ class ViewController: UIViewController {
 
     // Displays lables
     words = handler.offsetLabelsForDisplay()
-    self.collectionView.reloadData()
-
     startAudioRecognition()
 
   }
@@ -65,18 +48,6 @@ class ViewController: UIViewController {
   // MARK: Storyboard Segue Handlers
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
-
-    if segue.identifier == "EMBED" {
-
-      guard let tempModelDataHandler = modelDataHandler else {
-        return
-      }
-      inferenceViewController = segue.destination as? InferenceViewController
-      inferenceViewController?.sampleRate = Int(tempModelDataHandler.sampleRate)
-      inferenceViewController?.threadCountLimit = tempModelDataHandler.threadCountLimit
-      inferenceViewController?.currentThreadCount = tempModelDataHandler.threadCount
-      inferenceViewController?.delegate = self
-    }
   }
 
   /**
@@ -110,135 +81,28 @@ class ViewController: UIViewController {
    */
   private func runModel(onBuffer buffer: [Int16]) {
 
+    // buffer: 2차원 배열로 변환된 음성
     result = modelDataHandler?.runModel(onBuffer: buffer)
 
     // Updates the results on the screen.
     //After(deadline: .now() + 1)
     DispatchQueue.main.async {
+<<<<<<< HEAD
       print("🟥")
       self.refreshInferenceTime()
+=======
+>>>>>>> master
       guard let recognizedCommand = self.result?.recognizedCommand else {
         return
       }
+      print(self.result?.recognizedCommand)
+        
       self.highlightedCommand =  recognizedCommand
-      self.highlightResult()
+//      self.highlightResult()
     }
-  }
-
-  /**
-   Highlights the recognized command in the UICollectionView for the specified time.
-   */
-  private func highlightResult() {
-
-    DispatchQueue.main.async {
-
-      self.collectionView.reloadData()
-      self.perform(#selector(ViewController.unhighlightResult), with: nil, afterDelay: self.highlightTime)
-    }
-  }
-
-  /**
-   Unhighlights the recognized command in the UICollectionView.
-   */
-  @objc func unhighlightResult() {
-    highlightedCommand = nil
-
-    collectionView.reloadData()
-  }
-
-  /**
-   Refreshes the additional information displayed by InferenceViewController.
-   */
-  func refreshInferenceTime() {
-
-    var inferenceTime: Double = 0.0
-    if let result = self.result {
-      inferenceTime = result.inferenceTime
-    }
-    inferenceViewController?.inferenceTime = inferenceTime
-    inferenceViewController?.refreshResults()
   }
 }
 
-// MARK: InferenceViewControllerDelegate Methods
-extension ViewController: InferenceViewControllerDelegate {
-  func didChangeThreadCount(to count: Int) {
-    if modelDataHandler?.threadCount == count { return }
-    modelDataHandler = ModelDataHandler(
-      modelFileInfo: ConvActions.modelInfo,
-      labelsFileInfo: ConvActions.labelsInfo,
-      threadCount: count
-    )
-  }
-}
-
-// MARK: UICollectionView DataSource and Delegate
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-  // Get item size of the collection view with respect to it's current width and height.
-  private func itemSize() -> CGSize {
-    let width = (self.collectionView.bounds.size.width - collectionViewPadding) / 2.0
-    let rows: CGFloat = CGFloat(words.count / 2)
-    let height =  (self.collectionView.bounds.size.height - ((CGFloat(rows - 1) * collectionViewPadding))) /  rows
-
-    return CGSize(width: width, height: height)
-  }
-
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 1
-  }
-
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return words.count
-  }
-
-  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
-    var borderColor = UIColor.clear
-    let wordCell = cell as? WordCell
-
-    let word = words[indexPath.item]
-
-    if let recognizedCommand = highlightedCommand, recognizedCommand.name == word {
-      borderColor = UIColor.clear
-    }
-    else {
-      borderColor = unselectedBorderColor
-    }
-
-    wordCell?.borderColor = borderColor
-    wordCell?.setNeedsDisplay()
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-    return itemSize()
-  }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WORD_CELL", for: indexPath) as! WordCell
-
-    let word = words[indexPath.item]
-
-    var backgroundImage: UIImage?
-    var fontColor = unselectedFontColor
-    var name = word.capitalized
-
-    if let recognizedCommand = highlightedCommand, recognizedCommand.name == word {
-      backgroundImage = UIImage(named: "base")?.resizableImage(withCapInsets: UIEdgeInsets(top: imageInset, left: imageInset, bottom: imageInset, right: imageInset), resizingMode: .stretch)
-      fontColor = selectedFontColor
-      name = word.capitalized + " (\(Int(recognizedCommand.score * 100.0))%)"
-    }
-
-    cell.backgroundImageView.image = backgroundImage
-    cell.nameLabel.textColor = fontColor
-    cell.nameLabel.text = name
-
-    return cell
-  }
-
-}
 
 extension ViewController: AudioInputManagerDelegate {
 
@@ -247,6 +111,8 @@ extension ViewController: AudioInputManagerDelegate {
     guard let handler = modelDataHandler else {
       return
     }
+    
+//    print("didOutput");
 
     self.runModel(onBuffer: Array(channelData[0..<handler.sampleRate]))
     self.runModel(onBuffer: Array(channelData[handler.sampleRate..<bufferSize]))

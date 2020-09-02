@@ -25,6 +25,7 @@ class WatchEnvironment: ObservableObject {
   func changeWord(word: String) {
     self.word = word
   }
+<<<<<<< HEAD
 
     func activate() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
@@ -33,4 +34,8 @@ class WatchEnvironment: ObservableObject {
         }
     }
 
+=======
+  
+  
+>>>>>>> master
 }

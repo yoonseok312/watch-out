@@ -56,6 +56,35 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     //    }
   }
   
+  /**
+   모델로부터 결과를 받아 알림 설정을 검사한 후 해당 알림이 꺼져있다면 false, 아니면 true를 반환하는 메소드 입니다.
+   
+   모델로 부터 받은 결과(단어)를 parameter(result)로 받아서 사용자의 iOS에 저장되어있는 설정 값들을 비교 합니다.
+   
+   - parameters:
+   - result: String type의 단어
+   - returns: 해당 알람이 off라면 false, 아니면 true
+   
+   - Author:
+   김창윤
+   */
+  private func checkSettingOptions(result: String) -> Bool {
+    
+    if result == "fire" {
+      return !UserDefaults.standard.bool(forKey: "fire")
+    }
+    else if result == "car" {
+      return !UserDefaults.standard.bool(forKey: "car")
+    }
+    else if result == "yes" {
+      return !UserDefaults.standard.bool(forKey: "yes")
+    }
+    else if result == "no" {
+      return !UserDefaults.standard.bool(forKey: "no")
+    }
+    return !UserDefaults.standard.bool(forKey: "right")
+  }
+  
   private func runModel(onBuffer buffer: [Int16]) {
     
     print("🏅")
@@ -67,12 +96,17 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
       guard let recognizedCommand = self.result?.recognizedCommand else {
         return
       }
-      // 인식이 잘되는지 console에 출력 합니다.
-      print(self.result?.recognizedCommand)
-      self.highlightedCommand =  recognizedCommand.name
       
-      let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"] // Create your Dictionay as per uses
-      print(data)
+      // Watch로 메세지를 보내기전 알림 설정을 확인 합니다.
+      if !self.checkSettingOptions(result: recognizedCommand.name) {
+        
+        print("\t🔕 BLOCKED: \(recognizedCommand.name)")
+        return
+      }
+      print("🔈 Listen: \(recognizedCommand.name)")
+      // 인식된 단어를 highlightedCommand에 저장합니다.
+      self.highlightedCommand =  recognizedCommand.name
+      let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"]
       self.connectivityProvider.send(message: data)
     }
   }

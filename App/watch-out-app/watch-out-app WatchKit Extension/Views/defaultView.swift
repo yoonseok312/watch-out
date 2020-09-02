@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct defaultView: View {
+<<<<<<< HEAD
     @EnvironmentObject var viewModel: WatchEnvironment
     
     var body: some View {
@@ -28,11 +29,19 @@ struct defaultView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)    }
+=======
+  @EnvironmentObject var viewModel: WatchEnvironment
+  var body: some View {
+    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    // 디폴트 뷰로 구현
+    // viewModel.word에 텍스트가 들어오면 -> WatchView
+  }
+>>>>>>> master
 }
 
 
 struct defaultView_Previews: PreviewProvider {
-    static var previews: some View {
-        defaultView()
-    }
+  static var previews: some View {
+    defaultView()
+  }
 }

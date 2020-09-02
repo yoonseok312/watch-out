@@ -13,28 +13,34 @@ import SwiftUI
 import WatchConnectivity
 
 class HostingController: WKHostingController<AnyView> {
-
+  
   let session = WCSession.default
   
   override func awake(withContext context: Any?) {
-      super.awake(withContext: context)
-  
-      session.delegate = self
-      session.activate()
+    super.awake(withContext: context)
+    
+    session.delegate = self
+    session.activate()
   }
   var environment = WatchEnvironment(connectivityProvider: WatchConnectivityProvider())
+<<<<<<< HEAD
     override var body: AnyView {
       return AnyView(defaultView().environmentObject(environment))
     }
+=======
+  override var body: AnyView {
+    return AnyView(WatchView().environmentObject(environment))
+  }
+>>>>>>> master
 }
 
 extension HostingController: WCSessionDelegate {
-
+  
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
   }
-
+  
   func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-
+    
     print("received data: \(message)")
     if let t = message["title"] as? String {
       DispatchQueue.main.async {

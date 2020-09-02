@@ -14,9 +14,6 @@
 		935A4B9924EA7F4800E85615 /* micro_conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 935A4B9824EA7F4800E85615 /* micro_conv.tflite */; };
 		AA055D862162210E00B25948 /* conv_actions_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA055D842162210E00B25948 /* conv_actions_labels.txt */; };
 		AA055D872162210E00B25948 /* conv_actions_frozen.tflite in Resources */ = {isa = PBXBuildFile; fileRef = AA055D852162210E00B25948 /* conv_actions_frozen.tflite */; };
-		AA1C17622186E2F0006F9564 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C17612186E2F0006F9564 /* WordCell.swift */; };
-		AA1C176A2186FA70006F9564 /* InferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C17692186FA70006F9564 /* InferenceViewController.swift */; };
-		AA1C176C2186FA9E006F9564 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C176B2186FA9E006F9564 /* InfoCell.swift */; };
 		AA31546D21612AF7004B2732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31546C21612AF7004B2732 /* ViewController.swift */; };
 		AA3BF5DD2154CA9F00796012 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BF5DC2154CA9F00796012 /* ModelDataHandler.swift */; };
 		AA7006D021526754003E34C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7006CF21526754003E34C0 /* AppDelegate.swift */; };
@@ -36,10 +33,7 @@
 		935A4B9824EA7F4800E85615 /* micro_conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = micro_conv.tflite; sourceTree = "<group>"; };
 		AA055D842162210E00B25948 /* conv_actions_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_actions_labels.txt; sourceTree = "<group>"; };
 		AA055D852162210E00B25948 /* conv_actions_frozen.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv_actions_frozen.tflite; sourceTree = "<group>"; };
-		AA1C17612186E2F0006F9564 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
-		AA1C17692186FA70006F9564 /* InferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InferenceViewController.swift; sourceTree = "<group>"; };
-		AA1C176B2186FA9E006F9564 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
-		AA31546C21612AF7004B2732 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SpeechCommands/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		AA31546C21612AF7004B2732 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SpeechCommands/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		AA3BF5DC2154CA9F00796012 /* ModelDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
 		AA7006CC21526754003E34C0 /* SpeechCommands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechCommands.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7006CF21526754003E34C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +78,6 @@
 		AA055D7A2161FC0100B25948 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AA1C17692186FA70006F9564 /* InferenceViewController.swift */,
 				AA31546C21612AF7004B2732 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -101,15 +94,6 @@
 				AA055D842162210E00B25948 /* conv_actions_labels.txt */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		AA1C175D2186E2A2006F9564 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				AA1C176B2186FA9E006F9564 /* InfoCell.swift */,
-				AA1C17612186E2F0006F9564 /* WordCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		AA3BF5DB2154CA9F00796012 /* ModelDataHandler */ = {
@@ -142,7 +126,6 @@
 		AA7006CE21526754003E34C0 /* SpeechCommands */ = {
 			isa = PBXGroup;
 			children = (
-				AA1C175D2186E2A2006F9564 /* Cells */,
 				AA055D83216220E700B25948 /* Model */,
 				AA055D7A2161FC0100B25948 /* ViewControllers */,
 				AA73C15F2161269B0063142C /* AudioInputManager */,
@@ -289,11 +272,8 @@
 				AA7006D021526754003E34C0 /* AppDelegate.swift in Sources */,
 				AAE67264215DFA1900C6E344 /* RecognizeCommands.swift in Sources */,
 				AA31546D21612AF7004B2732 /* ViewController.swift in Sources */,
-				AA1C176A2186FA70006F9564 /* InferenceViewController.swift in Sources */,
 				AA3BF5DD2154CA9F00796012 /* ModelDataHandler.swift in Sources */,
-				AA1C17622186E2F0006F9564 /* WordCell.swift in Sources */,
 				AA73C161216126B20063142C /* AudioInputManager.swift in Sources */,
-				AA1C176C2186FA9E006F9564 /* InfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
