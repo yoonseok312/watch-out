@@ -10,7 +10,6 @@ import SwiftUI
 
 struct defaultView: View {
     @EnvironmentObject var viewModel: WatchEnvironment
-    let alert = WatchView()
     
     var body: some View {
         VStack{
@@ -21,7 +20,7 @@ struct defaultView: View {
             .fontWeight(.semibold).multilineTextAlignment(.center)
                 
             // viewModel.word에 텍스트가 들어오면 -> WatchView
-            if (viewModel.word != "default"){
+            if (viewModel.isActive == true){
                 //다른 뷰로 연결
                 WatchView()
             }

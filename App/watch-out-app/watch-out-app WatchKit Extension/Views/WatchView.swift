@@ -27,9 +27,7 @@ struct WatchView: View {
   
     var body: some View {
         VStack{
-            
             HStack{
-                
                 // 아이콘 변경 코드
                 if(viewModel.word == "yes"){
                      Image(systemName: "car").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
@@ -51,6 +49,7 @@ struct WatchView: View {
                     VStack{
                     if( viewModel.word == "yes"){
                        //yes 소리만 노랑색으로 박스가 바뀜
+                        NavigationLink(destination: defaultView(),isActive: self.$viewModel.isActive){
                         RoundedRectangle(cornerRadius: 23, style: .continuous)
                                            .fill(LinearGradient(
                                              gradient: .init(colors: [Self.gradientStart_, Self.gradientEnd_]),
@@ -58,9 +57,11 @@ struct WatchView: View {
                                              endPoint: .init(x: 0.5, y: 0.6)
                                            ))
                                            .frame(width: 185, height: 120)
+                        }
                         Spacer()
                     }else{
                         // 나머지는 주황색
+                        NavigationLink(destination: defaultView()){
                         RoundedRectangle(cornerRadius: 23, style: .continuous)
                                            .fill(LinearGradient(
                                              gradient: .init(colors: [Self.gradientStart, Self.gradientEnd]),
@@ -68,6 +69,7 @@ struct WatchView: View {
                                              endPoint: .init(x: 0.5, y: 0.6)
                                            ))
                                            .frame(width: 185, height: 120)
+                        }
                         Spacer()
                     }
                     }
@@ -91,15 +93,10 @@ struct WatchView: View {
                      Spacer()
                     }
                 }
+            }
         }
     }
     
-    }
+}
     
-}
 
-func GoBack() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-        defaultView()
-    }
-}
