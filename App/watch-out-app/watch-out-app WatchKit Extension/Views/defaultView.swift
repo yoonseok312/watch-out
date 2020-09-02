@@ -17,7 +17,7 @@ struct ContainerView: View {
       if viewModel.word != "changed" && viewModel.isActive {
       WatchView()
     } else {
-      DefaultView()
+      defaultView()
     }
     }
   }

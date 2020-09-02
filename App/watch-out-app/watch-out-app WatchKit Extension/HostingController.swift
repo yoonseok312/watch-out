@@ -23,15 +23,15 @@ class HostingController: WKHostingController<AnyView> {
     session.activate()
   }
   var environment = WatchEnvironment(connectivityProvider: WatchConnectivityProvider())
-<<<<<<< HEAD
+
     override var body: AnyView {
       return AnyView(defaultView().environmentObject(environment))
     }
-=======
+
   override var body: AnyView {
     return AnyView(ContainerView().environmentObject(environment))
   }
->>>>>>> master
+
 }
 
 extension HostingController: WCSessionDelegate {
