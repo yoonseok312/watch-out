@@ -123,6 +123,7 @@ struct MainView: View {
           NavigationLink(destination: SettingView()) {
             Image("settings")
           }
+            
           .accentColor(Color.white)
           
           Spacer()
