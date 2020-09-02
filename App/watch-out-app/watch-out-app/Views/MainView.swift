@@ -5,12 +5,10 @@
 //  Created by yoonseok312 on 2020/08/09.
 //  Copyright © 2020 yoonseok. All rights reserved.
 //
-
 // 2019년 6월에 나온 친구...
 import SwiftUI
 // Pods - 의존성 관리 해주는 친구
 // SwiftPackage Manager
-
 struct MainView: View {
   
   @ObservedObject var viewModel: MainViewModel
@@ -201,9 +199,3 @@ struct MainView: View {
             
     }
 }
-
-//struct MainView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainView()
-//    }
-//}
