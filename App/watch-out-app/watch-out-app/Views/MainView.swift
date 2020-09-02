@@ -127,7 +127,6 @@ struct MainView: View {
           
           Spacer()
         }
-        
       } //ZStack End
     } //Navigation View End
     
