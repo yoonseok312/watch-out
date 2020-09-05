@@ -18,12 +18,11 @@ struct MainView: View {
   @State private var isRotating = true
   
   @State private var permission = UserDefaults.standard.bool(forKey: "microphonePermission")  {
-         didSet {
-             UserDefaults.standard.set(self.permission, forKey: "microphonePermission")
-             UserDefaults.standard.synchronize()
-         }
-     }
-     
+    didSet {
+      UserDefaults.standard.set(self.permission, forKey: "microphonePermission")
+      UserDefaults.standard.synchronize()
+    }
+  }
   
   let navy = Color(red: 48.0 / 255.0, green: 66.0 / 255.0, blue: 105.0 / 255.0)
   let light = Color(red: 252.0 / 255.0, green: 240.0 / 255.0, blue: 237.0 / 255.0)
@@ -41,6 +40,7 @@ struct MainView: View {
       
     }
   }
+  
   struct titleBlackStyle: ViewModifier {
     func body(content: Content) -> some View {
       return content
@@ -81,7 +81,8 @@ struct MainView: View {
         VStack {
           //Spacer()
           Text("Watch Out").modifier(titleStyle())
-          //          Spacer()
+          Spacer()
+          
           if viewModel.isToggled {
             ZStack {
               Circle()
@@ -152,6 +153,7 @@ struct MainView: View {
           
           Spacer()
         }
+        
         if self.viewModel.popUpShow {
           
           GeometryReader{_ in
@@ -200,16 +202,20 @@ struct MainView: View {
             
             VStack {
               Spacer()
-                
-              Text("마이크를 사용할 수 있도록 해주세요!")
-                  .foregroundColor(.white)
-                  .fontWeight(.bold)
               
-              Text("현재 마이크가 허용되어 있지 않습니다. 설정에서 허용 해주세요. (해당 텍스트를 클릭하시면 이동합니다)")
-                  .padding()
-                  .font(.system(size: 13))
-                  .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9))
-
+              Text("마이크를 사용할 수 있도록 해주세요!")
+                .foregroundColor(.white)
+                .fontWeight(.bold)
+              
+              Text("현재 마이크가 허용되어 있지 않습니다. 설정에서 허용 해주세요.")
+                .padding()
+                .font(.system(size: 13))
+                .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9))
+              Text("(해당 텍스트를 클릭하시면 이동합니다)")
+                .padding()
+                .font(.system(size: 13))
+                .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9))
+              
               Spacer()
             }
           }
@@ -223,5 +229,5 @@ struct MainView: View {
       }
     } //ZStack End
   } //Navigation View End
-  
 }
+
