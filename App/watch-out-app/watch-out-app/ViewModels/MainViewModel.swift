@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import WatchConnectivity
+import SwiftySound
 
 class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   
@@ -102,9 +103,14 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
       if !self.checkSettingOptions(result: recognizedCommand.name) {
         
         print("\t🔕 BLOCKED: \(recognizedCommand.name)")
+        print("🟥\(buffer)")
+        print("🏅\(buffer.count)")
+        print("👺\(self.result)")
+        print("🤡\(buffer.map { Float($0) / 32767.0 })")
         return
       }
       print("🔈 Listen: \(recognizedCommand.name)")
+      print("🟥\(buffer)")
         
       // 인식된 단어를 highlightedCommand에 저장합니다.
       self.highlightedCommand =  recognizedCommand.name
@@ -113,6 +119,20 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
         
       let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"]
       self.connectivityProvider.send(message: data)
+    }
+  }
+  
+  func runTest() {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+      Sound.play(file: "불이야_김하림_46.wav")
+    }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+      Sound.play(file: "수지_김도연_156.wav")
+    }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+      Sound.play(file: "수지_김도연_156.wav")
     }
   }
   

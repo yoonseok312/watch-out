@@ -7,7 +7,7 @@ target 'watch-out-app' do
   use_frameworks!
 
   # Pods for watch-out-app
-  pod 'TensorFlowLiteSwift'
+  pod 'TensorFlowLiteSwift/CoreML', '~> 0.0.1-nightly'
 end
 
 target 'watch-out-app WatchKit App' do

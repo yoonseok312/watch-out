@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,19 @@
 		9330BDC024FA4D42009C4D06 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDBF24FA4D42009C4D06 /* WatchView.swift */; };
 		9330BDC224FA4EBF009C4D06 /* WatchEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDC124FA4EBF009C4D06 /* WatchEnvironment.swift */; };
 		9330BDC424FA59C8009C4D06 /* WatchConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDC324FA59C8009C4D06 /* WatchConnectivityProvider.swift */; };
+		9349FC4025011569007F527F /* conv_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC3F25011569007F527F /* conv_labels.txt */; };
+		9349FC4125011569007F527F /* conv_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC3F25011569007F527F /* conv_labels.txt */; };
+		9349FC4225011569007F527F /* conv_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC3F25011569007F527F /* conv_labels.txt */; };
+		9349FC6525033982007F527F /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 9349FC6425033982007F527F /* SwiftySound */; };
+		9349FC67250339A3007F527F /* 수지_김도연_156.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC66250339A3007F527F /* 수지_김도연_156.wav */; };
+		9349FC68250339A3007F527F /* 수지_김도연_156.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC66250339A3007F527F /* 수지_김도연_156.wav */; };
+		9349FC69250339A3007F527F /* 수지_김도연_156.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC66250339A3007F527F /* 수지_김도연_156.wav */; };
+		9349FC6B250513F3007F527F /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC6A250513F3007F527F /* conv.tflite */; };
+		9349FC6C250513F3007F527F /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC6A250513F3007F527F /* conv.tflite */; };
+		9349FC6D250513F3007F527F /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC6A250513F3007F527F /* conv.tflite */; };
+		9349FC6F250514FD007F527F /* 불이야_김하림_46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC6E250514FD007F527F /* 불이야_김하림_46.wav */; };
+		9349FC70250514FD007F527F /* 불이야_김하림_46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC6E250514FD007F527F /* 불이야_김하림_46.wav */; };
+		9349FC71250514FD007F527F /* 불이야_김하림_46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC6E250514FD007F527F /* 불이야_김하림_46.wav */; };
 		ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +147,10 @@
 		9330BDBF24FA4D42009C4D06 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		9330BDC124FA4EBF009C4D06 /* WatchEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchEnvironment.swift; sourceTree = "<group>"; };
 		9330BDC324FA59C8009C4D06 /* WatchConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityProvider.swift; sourceTree = "<group>"; };
+		9349FC3F25011569007F527F /* conv_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_labels.txt; sourceTree = "<group>"; };
+		9349FC66250339A3007F527F /* 수지_김도연_156.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "수지_김도연_156.wav"; sourceTree = "<group>"; };
+		9349FC6A250513F3007F527F /* conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv.tflite; sourceTree = "<group>"; };
+		9349FC6E250514FD007F527F /* 불이야_김하림_46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "불이야_김하림_46.wav"; sourceTree = "<group>"; };
 		ABA51547C12D4BDC645CA3C5 /* Pods-watch-out-app WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_out_app_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FAAAC9156744306ECC0D66 /* Pods-watch-out-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app/Pods-watch-out-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9349FC6525033982007F527F /* SwiftySound in Frameworks */,
 				ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +275,10 @@
 		3493598824EE9CEB004F6DF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9349FC66250339A3007F527F /* 수지_김도연_156.wav */,
+				9349FC6E250514FD007F527F /* 불이야_김하림_46.wav */,
+				9349FC6A250513F3007F527F /* conv.tflite */,
+				9349FC3F25011569007F527F /* conv_labels.txt */,
 				9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */,
 				9321B3FF24F2978800140174 /* conv_actions_labels.txt */,
 			);
@@ -350,6 +372,9 @@
 				3493596024EE9C1C004F6DF1 /* PBXTargetDependency */,
 			);
 			name = "watch-out-app";
+			packageProductDependencies = (
+				9349FC6425033982007F527F /* SwiftySound */,
+			);
 			productName = "watch-out-app";
 			productReference = 3493594924EE9C17004F6DF1 /* watch-out-app.app */;
 			productType = "com.apple.product-type.application";
@@ -422,6 +447,9 @@
 				Base,
 			);
 			mainGroup = 3493594024EE9C17004F6DF1;
+			packageReferences = (
+				9349FC6325033982007F527F /* XCRemoteSwiftPackageReference "SwiftySound" */,
+			);
 			productRefGroup = 3493594A24EE9C17004F6DF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -438,11 +466,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9349FC67250339A3007F527F /* 수지_김도연_156.wav in Resources */,
 				3493595924EE9C1C004F6DF1 /* LaunchScreen.storyboard in Resources */,
 				9321B3FC24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
+				9349FC4025011569007F527F /* conv_labels.txt in Resources */,
 				3493595624EE9C1C004F6DF1 /* Assets.xcassets in Resources */,
 				3493595424EE9C17004F6DF1 /* Main.storyboard in Resources */,
 				9321B40024F2978800140174 /* conv_actions_labels.txt in Resources */,
+				9349FC6B250513F3007F527F /* conv.tflite in Resources */,
+				9349FC6F250514FD007F527F /* 불이야_김하림_46.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,10 +482,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9349FC6C250513F3007F527F /* conv.tflite in Resources */,
 				9321B3FD24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
+				9349FC4125011569007F527F /* conv_labels.txt in Resources */,
 				9321B40124F2978800140174 /* conv_actions_labels.txt in Resources */,
 				3493596624EE9C1D004F6DF1 /* Assets.xcassets in Resources */,
+				9349FC70250514FD007F527F /* 불이야_김하림_46.wav in Resources */,
 				9330BDBD24FA4A6D009C4D06 /* Interface.storyboard in Resources */,
+				9349FC68250339A3007F527F /* 수지_김도연_156.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,10 +497,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9349FC6D250513F3007F527F /* conv.tflite in Resources */,
 				9330BDBE24FA4A6D009C4D06 /* Interface.storyboard in Resources */,
+				9349FC4225011569007F527F /* conv_labels.txt in Resources */,
 				9321B40224F2978800140174 /* conv_actions_labels.txt in Resources */,
 				3493597824EE9C1E004F6DF1 /* Assets.xcassets in Resources */,
+				9349FC71250514FD007F527F /* 불이야_김하림_46.wav in Resources */,
 				9321B3FE24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
+				9349FC69250339A3007F527F /* 수지_김도연_156.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +943,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9349FC6325033982007F527F /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9349FC6425033982007F527F /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9349FC6325033982007F527F /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3493594124EE9C17004F6DF1 /* Project object */;
 }

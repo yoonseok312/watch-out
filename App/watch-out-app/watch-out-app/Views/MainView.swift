@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftySound
 
 struct MainView: View {
   
@@ -129,6 +130,8 @@ struct MainView: View {
           Spacer()
         }
         
+      }.onAppear {
+        self.viewModel.runTest()
       } //ZStack End
     } //Navigation View End
     

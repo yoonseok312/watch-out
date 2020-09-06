@@ -26,8 +26,8 @@ typealias FileInfo = (name: String, extension: String)
 
 /// Information about the ConvActions model.
 enum ConvActions {
-  static let modelInfo: FileInfo = (name: "conv_actions_frozen", extension: "tflite")
-  static let labelsInfo: FileInfo = (name: "conv_actions_labels", extension: "txt")
+  static let modelInfo: FileInfo = (name: "conv", extension: "tflite")
+  static let labelsInfo: FileInfo = (name: "conv_labels", extension: "txt")
 }
 
 /// This class handles all data preprocessing and makes calls to run inference on a given audio
@@ -45,7 +45,7 @@ class ModelDataHandler {
   
   // MARK: - Private Properties
   
-  private var buffer:[Int] = []
+  public var buffer:[Int] = []
   private var recognizeCommands: RecognizeCommands?
   private let audioBufferInputTensorIndex = 0
   private let sampleRateInputTensorIndex = 1
@@ -89,8 +89,13 @@ class ModelDataHandler {
     var options = InterpreterOptions()
     options.threadCount = threadCount
     do {
+      let coreMLDelegate = CoreMLDelegate()
+      if coreMLDelegate != nil {
+        interpreter = try Interpreter(modelPath: modelPath, options: options, delegates: [coreMLDelegate!])
+      } else {
       // Create the `Interpreter`.
-      interpreter = try Interpreter(modelPath: modelPath, options: options)
+        interpreter = try Interpreter(modelPath: modelPath, options: options)
+      }
       // Allocate memory for the model's input `Tensor`s.
       try interpreter.allocateTensors()
     } catch let error {
@@ -112,18 +117,19 @@ class ModelDataHandler {
   
   /// Invokes the `Interpreter` and processes and returns the inference results.
   func runModel(onBuffer buffer: [Int16]) -> Result? {
-    //    print("🟥")
+    //print("🟥\(buffer)")
     let interval: TimeInterval
     let outputTensor: Tensor
     do {
       // Copy the `[Int16]` buffer data as an array of `Float`s to the audio buffer input `Tensor`'s.
       let audioBufferData = Data(copyingBufferOf: buffer.map { Float($0) / maxInt16AsFloat32 })
+      //print("😉\(audioBufferData)")
       try interpreter.copy(audioBufferData, toInputAt: audioBufferInputTensorIndex)
       
       // Copy the sample rate data to the sample rate input `Tensor`.
       var rate = Int32(sampleRate)
-      let sampleRateData = Data(bytes: &rate, count: MemoryLayout.size(ofValue: rate))
-      try interpreter.copy(sampleRateData, toInputAt: sampleRateInputTensorIndex)
+//      let sampleRateData = Data(bytes: &rate, count: MemoryLayout.size(ofValue: rate))
+//      try interpreter.copy(sampleRateData, toInputAt: sampleRateInputTensorIndex)
       
       // Run inference by invoking the `Interpreter`.
       let startDate = Date()
