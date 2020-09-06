@@ -32,7 +32,7 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   private var bufferSize: Int = 0
   
   init(connectivityProvider: ConnectivityProvider) {
-
+    
     UserDefaults.standard.set(false, forKey: "microphonePermission")
     self.connectivityProvider = connectivityProvider
     self.startAudioRecognition()
@@ -94,7 +94,6 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   }
   
   private func runModel(onBuffer buffer: [Int16]) {
-    
     print("🏅")
     // buffer: 2차원 배열로 변환된 음성
     result = modelDataHandler?.runModel(onBuffer: buffer)
@@ -112,8 +111,10 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
         return
       }
       print("🔈 Listen: \(recognizedCommand.name)")
+      
       // 인식된 단어를 highlightedCommand에 저장합니다.
       self.highlightedCommand =  recognizedCommand.name
+      
       let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"]
       self.connectivityProvider.send(message: data)
     }
@@ -125,7 +126,6 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
       return
     }
     
-    //print("didOutput model");
     if self.isToggled {
       self.runModel(onBuffer: Array(channelData[0..<handler.sampleRate]))
       self.runModel(onBuffer: Array(channelData[handler.sampleRate..<bufferSize]))

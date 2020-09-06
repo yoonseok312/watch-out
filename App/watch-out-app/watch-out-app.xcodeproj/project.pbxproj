@@ -27,7 +27,8 @@
 		3493599224EE9D3B004F6DF1 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */; };
 		3493599424EE9D5B004F6DF1 /* RecognizeCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599324EE9D5B004F6DF1 /* RecognizeCommands.swift */; };
 		3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599924EEBCF9004F6DF1 /* Alert.swift */; };
-		36E99DD924FD004100605786 /* defaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E99DD824FD004100605786 /* defaultView.swift */; };
+		34D41D172503339100BF160B /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 34D41D152503339100BF160B /* conv.tflite */; };
+		34D41D182503339100BF160B /* conv_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34D41D162503339100BF160B /* conv_labels.txt */; };
 		36E99DD924FD004100605786 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E99DD824FD004100605786 /* ContainerView.swift */; };
 		519CCC4F24FB46B900935336 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CCC4E24FB46B900935336 /* Information.swift */; };
 		79C343D8238AA7EA818DEECC /* Pods_watch_out_app_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */; };
@@ -116,9 +117,11 @@
 		3493597924EE9C1E004F6DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3493597A24EE9C1E004F6DF1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		3493598E24EE9D22004F6DF1 /* AudioInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInputManager.swift; sourceTree = "<group>"; };
-		3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3493599324EE9D5B004F6DF1 /* RecognizeCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeCommands.swift; sourceTree = "<group>"; };
 		3493599924EEBCF9004F6DF1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		34D41D152503339100BF160B /* conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = conv.tflite; path = ../../../../../../../Downloads/conv.tflite; sourceTree = "<group>"; };
+		34D41D162503339100BF160B /* conv_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = conv_labels.txt; path = ../../../../../../../Downloads/conv_labels.txt; sourceTree = "<group>"; };
 		36E99DD824FD004100605786 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		4ADC7C12B117986B0264C8D5 /* Pods-watch-out-app WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_out_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +263,8 @@
 		3493598824EE9CEB004F6DF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				34D41D162503339100BF160B /* conv_labels.txt */,
+				34D41D152503339100BF160B /* conv.tflite */,
 				9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */,
 				9321B3FF24F2978800140174 /* conv_actions_labels.txt */,
 			);
@@ -450,9 +455,11 @@
 			files = (
 				3493595924EE9C1C004F6DF1 /* LaunchScreen.storyboard in Resources */,
 				9321B3FC24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
+				34D41D182503339100BF160B /* conv_labels.txt in Resources */,
 				3493595624EE9C1C004F6DF1 /* Assets.xcassets in Resources */,
 				3493595424EE9C17004F6DF1 /* Main.storyboard in Resources */,
 				9321B40024F2978800140174 /* conv_actions_labels.txt in Resources */,
+				34D41D172503339100BF160B /* conv.tflite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
