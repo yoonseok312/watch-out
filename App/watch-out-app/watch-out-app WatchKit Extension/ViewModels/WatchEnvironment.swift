@@ -6,6 +6,7 @@
 //  Copyright © 2020 Ryan Taylor. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import SwiftUI
 import WatchConnectivity

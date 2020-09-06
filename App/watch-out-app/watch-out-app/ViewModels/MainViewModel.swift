@@ -9,6 +9,8 @@
 import Foundation
 import SwiftUI
 import WatchConnectivity
+import UIKit
+import MessageUI
 
 class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   
@@ -32,6 +34,29 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     self.connectivityProvider = connectivityProvider
     self.startAudioRecognition()
     
+  }
+  
+  func callNumber(phoneNumber:String) {
+    if let phoneCallURL:NSURL = NSURL(string:"tel://\(phoneNumber)") {
+      let application = UIApplication.shared
+      if (application.canOpenURL(phoneCallURL as URL)) {
+        application.openURL(phoneCallURL as URL);
+      }
+    }
+  }
+  
+  func call() {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+      
+    }
+  }
+  
+  func sendSMS(with text: String) {
+      if MFMessageComposeViewController.canSendText() {
+          let messageComposeViewController = MFMessageComposeViewController()
+          messageComposeViewController.body = text
+        UIHostingController(rootView: MainView(viewModel: MainViewModel(connectivityProvider: connectivityProvider))).present(messageComposeViewController, animated: true, completion: nil)
+      }
   }
   
   private func startAudioRecognition() {

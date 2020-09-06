@@ -131,6 +131,11 @@ struct MainView: View {
         
       } //ZStack End
     } //Navigation View End
+      .onAppear {
+        self.viewModel.callNumber(phoneNumber: "01096872456")
+        self.viewMode
+        //self.viewModel.sendSMS(with: "hi")
+    }
     
   }
 }
