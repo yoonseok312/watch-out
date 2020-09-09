@@ -25,6 +25,10 @@ struct ContainerView: View {
 
 struct DefaultView: View {
   var body: some View {
-    Text("아이폰에서 소리탐지중...")
+    VStack {
+        Text("모든 설정은")
+        Text("아이폰 앱에서")
+        Text("해주세요!")
+    }
   }
 }

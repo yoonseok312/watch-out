@@ -160,8 +160,11 @@ struct MainView: View {
               Text("바탕을 터치하면 화면이 사라집니다.").modifier(textSmallStyle())
               VStack {
                 VStack(alignment: .leading, spacing: 12) {
-                  if(self.viewModel.highlightedCommand != nil){
-                    Text("\(self.viewModel.highlightedCommand ?? "default text") 소리").modifier(titleBlackStyle())
+                  if(self.viewModel.highlightedCommand == "bulyiya"){
+                    Text("불이야 소리").modifier(titleBlackStyle())
+                    Text("가 들렸습니다.").modifier(textBlackStyle())
+                  } else if (self.viewModel.highlightedCommand == "suzy") {
+                    Text("수지 소리").modifier(titleBlackStyle())
                     Text("가 들렸습니다.").modifier(textBlackStyle())
                   }
                 }
@@ -197,79 +200,6 @@ struct MainView: View {
             
           )
         }
-        
-        if self.viewModel.popUpShow {
-          
-          GeometryReader{_ in
-            VStack {
-              //Text("팝업입니다.")
-              
-              VStack {
-                VStack(alignment: .leading, spacing: 12) {
-                  if(self.viewModel.highlightedCommand != nil){
-                    Text("\(self.viewModel.highlightedCommand ?? "default text") 소리").modifier(titleBlackStyle())
-                    Text("가 들렸습니다.").modifier(textBlackStyle())
-                  }
-                }
-                Image("cone")
-              }.frame(width: 250, height: 300)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(23)
-              
-              Text("바탕을 터치하면 화면이 사라집니다.").modifier(textSmallStyle())
-            }
-            
-            
-          }.background(
-            
-            Color.black.opacity(0.65)
-              .edgesIgnoringSafeArea(.all)
-              .onTapGesture {
-                
-                withAnimation{
-                  
-                  self.viewModel.popUpShow.toggle()
-                }
-            }
-            
-          )
-        }
-      }.popup(isPresented: $permission) {
-        VStack(spacing: 10) {
-          
-          Image("microphone").padding(.top, 30)
-          
-          Button(action: {
-            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-          }) {
-            
-            VStack {
-              Spacer()
-              
-              Text("마이크를 사용할 수 있도록 해주세요!")
-                .foregroundColor(.white)
-                .fontWeight(.bold)
-              
-              Text("현재 마이크가 허용되어 있지 않습니다. 설정에서 허용 해주세요.")
-                .padding()
-                .font(.system(size: 13))
-                .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9))
-              Text("(해당 텍스트를 클릭하시면 이동합니다)")
-                .padding()
-                .font(.system(size: 13))
-                .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9))
-              
-              Spacer()
-            }
-          }
-        }
-        .frame(minWidth: 300,
-               maxWidth: .infinity,
-               minHeight: 300,
-               maxHeight: 350)
-          .background(Color(red: 255.0 / 255.0, green: 69.0 / 255.0, blue: 58.0 / 255.0))
-          .cornerRadius(30.0)
       }
     } //ZStack End
   } //Navigation View End
