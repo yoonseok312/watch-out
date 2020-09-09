@@ -9,6 +9,8 @@
 import Foundation
 import SwiftUI
 import WatchConnectivity
+import UIKit
+import MessageUI
 
 import AVFoundation
 import ExytePopupView
@@ -36,6 +38,29 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     UserDefaults.standard.set(false, forKey: "microphonePermission")
     self.connectivityProvider = connectivityProvider
     self.startAudioRecognition()
+  }
+  
+  func callNumber(phoneNumber:String) {
+    if let phoneCallURL:NSURL = NSURL(string:"tel://\(phoneNumber)") {
+      let application = UIApplication.shared
+      if (application.canOpenURL(phoneCallURL as URL)) {
+        application.openURL(phoneCallURL as URL);
+      }
+    }
+  }
+  
+  func call() {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+      
+    }
+  }
+  
+  func sendSMS(with text: String) {
+    if MFMessageComposeViewController.canSendText() {
+      let messageComposeViewController = MFMessageComposeViewController()
+      messageComposeViewController.body = text
+      UIHostingController(rootView: MainView(viewModel: MainViewModel(connectivityProvider: connectivityProvider))).present(messageComposeViewController, animated: true, completion: nil)
+    }
   }
   
   private func startAudioRecognition() {
@@ -78,16 +103,7 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     else if result == "bulyiya" {
       return !UserDefaults.standard.bool(forKey: "bulyiya")
     }
-    else if result == "yes" {
-      return !UserDefaults.standard.bool(forKey: "yes")
-    }
     return false
-  }
-  
-  private func popUpFasleinSecond() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-      self.popUpShow = false
-    }
   }
   
   private func runModel(onBuffer buffer: [Int16]) {
@@ -111,9 +127,17 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
       
       // 인식된 단어를 highlightedCommand에 저장합니다.
       self.highlightedCommand =  recognizedCommand.name
+      self.popUpShow = true
+      self.popUpFasleinSecond()
       
       let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"]
       self.connectivityProvider.send(message: data)
+    }
+  }
+  
+  private func popUpFasleinSecond() {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+      self.popUpShow = false
     }
   }
   

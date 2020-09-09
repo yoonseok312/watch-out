@@ -54,7 +54,6 @@ struct MainView: View {
       return content
         .foregroundColor(Color.white)
         .font(Font.custom("AppleSDGothicNeo-SemiBold", size: 18))
-      
     }
   }
   struct textBlackStyle: ViewModifier {
@@ -152,6 +151,51 @@ struct MainView: View {
           .accentColor(Color.white)
           
           Spacer()
+        }
+        if self.viewModel.popUpShow {
+          
+          GeometryReader{_ in
+            VStack {
+              //Text("팝업입니다.")
+              Text("바탕을 터치하면 화면이 사라집니다.").modifier(textSmallStyle())
+              VStack {
+                VStack(alignment: .leading, spacing: 12) {
+                  if(self.viewModel.highlightedCommand != nil){
+                    Text("\(self.viewModel.highlightedCommand ?? "default text") 소리").modifier(titleBlackStyle())
+                    Text("가 들렸습니다.").modifier(textBlackStyle())
+                  }
+                }
+                Image("cone")
+              }.frame(width: 250, height: 300)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(23)
+              Button(action: {
+                // action
+                self.viewModel.callNumber(phoneNumber: "119")
+              }) {
+                Text("119에 전화걸기")
+                  .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+              }.foregroundColor(self.orangeON)
+                .frame(width: 250, height: 30)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(23)
+            }
+            
+          }.background(
+            
+            Color.black.opacity(0.65)
+              .edgesIgnoringSafeArea(.all)
+              .onTapGesture {
+                
+                withAnimation{
+                  
+                  self.viewModel.popUpShow.toggle()
+                }
+            }
+            
+          )
         }
         
         if self.viewModel.popUpShow {

@@ -31,10 +31,12 @@ class WatchConnectivityProvider: NSObject, WCSessionDelegate {
     print("received data: \(message)")
     if let t = message["title"] as? String {
       viewModel.word = t
+      viewModel.isActive = true
       print("👺")
     }
-    //    if let c = message["content"] as? String {
-    //        self.content.setText(c)
-    //    }
+    else {
+      viewModel.isActive = false
+      print("\t❌ Stop listening")
+    }
   }
 }
