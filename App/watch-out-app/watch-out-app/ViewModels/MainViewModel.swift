@@ -52,11 +52,11 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   }
   
   func sendSMS(with text: String) {
-      if MFMessageComposeViewController.canSendText() {
-          let messageComposeViewController = MFMessageComposeViewController()
-          messageComposeViewController.body = text
-        UIHostingController(rootView: MainView(viewModel: MainViewModel(connectivityProvider: connectivityProvider))).present(messageComposeViewController, animated: true, completion: nil)
-      }
+    if MFMessageComposeViewController.canSendText() {
+      let messageComposeViewController = MFMessageComposeViewController()
+      messageComposeViewController.body = text
+      UIHostingController(rootView: MainView(viewModel: MainViewModel(connectivityProvider: connectivityProvider))).present(messageComposeViewController, animated: true, completion: nil)
+    }
   }
   
   private func startAudioRecognition() {
@@ -130,21 +130,21 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
         return
       }
       print("🔈 Listen: \(recognizedCommand.name)")
-        
+      
       // 인식된 단어를 highlightedCommand에 저장합니다.
       self.highlightedCommand =  recognizedCommand.name
-        self.popUpShow = true
-        self.popUpFasleinSecond()
-        
+      self.popUpShow = true
+      self.popUpFasleinSecond()
+      
       let data: [String: Any] = ["title": self.highlightedCommand!, "content": self.highlightedCommand! + "!!!"]
       self.connectivityProvider.send(message: data)
     }
   }
   
   private func popUpFasleinSecond() {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-          self.popUpShow = false
-      }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+      self.popUpShow = false
+    }
   }
   
   func didOutput(channelData: [Int16]) {
