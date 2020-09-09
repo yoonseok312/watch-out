@@ -124,15 +124,15 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   
   func runTest() {
     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-      Sound.play(file: "불이야_양윤석_190.wav")
+      Sound.play(file: "19026-1-0-0.wav")
     }
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-      Sound.play(file: "불이야_양윤석_190.wav")
+      Sound.play(file: "19026-1-0-0.wav")
     }
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-      Sound.play(file: "수지_김도연_156.wav")
+      Sound.play(file: "19026-1-0-0.wav")
     }
   }
   

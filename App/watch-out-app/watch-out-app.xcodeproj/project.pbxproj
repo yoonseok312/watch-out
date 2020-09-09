@@ -55,7 +55,13 @@
 		9349FC68250339A3007F527F /* 수지_김도연_156.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC66250339A3007F527F /* 수지_김도연_156.wav */; };
 		9349FC69250339A3007F527F /* 수지_김도연_156.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC66250339A3007F527F /* 수지_김도연_156.wav */; };
 		9349FC7F25052760007F527F /* 불이야_양윤석_190.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC7E25052760007F527F /* 불이야_양윤석_190.wav */; };
-		9349FC8125052781007F527F /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC8025052781007F527F /* conv.tflite */; };
+		9349FC832505A00E007F527F /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC822505A00E007F527F /* conv.tflite */; };
+		9349FC842505A00E007F527F /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC822505A00E007F527F /* conv.tflite */; };
+		9349FC852505A00E007F527F /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC822505A00E007F527F /* conv.tflite */; };
+		9397C2112508F5D100D2EE8A /* conv_urban.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9397C2102508F5D100D2EE8A /* conv_urban.tflite */; };
+		9397C2132508F5D700D2EE8A /* conv_urban_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9397C2122508F5D700D2EE8A /* conv_urban_labels.txt */; };
+		9397C2152508F67000D2EE8A /* 18594-1-0-0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9397C2142508F67000D2EE8A /* 18594-1-0-0.wav */; };
+		9397C2172508F77000D2EE8A /* 19026-1-0-0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9397C2162508F77000D2EE8A /* 19026-1-0-0.wav */; };
 		ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,7 +152,11 @@
 		9349FC3F25011569007F527F /* conv_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_labels.txt; sourceTree = "<group>"; };
 		9349FC66250339A3007F527F /* 수지_김도연_156.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "수지_김도연_156.wav"; sourceTree = "<group>"; };
 		9349FC7E25052760007F527F /* 불이야_양윤석_190.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "불이야_양윤석_190.wav"; sourceTree = "<group>"; };
-		9349FC8025052781007F527F /* conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv.tflite; sourceTree = "<group>"; };
+		9349FC822505A00E007F527F /* conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv.tflite; sourceTree = "<group>"; };
+		9397C2102508F5D100D2EE8A /* conv_urban.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv_urban.tflite; sourceTree = "<group>"; };
+		9397C2122508F5D700D2EE8A /* conv_urban_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_urban_labels.txt; sourceTree = "<group>"; };
+		9397C2142508F67000D2EE8A /* 18594-1-0-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "18594-1-0-0.wav"; sourceTree = "<group>"; };
+		9397C2162508F77000D2EE8A /* 19026-1-0-0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "19026-1-0-0.wav"; sourceTree = "<group>"; };
 		ABA51547C12D4BDC645CA3C5 /* Pods-watch-out-app WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_out_app_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FAAAC9156744306ECC0D66 /* Pods-watch-out-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app/Pods-watch-out-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,8 +282,12 @@
 			isa = PBXGroup;
 			children = (
 				9349FC66250339A3007F527F /* 수지_김도연_156.wav */,
+				9397C2162508F77000D2EE8A /* 19026-1-0-0.wav */,
+				9397C2142508F67000D2EE8A /* 18594-1-0-0.wav */,
+				9397C2122508F5D700D2EE8A /* conv_urban_labels.txt */,
+				9349FC822505A00E007F527F /* conv.tflite */,
 				9349FC7E25052760007F527F /* 불이야_양윤석_190.wav */,
-				9349FC8025052781007F527F /* conv.tflite */,
+				9397C2102508F5D100D2EE8A /* conv_urban.tflite */,
 				9349FC3F25011569007F527F /* conv_labels.txt */,
 				9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */,
 				9321B3FF24F2978800140174 /* conv_actions_labels.txt */,
@@ -464,13 +478,17 @@
 			files = (
 				9349FC67250339A3007F527F /* 수지_김도연_156.wav in Resources */,
 				3493595924EE9C1C004F6DF1 /* LaunchScreen.storyboard in Resources */,
-				9349FC8125052781007F527F /* conv.tflite in Resources */,
+				9397C2152508F67000D2EE8A /* 18594-1-0-0.wav in Resources */,
+				9349FC832505A00E007F527F /* conv.tflite in Resources */,
 				9349FC7F25052760007F527F /* 불이야_양윤석_190.wav in Resources */,
 				9321B3FC24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
 				9349FC4025011569007F527F /* conv_labels.txt in Resources */,
 				3493595624EE9C1C004F6DF1 /* Assets.xcassets in Resources */,
 				3493595424EE9C17004F6DF1 /* Main.storyboard in Resources */,
+				9397C2112508F5D100D2EE8A /* conv_urban.tflite in Resources */,
+				9397C2132508F5D700D2EE8A /* conv_urban_labels.txt in Resources */,
 				9321B40024F2978800140174 /* conv_actions_labels.txt in Resources */,
+				9397C2172508F77000D2EE8A /* 19026-1-0-0.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +496,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9349FC842505A00E007F527F /* conv.tflite in Resources */,
 				9321B3FD24F2977D00140174 /* conv_actions_frozen.tflite in Resources */,
 				9349FC4125011569007F527F /* conv_labels.txt in Resources */,
 				9321B40124F2978800140174 /* conv_actions_labels.txt in Resources */,
@@ -491,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9349FC852505A00E007F527F /* conv.tflite in Resources */,
 				9330BDBE24FA4A6D009C4D06 /* Interface.storyboard in Resources */,
 				9349FC4225011569007F527F /* conv_labels.txt in Resources */,
 				9321B40224F2978800140174 /* conv_actions_labels.txt in Resources */,
