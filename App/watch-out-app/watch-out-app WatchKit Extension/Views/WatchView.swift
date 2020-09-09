@@ -35,19 +35,12 @@ struct WatchView: View {
         HStack{
             
           // 아이콘 변경 코드
-          if(viewModel.word == "yes"){
-            Image(systemName: "car").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
-          }else if (viewModel.word == "no"){
-            Image(systemName: "map").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
-          }else if (viewModel.word == "right"){
-            Image(systemName: "snow").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
-          }else if (viewModel.word == "left"){
-            Image(systemName: "flanme.fill").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
+          if(viewModel.word == "suzy"){
+            Image(systemName: "speaker.3.fill").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
+          }else if ( viewModel.word == "bulyiya"){
+            Image(systemName: "flame.fill").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
           }
-          else{
-            Image(systemName: "heart.fill").foregroundColor(.white).font(.system(size: 23)).padding(.horizontal,2)
-          }
-          Text("위험 신호감지!").font(.system(size: 23, weight: .bold))
+          Text("소리 감지!!!").font(.system(size: 23, weight: .bold))
         }
         
         Spacer()
@@ -55,7 +48,7 @@ struct WatchView: View {
         HStack{
           ZStack{
             
-            if( viewModel.word == "yes"){
+            if( viewModel.word == "suzy"){
               //yes 소리만 노랑색으로 박스가 바뀜
               RoundedRectangle(cornerRadius: 23, style: .continuous)
                 .fill(LinearGradient(
@@ -65,7 +58,7 @@ struct WatchView: View {
                 ))
                 .frame(width: 185, height: 120)
               
-            }else{
+            }else if ( viewModel.word == "bulyiya"){
               // 나머지는 주황색
               RoundedRectangle(cornerRadius: 23, style: .continuous)
                 .fill(LinearGradient(
@@ -79,16 +72,16 @@ struct WatchView: View {
             
             
             VStack(alignment: .center) {
-              if( viewModel.word == "yes"){
+              if( viewModel.word == "suzy"){
                 Text("근처에서 소리").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
-                Text(viewModel.word+" 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 0.0, green: 0.0, blue: 0.0))
+                Text("수지 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 0.0, green: 0.0, blue: 0.0))
                 HStack(alignment:.lastTextBaseline){
                   Text("가 들렸습니다").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.leading,60).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
                 }
                 
-              }else{
+              }else if ( viewModel.word == "bulyiya"){
                 Text("근처에서 소리").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.trailing,55).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
-                Text(viewModel.word+" 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
+                Text("불이야 소리").font(.system(size: 37, weight: .black)).foregroundColor(Color.init(red: 255.0, green: 255.0, blue: 255.0))
                 HStack(alignment:.lastTextBaseline){
                   Text("가 들렸습니다").font(.system(size: 18, weight: .black)).padding(.vertical,7).padding(.leading,60).foregroundColor(Color.init(red: 0, green: 0, blue: 0))
                 }
