@@ -68,3 +68,15 @@ struct DefaultView: View {
        }
 
   }
+
+
+struct toggle_state: View {
+var body: some View {
+                 VStack {
+                     Image(systemName: "heart.slash").foregroundColor(.red).font(.system(size: 80)).padding(.vertical, 16)
+                       Text("아이폰 연결 대기중...")
+                             .fontWeight(.bold)
+               }
+     }
+
+}
