@@ -103,6 +103,7 @@ struct WatchView: View {
     }
     .onAppear{
         self.viewModel.activated()
+      //self.viewModel.callNumber(phoneNumber: "01096872456")
     }
  }
 }
