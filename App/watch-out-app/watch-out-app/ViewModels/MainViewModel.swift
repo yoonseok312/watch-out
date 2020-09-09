@@ -72,19 +72,16 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
    */
   private func checkSettingOptions(result: String) -> Bool {
     
-    if result == "fire" {
-      return !UserDefaults.standard.bool(forKey: "fire")
+    if result == "suzy" {
+      return !UserDefaults.standard.bool(forKey: "suzy")
     }
-    else if result == "car" {
-      return !UserDefaults.standard.bool(forKey: "car")
+    else if result == "bulyiya" {
+      return !UserDefaults.standard.bool(forKey: "bulyiya")
     }
     else if result == "yes" {
       return !UserDefaults.standard.bool(forKey: "yes")
     }
-    else if result == "no" {
-      return !UserDefaults.standard.bool(forKey: "no")
-    }
-    return !UserDefaults.standard.bool(forKey: "right")
+    return false
   }
   
   private func popUpFasleinSecond() {

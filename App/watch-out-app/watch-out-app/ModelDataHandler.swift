@@ -28,8 +28,8 @@ typealias FileInfo = (name: String, extension: String)
 enum ConvActions {
   static let modelInfo: FileInfo = (name: "conv_actions_frozen", extension: "tflite")
   static let labelsInfo: FileInfo = (name: "conv_actions_labels", extension: "txt")
-  //  static let modelInfo: FileInfo = (name: "conv", extension: "tflite")
-  //  static let labelsInfo: FileInfo = (name: "conv_labels", extension: "txt")
+  //    static let modelInfo: FileInfo = (name: "conv", extension: "tflite")
+  //    static let labelsInfo: FileInfo = (name: "conv_labels", extension: "txt")
 }
 
 /// This class handles all data preprocessing and makes calls to run inference on a given audio

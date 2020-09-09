@@ -22,21 +22,21 @@ import SwiftUI
 class UserDefaultsManager: ObservableObject {
     
     /**
-     "불이야" 음성에 대한 설정값 입니다.
+     "불이야" 소음에 대한 설정값 입니다.
      */
-    @Published var fireToggle: Bool = !UserDefaults.standard.bool(forKey: "fire") {
+    @Published var bulyiyaToggle: Bool = !UserDefaults.standard.bool(forKey: "bulyiya") {
         didSet {
-            UserDefaults.standard.set(!self.fireToggle, forKey: "fire")
+            UserDefaults.standard.set(!self.bulyiyaToggle, forKey: "bulyiya")
             UserDefaults.standard.synchronize()
         }
     }
     
     /**
-     "자동차" 소음에 대한 설정값 입니다.
+     "수지" 음성에 대한 설정값 입니다.
      */
-    @Published var carToggle: Bool = !UserDefaults.standard.bool(forKey: "car") {
+    @Published var suzyToggle: Bool = !UserDefaults.standard.bool(forKey: "suzy") {
         didSet {
-            UserDefaults.standard.set(!self.carToggle, forKey: "car")
+            UserDefaults.standard.set(!self.suzyToggle, forKey: "suzy")
             UserDefaults.standard.synchronize()
         }
     }
@@ -47,26 +47,6 @@ class UserDefaultsManager: ObservableObject {
     @Published var yesToggle: Bool = !UserDefaults.standard.bool(forKey: "yes") {
         didSet {
             UserDefaults.standard.set(!self.yesToggle, forKey: "yes")
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    /**
-     "no" 음성에 대한 설정값 입니다.
-     */
-    @Published var noToggle: Bool = !UserDefaults.standard.bool(forKey: "no") {
-        didSet {
-            UserDefaults.standard.set(!self.noToggle, forKey: "no")
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    /**
-     "right" 음성에 대한 설정값 입니다.
-     */
-    @Published var rightToggle: Bool = !UserDefaults.standard.bool(forKey: "right") {
-        didSet {
-            UserDefaults.standard.set(!self.rightToggle, forKey: "right")
             UserDefaults.standard.synchronize()
         }
     }

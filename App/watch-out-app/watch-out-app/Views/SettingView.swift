@@ -23,11 +23,9 @@ struct SettingView: View {
                 Form {
                     Section(header: Text("알림 설정"))  {
                         
-                        OptionView(image: "car", name: "자동차 소리", activate: $storeData.carToggle)
-                        OptionView(image: "fire", name: "불이야 소리", activate: $storeData.fireToggle)
-                        OptionView(image: "cone", name: "Yes", activate: $storeData.yesToggle)
-                        OptionView(image: "cone", name: "No", activate: $storeData.noToggle)
-                        OptionView(image: "cone", name: "Right", activate: $storeData.rightToggle)
+                        OptionView(image: "fire", name: "불이야 소리", activate: $storeData.bulyiyaToggle)
+                        OptionView(image: "speak", name: "수지야", activate: $storeData.suzyToggle)
+                        OptionView(image: "cone", name: "테스트용(yes)", activate: $storeData.yesToggle)
                     }
                     
                     Section(header: Text("추가 기능"))  {
