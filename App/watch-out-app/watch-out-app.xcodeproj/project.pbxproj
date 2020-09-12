@@ -50,6 +50,7 @@
 		9349FC7B250526FE007F527F /* 불이야_양윤석_190.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC7A250526FE007F527F /* 불이야_양윤석_190.wav */; };
 		9349FC7C250526FE007F527F /* 불이야_양윤석_190.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC7A250526FE007F527F /* 불이야_양윤석_190.wav */; };
 		9349FC7D250526FE007F527F /* 불이야_양윤석_190.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9349FC7A250526FE007F527F /* 불이야_양윤석_190.wav */; };
+		936A6162250D2942007C76FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A6161250D2942007C76FE /* ContentView.swift */; };
 		9397C21925090B3200D2EE8A /* conv.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 9397C21825090B3200D2EE8A /* conv.tflite */; };
 		9397C21F25090CE800D2EE8A /* conv_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9397C21E25090CE800D2EE8A /* conv_labels.txt */; };
 		ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */; };
@@ -140,6 +141,7 @@
 		9330BDC124FA4EBF009C4D06 /* WatchEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchEnvironment.swift; sourceTree = "<group>"; };
 		9330BDC324FA59C8009C4D06 /* WatchConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityProvider.swift; sourceTree = "<group>"; };
 		9349FC7A250526FE007F527F /* 불이야_양윤석_190.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "불이야_양윤석_190.wav"; sourceTree = "<group>"; };
+		936A6161250D2942007C76FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9397C21825090B3200D2EE8A /* conv.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv.tflite; sourceTree = "<group>"; };
 		9397C21E25090CE800D2EE8A /* conv_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_labels.txt; sourceTree = "<group>"; };
 		ABA51547C12D4BDC645CA3C5 /* Pods-watch-out-app WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				9321B45224F2A90B00140174 /* StartView.swift */,
 				9321B45524F2AB7E00140174 /* SwiftUIView.swift */,
 				34878E7124FB41AE00AD9358 /* SettingView.swift */,
+				936A6161250D2942007C76FE /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			files = (
 				34526EDA24EF8386005BC1B3 /* MainView.swift in Sources */,
 				9321B45624F2AB7E00140174 /* SwiftUIView.swift in Sources */,
+				936A6162250D2942007C76FE /* ContentView.swift in Sources */,
 				9330BDB124FA3139009C4D06 /* ConectivityProvider.swift in Sources */,
 				9321B45324F2A90B00140174 /* StartView.swift in Sources */,
 				3493594D24EE9C17004F6DF1 /* AppDelegate.swift in Sources */,
