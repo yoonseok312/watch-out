@@ -100,7 +100,7 @@ class ModelDataHandler {
     loadLabels(fileInfo: labelsFileInfo)
     recognizeCommands = RecognizeCommands(
       averageWindowDuration: averageWindowDuration,
-      detectionThreshold: 0.3,
+      detectionThreshold: 0.5,
       minimumTimeBetweenSamples: minTimeBetweenSamples,
       suppressionTime: suppressionMs,
       minimumCount: minimumCount,
