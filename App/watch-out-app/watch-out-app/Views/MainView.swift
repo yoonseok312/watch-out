@@ -150,8 +150,11 @@ struct MainView: View {
               Text("바탕을 터치하면 화면이 사라집니다.").modifier(textSmallStyle())
               VStack {
                 VStack(alignment: .leading, spacing: 12) {
-                  if(self.viewModel.highlightedCommand != nil){
-                    Text("\(self.viewModel.highlightedCommand ?? "default text") 소리").modifier(titleBlackStyle())
+                  if(self.viewModel.highlightedCommand == "bulyiya"){
+                    Text("불이야 소리").modifier(titleBlackStyle())
+                    Text("가 들렸습니다.").modifier(textBlackStyle())
+                  } else if (self.viewModel.highlightedCommand == "suzy") {
+                    Text("수지 소리").modifier(titleBlackStyle())
                     Text("가 들렸습니다.").modifier(textBlackStyle())
                   }
                 }
