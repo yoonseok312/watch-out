@@ -163,17 +163,19 @@ struct MainView: View {
                 .padding()
                 .background(Color.white)
                 .cornerRadius(23)
-              Button(action: {
-                // action
-                self.viewModel.callNumber(phoneNumber: "119")
-              }) {
-                Text("119에 전화걸기")
-                  .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
-              }.foregroundColor(self.orangeON)
-                .frame(width: 250, height: 30)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(23)
+              if self.viewModel.highlightedCommand == "bulyiya" {
+                Button(action: {
+                  // action
+                  self.viewModel.callNumber(phoneNumber: "119")
+                }) {
+                  Text("119에 전화걸기")
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+                }.foregroundColor(self.orangeON)
+                  .frame(width: 250, height: 30)
+                  .padding()
+                  .background(Color.white)
+                  .cornerRadius(23)
+              }
             }
             
           }.background(
