@@ -54,9 +54,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>마아아아아이이이이크으으으으으사아아아요요오오오옹해애에에에도도도도될까요?</string>
+	<string>watch-out을 사용하시려면 마이크에 대한 액세스 권한이 필요합니다. (주변 소음 감지)</string>
 	<key>NSFileProviderDomainUsageDescription</key>
-	<string>여어어언라아아악처어어어저어어업근해도될까요?</string>
+	<string>watch-out이 전화를 사용하려면 연락처에 대한 액세스 권한이 필요합니다. (119 또는 122 바로 연결)</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
