@@ -41,5 +41,12 @@ extension HostingController: WCSessionDelegate {
         self.environment.changeWord(word:t)
       }
     }
+    
+    if let onoff = message["onoff"] as? Int {
+      DispatchQueue.main.async {
+        self.environment.changeToggleState(word: onoff)
+        print("🤡\(self.environment.toggleState)")
+      }
+    }
   }
 }

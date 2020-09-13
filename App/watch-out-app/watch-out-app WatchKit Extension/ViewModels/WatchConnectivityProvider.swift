@@ -34,13 +34,14 @@ class WatchConnectivityProvider: NSObject, WCSessionDelegate {
       viewModel.isActive = true
       print("👺")
     }
-    else if let onoff = message["onoff"] as? String {
-        
-        print("🎙 \(onoff)")
-    }
     else {
       viewModel.isActive = false
       print("\t❌ Stop listening")
+    }
+    
+    if let onoff = message["onoff"] as? String {
+      //viewModel.toggleState = onoff
+      print("🤡\(viewModel.toggleState)")
     }
   }
 }
