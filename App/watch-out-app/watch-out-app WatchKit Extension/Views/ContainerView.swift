@@ -14,11 +14,19 @@ struct ContainerView: View {
   var body: some View {
     
     Group {
-      if viewModel.word != "changed" && viewModel.isActive {
-        WatchView()
-      } else {
-        DefaultView()
+      
+      if (viewModel.toggleState == 1){
+        if viewModel.word != "changed" && viewModel.isActive {
+          WatchView()
+        } else {
+          DefaultView()
+          // 안테나 돌아가는 뷰
+        }
+      }else{
+       toggle_state()
+        
       }
+      
     }
   }
 }
@@ -31,4 +39,15 @@ struct DefaultView: View {
         Text("해주세요!")
     }
   }
+}
+
+struct toggle_state: View {
+var body: some View {
+                 VStack {
+                     Image(systemName: "heart.slash").foregroundColor(.red).font(.system(size: 80)).padding(.vertical, 16)
+                       Text("아이폰 연결 대기중...")
+                             .fontWeight(.bold)
+               }
+     }
+
 }

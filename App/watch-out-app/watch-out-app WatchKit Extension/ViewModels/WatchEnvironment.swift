@@ -15,6 +15,7 @@ class WatchEnvironment: ObservableObject {
   
   @Published var word: String = "changed"
   @Published var isActive : Bool = false
+  @Published var toggleState : Int = 0
   
   private(set) var connectivityProvider: WatchConnectivityProvider
   
@@ -26,6 +27,10 @@ class WatchEnvironment: ObservableObject {
   func changeWord(word: String) {
     self.word = word
     self.isActive = true
+  }
+  
+  func changeToggleState(word: Int) {
+    self.toggleState = word
   }
   
   func activated() {
