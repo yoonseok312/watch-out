@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct ContainerView: View {
-
+  
   @EnvironmentObject var viewModel: WatchEnvironment
   var body: some View {
-
+    
     Group {
       if viewModel.word != "changed" && viewModel.isActive {
-      WatchView()
-    } else {
-      DefaultView()
-    }
+        WatchView()
+      } else {
+        DefaultView()
+      }
     }
   }
 }

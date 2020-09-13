@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		288EAD59E6EF4898D636C4F4 /* Pods_watch_out_app_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C3031203F7DF0823981744 /* Pods_watch_out_app_WatchKit_App.framework */; };
 		340A860324FBAFB200D00E63 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A860224FBAFB200D00E63 /* UserDefaultsManager.swift */; };
+		3451D42324FFC9E1006371F2 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 3451D42224FFC9E1006371F2 /* PopupView */; };
 		34526EDA24EF8386005BC1B3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34526ED924EF8386005BC1B3 /* MainView.swift */; };
 		34878E7224FB41AE00AD9358 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34878E7124FB41AE00AD9358 /* SettingView.swift */; };
 		3493594D24EE9C17004F6DF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493594C24EE9C17004F6DF1 /* AppDelegate.swift */; };
@@ -25,7 +26,6 @@
 		3493598F24EE9D22004F6DF1 /* AudioInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493598E24EE9D22004F6DF1 /* AudioInputManager.swift */; };
 		3493599224EE9D3B004F6DF1 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */; };
 		3493599424EE9D5B004F6DF1 /* RecognizeCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599324EE9D5B004F6DF1 /* RecognizeCommands.swift */; };
-		3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493599924EEBCF9004F6DF1 /* Alert.swift */; };
 		36E99DD924FD004100605786 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E99DD824FD004100605786 /* ContainerView.swift */; };
 		519CCC4F24FB46B900935336 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CCC4E24FB46B900935336 /* Information.swift */; };
 		79C343D8238AA7EA818DEECC /* Pods_watch_out_app_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A416BB19393CAD7FC8B30F /* Pods_watch_out_app_WatchKit_Extension.framework */; };
@@ -35,10 +35,6 @@
 		9321B40024F2978800140174 /* conv_actions_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9321B3FF24F2978800140174 /* conv_actions_labels.txt */; };
 		9321B40124F2978800140174 /* conv_actions_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9321B3FF24F2978800140174 /* conv_actions_labels.txt */; };
 		9321B40224F2978800140174 /* conv_actions_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9321B3FF24F2978800140174 /* conv_actions_labels.txt */; };
-		9321B45324F2A90B00140174 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45224F2A90B00140174 /* StartView.swift */; };
-		9321B45424F2A90B00140174 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45224F2A90B00140174 /* StartView.swift */; };
-		9321B45624F2AB7E00140174 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45524F2AB7E00140174 /* SwiftUIView.swift */; };
-		9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321B45524F2AB7E00140174 /* SwiftUIView.swift */; };
 		9330BD3F24FA0626009C4D06 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BD3E24FA0626009C4D06 /* MainViewModel.swift */; };
 		9330BDB124FA3139009C4D06 /* ConectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */; };
 		9330BDBB24FA49EF009C4D06 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330BDBA24FA49EF009C4D06 /* HostingController.swift */; };
@@ -101,8 +97,8 @@
 /* Begin PBXFileReference section */
 		1E6C1E7D272268F807FC3AAB /* Pods-watch-out-app WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit App/Pods-watch-out-app WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		340A860224FBAFB200D00E63 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		34526ED924EF8386005BC1B3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		34878E7124FB41AE00AD9358 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		34526ED924EF8386005BC1B3 /* MainView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		34878E7124FB41AE00AD9358 /* SettingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3493594924EE9C17004F6DF1 /* watch-out-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch-out-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3493594C24EE9C17004F6DF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3493594E24EE9C17004F6DF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,10 +116,9 @@
 		3493597924EE9C1E004F6DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3493597A24EE9C1E004F6DF1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		3493598E24EE9D22004F6DF1 /* AudioInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInputManager.swift; sourceTree = "<group>"; };
-		3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		3493599124EE9D3B004F6DF1 /* ModelDataHandler.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3493599324EE9D5B004F6DF1 /* RecognizeCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeCommands.swift; sourceTree = "<group>"; };
-		3493599924EEBCF9004F6DF1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		36E99DD824FD004100605786 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		36E99DD824FD004100605786 /* ContainerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4ADC7C12B117986B0264C8D5 /* Pods-watch-out-app WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit Extension/Pods-watch-out-app WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		4B1E6CA46477D2BF316E94B0 /* Pods_watch_out_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_out_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		519CCC4E24FB46B900935336 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
@@ -131,13 +126,11 @@
 		85F1ECDF8301894AC5568642 /* Pods-watch-out-app WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watch-out-app WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-watch-out-app WatchKit App/Pods-watch-out-app WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		9321B3FB24F2977D00140174 /* conv_actions_frozen.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = conv_actions_frozen.tflite; sourceTree = "<group>"; };
 		9321B3FF24F2978800140174 /* conv_actions_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conv_actions_labels.txt; sourceTree = "<group>"; };
-		9321B45224F2A90B00140174 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		9321B45524F2AB7E00140174 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		9330BD3E24FA0626009C4D06 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectivityProvider.swift; sourceTree = "<group>"; };
+		9330BD3E24FA0626009C4D06 /* MainViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; tabWidth = 2; };
+		9330BDB024FA3139009C4D06 /* ConectivityProvider.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConectivityProvider.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9330BDBA24FA49EF009C4D06 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		9330BDBC24FA4A6D009C4D06 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
-		9330BDBF24FA4D42009C4D06 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
+		9330BDBF24FA4D42009C4D06 /* WatchView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9330BDC124FA4EBF009C4D06 /* WatchEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchEnvironment.swift; sourceTree = "<group>"; };
 		9330BDC324FA59C8009C4D06 /* WatchConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityProvider.swift; sourceTree = "<group>"; };
 		9349FC7A250526FE007F527F /* 불이야_양윤석_190.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "불이야_양윤석_190.wav"; sourceTree = "<group>"; };
@@ -155,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3451D42324FFC9E1006371F2 /* PopupView in Frameworks */,
 				ECFDBA713DBC5252E0F428CD /* Pods_watch_out_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,8 +185,6 @@
 			children = (
 				34526ED924EF8386005BC1B3 /* MainView.swift */,
 				519CCC4E24FB46B900935336 /* Information.swift */,
-				9321B45224F2A90B00140174 /* StartView.swift */,
-				9321B45524F2AB7E00140174 /* SwiftUIView.swift */,
 				34878E7124FB41AE00AD9358 /* SettingView.swift */,
 				936A6161250D2942007C76FE /* ContentView.swift */,
 			);
@@ -306,7 +298,6 @@
 		9330BDC524FA681E009C4D06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3493599924EEBCF9004F6DF1 /* Alert.swift */,
 				9330BDBF24FA4D42009C4D06 /* WatchView.swift */,
 				36E99DD824FD004100605786 /* ContainerView.swift */,
 			);
@@ -357,6 +348,7 @@
 				3493594624EE9C17004F6DF1 /* Frameworks */,
 				3493594724EE9C17004F6DF1 /* Resources */,
 				3493598424EE9C1E004F6DF1 /* Embed Watch Content */,
+				7F085672191D9882ACB22DAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,6 +356,9 @@
 				3493596024EE9C1C004F6DF1 /* PBXTargetDependency */,
 			);
 			name = "watch-out-app";
+			packageProductDependencies = (
+				3451D42224FFC9E1006371F2 /* PopupView */,
+			);
 			productName = "watch-out-app";
 			productReference = 3493594924EE9C17004F6DF1 /* watch-out-app.app */;
 			productType = "com.apple.product-type.application";
@@ -436,6 +431,9 @@
 				Base,
 			);
 			mainGroup = 3493594024EE9C17004F6DF1;
+			packageReferences = (
+				3451D42124FFC9E1006371F2 /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 3493594A24EE9C17004F6DF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -512,6 +510,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7F085672191D9882ACB22DAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-watch-out-app/Pods-watch-out-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-watch-out-app/Pods-watch-out-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-watch-out-app/Pods-watch-out-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EA6CA8CAA30893C1EE7B261C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,7 +582,6 @@
 				9321B45624F2AB7E00140174 /* SwiftUIView.swift in Sources */,
 				936A6162250D2942007C76FE /* ContentView.swift in Sources */,
 				9330BDB124FA3139009C4D06 /* ConectivityProvider.swift in Sources */,
-				9321B45324F2A90B00140174 /* StartView.swift in Sources */,
 				3493594D24EE9C17004F6DF1 /* AppDelegate.swift in Sources */,
 				519CCC4F24FB46B900935336 /* Information.swift in Sources */,
 				340A860324FBAFB200D00E63 /* UserDefaultsManager.swift in Sources */,
@@ -589,11 +603,8 @@
 				9330BDC224FA4EBF009C4D06 /* WatchEnvironment.swift in Sources */,
 				9330BDBB24FA49EF009C4D06 /* HostingController.swift in Sources */,
 				36E99DD924FD004100605786 /* ContainerView.swift in Sources */,
-				9321B45724F2AB7E00140174 /* SwiftUIView.swift in Sources */,
 				9330BDC024FA4D42009C4D06 /* WatchView.swift in Sources */,
 				3493597424EE9C1D004F6DF1 /* ExtensionDelegate.swift in Sources */,
-				3493599A24EEBCF9004F6DF1 /* Alert.swift in Sources */,
-				9321B45424F2A90B00140174 /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,6 +934,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3451D42124FFC9E1006371F2 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3451D42224FFC9E1006371F2 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3451D42124FFC9E1006371F2 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3493594124EE9C17004F6DF1 /* Project object */;
 }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 import MessageUI
 
 struct MainView: View {
@@ -16,6 +17,13 @@ struct MainView: View {
   @State private var animateStrokeStart = true
   @State private var animateStrokeEnd = true
   @State private var isRotating = true
+  
+  @State private var permission = UserDefaults.standard.bool(forKey: "microphonePermission")  {
+    didSet {
+      UserDefaults.standard.set(self.permission, forKey: "microphonePermission")
+      UserDefaults.standard.synchronize()
+    }
+  }
   
   let navy = Color(red: 48.0 / 255.0, green: 66.0 / 255.0, blue: 105.0 / 255.0)
   let light = Color(red: 252.0 / 255.0, green: 240.0 / 255.0, blue: 237.0 / 255.0)
@@ -35,6 +43,7 @@ struct MainView: View {
       
     }
   }
+  
   struct titleBlackStyle: ViewModifier {
     func body(content: Content) -> some View {
       return content
@@ -75,6 +84,7 @@ struct MainView: View {
           //Spacer()
           Text("Watch Out").modifier(titleStyle())
           Spacer()
+          
           if viewModel.isToggled {
             ZStack {
               Circle()
@@ -209,11 +219,9 @@ struct MainView: View {
             
           )
         }
-        
-      } //ZStack End
-    } //Navigation View End
-    
-  }
+      }
+    } //ZStack End
+  } //Navigation View End
 }
 
 extension MainView {

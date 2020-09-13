@@ -26,6 +26,8 @@ typealias FileInfo = (name: String, extension: String)
 
 /// Information about the ConvActions model.
 enum ConvActions {
+//  static let modelInfo: FileInfo = (name: "conv_actions_frozen", extension: "tflite")
+//  static let labelsInfo: FileInfo = (name: "conv_actions_labels", extension: "txt")
   static let modelInfo: FileInfo = (name: "conv", extension: "tflite")
   static let labelsInfo: FileInfo = (name: "conv_labels", extension: "txt")
 }
@@ -112,10 +114,11 @@ class ModelDataHandler {
   
   /// Invokes the `Interpreter` and processes and returns the inference results.
   func runModel(onBuffer buffer: [Int16]) -> Result? {
-    //    print("🟥")
+//    print("🟥")
     let interval: TimeInterval
     let outputTensor: Tensor
     do {
+      
       // Copy the `[Int16]` buffer data as an array of `Float`s to the audio buffer input `Tensor`'s.
       let audioBufferData = Data(copyingBufferOf: buffer.map { Float($0) / maxInt16AsFloat32 })
       try interpreter.copy(audioBufferData, toInputAt: audioBufferInputTensorIndex)

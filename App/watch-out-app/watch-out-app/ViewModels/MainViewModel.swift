@@ -12,11 +12,15 @@ import WatchConnectivity
 import UIKit
 import MessageUI
 
+import AVFoundation
+import ExytePopupView
+
 class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   
   //ConnectivityProvider 에서 접근 가능하도록 environment object 로 변수 선언
   @Published var isToggled = false
   @Published var popUpShow = false
+  var preToggled = false
   
   private(set) var connectivityProvider: ConnectivityProvider
   var session: WCSession?
@@ -27,13 +31,14 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   // MARK: Instance Variables
   private var words: [String] = []
   private var result: Result?
-  @Published var highlightedCommand: String?
+  var highlightedCommand: String?
   private var bufferSize: Int = 0
   
   init(connectivityProvider: ConnectivityProvider) {
+    
+    UserDefaults.standard.set(false, forKey: "microphonePermission")
     self.connectivityProvider = connectivityProvider
     self.startAudioRecognition()
-    
   }
   
   func callNumber(phoneNumber:String) {
@@ -64,16 +69,13 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     guard let handler = modelDataHandler else {
       return
     }
-    
     audioInputManager = AudioInputManager(sampleRate: handler.sampleRate)
     audioInputManager?.delegate = self
     
     guard let workingAudioInputManager = audioInputManager else {
       return
     }
-    
     bufferSize = workingAudioInputManager.bufferSize
-    
     workingAudioInputManager.checkPermissionsAndStartTappingMicrophone()
     //    workingAudioInputManager.start { (channelDataArray) in
     //
@@ -96,24 +98,17 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
    */
   private func checkSettingOptions(result: String) -> Bool {
     
-    if result == "fire" {
-      return !UserDefaults.standard.bool(forKey: "fire")
+    if result == "suzy" {
+      return !UserDefaults.standard.bool(forKey: "suzy")
     }
-    else if result == "car" {
-      return !UserDefaults.standard.bool(forKey: "car")
+    else if result == "bulyiya" {
+      return !UserDefaults.standard.bool(forKey: "bulyiya")
     }
-    else if result == "yes" {
-      return !UserDefaults.standard.bool(forKey: "yes")
-    }
-    else if result == "no" {
-      return !UserDefaults.standard.bool(forKey: "no")
-    }
-    return !UserDefaults.standard.bool(forKey: "right")
+    return false
   }
   
   private func runModel(onBuffer buffer: [Int16]) {
-    
-    print("🏅")
+//    print("🏅")
     // buffer: 2차원 배열로 변환된 음성
     result = modelDataHandler?.runModel(onBuffer: buffer)
     
@@ -153,7 +148,15 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
       return
     }
     
-    //print("didOutput model");
+    if isToggled != preToggled {
+      
+      print("\t❕Microphone Switch ON?: \(preToggled) → \(isToggled)")
+      preToggled = isToggled
+      
+      let data: [String: Any] = ["onoff": isToggled]
+      self.connectivityProvider.send(message: data)
+    }
+    
     if self.isToggled {
       self.runModel(onBuffer: Array(channelData[0..<handler.sampleRate]))
       self.runModel(onBuffer: Array(channelData[handler.sampleRate..<bufferSize]))
@@ -162,25 +165,21 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   
   func showCameraPermissionsDeniedAlert() {
     
-    //Todo: presentView 적용하여 AlertView 만들기
-    
-    let alertController = UIAlertController(title: "Microphone Permissions Denied", message: "Microphone permissions have been denied for this app. You can change this by going to Settings", preferredStyle: .alert)
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    let settingsAction = UIAlertAction(title: "Settings", style: .default) { (action) in
-      UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+    switch AVAudioSession.sharedInstance().recordPermission {
+    case AVAudioSessionRecordPermission.granted:
+      print("Permission granted")
+    case AVAudioSessionRecordPermission.denied:
+      print("Pemission denied")
+      UserDefaults.standard.set(true, forKey: "microphonePermission")
+      UserDefaults.standard.synchronize()
+      
+    case AVAudioSessionRecordPermission.undetermined:
+      print("Request permission here")
+      AVAudioSession.sharedInstance().requestRecordPermission({ (granted) in
+        // Handle granted
+      })
+    @unknown default:
+      UserDefaults.standard.set(false, forKey: "microphonePermission")
     }
-    
-    alertController.addAction(cancelAction)
-    alertController.addAction(settingsAction)
-    
-    //presentView(alertController, animated: true)
   }
-}
-
-func presentView<V>(view: V, animated: Bool, backgroundColor: UIColor? = UIColor(named: "grey4")?.withAlphaComponent(0.4)) where V: View {
-  let controller = UIHostingController(rootView: view)
-  controller.view.backgroundColor = backgroundColor
-  controller.modalPresentationStyle = .overFullScreen
-  UIApplication.shared.windows.first?.rootViewController?.present(controller, animated: true)
 }
