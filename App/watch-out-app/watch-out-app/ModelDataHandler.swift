@@ -102,7 +102,7 @@ class ModelDataHandler {
     loadLabels(fileInfo: labelsFileInfo)
     recognizeCommands = RecognizeCommands(
       averageWindowDuration: averageWindowDuration,
-      detectionThreshold: 0.3,
+      detectionThreshold: 0.5,
       minimumTimeBetweenSamples: minTimeBetweenSamples,
       suppressionTime: suppressionMs,
       minimumCount: minimumCount,
@@ -114,7 +114,7 @@ class ModelDataHandler {
   
   /// Invokes the `Interpreter` and processes and returns the inference results.
   func runModel(onBuffer buffer: [Int16]) -> Result? {
-    print("🟥")
+//    print("🟥")
     let interval: TimeInterval
     let outputTensor: Tensor
     do {

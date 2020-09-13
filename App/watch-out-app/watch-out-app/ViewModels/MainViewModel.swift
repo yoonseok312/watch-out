@@ -20,6 +20,7 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   //ConnectivityProvider 에서 접근 가능하도록 environment object 로 변수 선언
   @Published var isToggled = false
   @Published var popUpShow = false
+  var preToggled = false
   
   private(set) var connectivityProvider: ConnectivityProvider
   var session: WCSession?
@@ -107,7 +108,7 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
   }
   
   private func runModel(onBuffer buffer: [Int16]) {
-    print("🏅")
+//    print("🏅")
     // buffer: 2차원 배열로 변환된 음성
     result = modelDataHandler?.runModel(onBuffer: buffer)
     
@@ -145,6 +146,15 @@ class MainViewModel: ObservableObject, AudioInputManagerDelegate {
     
     guard let handler = modelDataHandler else {
       return
+    }
+    
+    if isToggled != preToggled {
+      
+      print("\t❕Microphone Switch ON?: \(preToggled) → \(isToggled)")
+      preToggled = isToggled
+      
+      let data: [String: Any] = ["onoff": isToggled]
+      self.connectivityProvider.send(message: data)
     }
     
     if self.isToggled {
