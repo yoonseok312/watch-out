@@ -11,7 +11,7 @@
 
 ### 텐서플로우 라이트 모델 훈련
 
-- **모델 학습으로 [](https://colab.research.google.com/github/sanghunkang/tensorflow-lite/blob/master/mobile_team_project/model_training/train_speech_model_ios_ko.ipynb)**
+- **모델 학습으로** [바로가기](https://colab.research.google.com/github/sanghunkang/tensorflow-lite/blob/master/mobile_team_project/model_training/train_speech_model_ios_ko.ipynb)
 - **데이터 준비 및 형식**
 
     저희가 참고한 speech_commands 예제 모델에 들어있던 데이터를 바탕으로 데이터의 형식과 데이터의 개수를 정하였습니다.  데이터 개수는 한 키워드당 2000개, 데이터 형식은 1초 미만의 wav 파일을 준비하였습니다. 모델이 오버피팅이 되지 않도록 최대한 다양한 사람의 목소리, 다양한 어조와 톤, 빠르기로 녹음을 진행 하였습니다.
