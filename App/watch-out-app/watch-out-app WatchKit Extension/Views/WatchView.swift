@@ -21,7 +21,6 @@ struct WatchView: View {
   static let gradientEnd_ =  Color(red: 255 / 255, green: 198 / 255, blue: 0 / 255)
   
   //    var detectedWord : String = viewModel.word
-  var finalIcon : String = "map"
   
   var body: some View {
     VStack{
@@ -87,6 +86,8 @@ struct WatchView: View {
       }
     }
     .onAppear{
+        WKInterfaceDevice.current().play(.notification)
+        self.viewModel.activated()
       self.viewModel.activated()
       //self.viewModel.callNumber(phoneNumber: "01096872456")
     }
