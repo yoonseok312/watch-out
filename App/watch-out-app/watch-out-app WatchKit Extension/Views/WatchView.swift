@@ -20,14 +20,8 @@ struct WatchView: View {
   static let gradientStart_ = Color(red: 255.0 / 255, green: 168.0 / 255, blue: 0.0 / 255)
   static let gradientEnd_ =  Color(red: 255 / 255, green: 198 / 255, blue: 0 / 255)
   
-  //    var detectedWord : String = viewModel.word
-  
   var body: some View {
     VStack{
-      //NavigationLink(destination: defaultView(), isActive: self.$viewModel.isActive) {EmptyView()}
-      // viewModel.word = "changed"
-      // 5초 지난 후 뷰 이동
-      // 다른 뷰로 연결
       Spacer()
       HStack{
         
@@ -44,7 +38,6 @@ struct WatchView: View {
       HStack{
         ZStack{
           if( viewModel.word == "suzy"){
-            //yes 소리만 노랑색으로 박스가 바뀜
             RoundedRectangle(cornerRadius: 23, style: .continuous)
               .fill(LinearGradient(
                 gradient: .init(colors: [Self.gradientStart_, Self.gradientEnd_]),
@@ -54,7 +47,6 @@ struct WatchView: View {
               .frame(width: 185, height: 120)
             
           }else if ( viewModel.word == "bulyiya"){
-            // 나머지는 주황색
             RoundedRectangle(cornerRadius: 23, style: .continuous)
               .fill(LinearGradient(
                 gradient: .init(colors: [Self.gradientStart, Self.gradientEnd]),
@@ -88,8 +80,7 @@ struct WatchView: View {
     .onAppear{
         WKInterfaceDevice.current().play(.notification)
         self.viewModel.activated()
-      self.viewModel.activated()
-      //self.viewModel.callNumber(phoneNumber: "01096872456")
+        self.viewModel.activated()
     }
   }
 }

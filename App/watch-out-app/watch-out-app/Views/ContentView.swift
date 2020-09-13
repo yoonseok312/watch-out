@@ -8,7 +8,6 @@
 
 import SwiftUI
 import MessageUI
-/// Main View
 struct ContentView: View {
 
     private let mailComposeDelegate = MailComposerDelegate()
@@ -36,7 +35,6 @@ struct ContentView: View {
     }
 }
 
-// MARK: The email extension
 
 extension ContentView {
 
@@ -48,7 +46,6 @@ extension ContentView {
             controller.dismiss(animated: true)
         }
     }
-    /// Present an mail compose view controller modally in UIKit environment
     private func presentMailCompose() {
         guard MFMailComposeViewController.canSendMail() else {
             return
@@ -61,8 +58,6 @@ extension ContentView {
     }
 }
 
-// MARK: The message extension
-
 extension ContentView {
 
     private class MessageComposerDelegate: NSObject, MFMessageComposeViewControllerDelegate {
@@ -71,7 +66,6 @@ extension ContentView {
             controller.dismiss(animated: true)
         }
     }
-    /// Present an message compose view controller modally in UIKit environment
     private func presentMessageCompose() {
         guard MFMessageComposeViewController.canSendText() else {
             return

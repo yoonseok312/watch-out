@@ -220,19 +220,17 @@ struct MainView: View {
           )
         }
       }
-    } //ZStack End
-  } //Navigation View End
+    }
+  }
 }
 
 extension MainView {
 
     private class MessageComposerDelegate: NSObject, MFMessageComposeViewControllerDelegate {
         func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-            // Customize here
             controller.dismiss(animated: true)
         }
     }
-    /// Present an message compose view controller modally in UIKit environment
     private func presentMessageCompose() {
         guard MFMessageComposeViewController.canSendText() else {
             return
