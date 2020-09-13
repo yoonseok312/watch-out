@@ -1,4 +1,5 @@
 PODS:
+  - ExytePopupView (0.0.7)
   - TensorFlowLiteC (2.3.0):
     - TensorFlowLiteC/Core (= 2.3.0)
   - TensorFlowLiteC/Core (2.3.0)
@@ -8,17 +9,20 @@ PODS:
     - TensorFlowLiteC (= 2.3.0)
 
 DEPENDENCIES:
+  - ExytePopupView
   - TensorFlowLiteSwift
 
 SPEC REPOS:
   trunk:
+    - ExytePopupView
     - TensorFlowLiteC
     - TensorFlowLiteSwift
 
 SPEC CHECKSUMS:
+  ExytePopupView: 1ec76e06509bafd4aeb8672ea3298bb46a7c2c51
   TensorFlowLiteC: 51f50caf5777f740a70e2c1a5dbdc149e7aeb50b
   TensorFlowLiteSwift: fb152cc1eec36b25b03a23c07f5d58113170af58
 
-PODFILE CHECKSUM: d515ea3bbf0f17a394f1cfc6991d741c1d7035d0
+PODFILE CHECKSUM: b29f788a3897af3673fad08ba2eca21afa929834
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0.beta.2

@@ -79,6 +79,8 @@ class AudioInputManager: NSObject {
     guard let formatConverter =  AVAudioConverter(from:inputFormat, to: recordingFormat!) else {
       return
     }
+    
+//    print("recordingFormat: \(recordingFormat)")
 
     // We install a tap on the audio engine and specifying the buffer size and the input format.
     audioEngine.inputNode.installTap(onBus: 0, bufferSize: AVAudioFrameCount(bufferSize), format: inputFormat) { (buffer, time) in

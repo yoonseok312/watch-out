@@ -8,6 +8,7 @@ target 'watch-out-app' do
 
   # Pods for watch-out-app
   pod 'TensorFlowLiteSwift'
+  pod 'ExytePopupView'
 end
 
 target 'watch-out-app WatchKit App' do

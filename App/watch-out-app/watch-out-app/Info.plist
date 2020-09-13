@@ -55,6 +55,8 @@
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>마아아아아이이이이크으으으으으사아아아요요오오오옹해애에에에도도도도될까요?</string>
+	<key>NSFileProviderDomainUsageDescription</key>
+	<string>여어어언라아아악처어어어저어어업근해도될까요?</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

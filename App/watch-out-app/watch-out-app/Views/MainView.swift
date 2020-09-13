@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import AVFoundation
+import MessageUI
 
 struct MainView: View {
   
@@ -16,6 +18,13 @@ struct MainView: View {
   @State private var animateStrokeEnd = true
   @State private var isRotating = true
   
+  @State private var permission = UserDefaults.standard.bool(forKey: "microphonePermission")  {
+    didSet {
+      UserDefaults.standard.set(self.permission, forKey: "microphonePermission")
+      UserDefaults.standard.synchronize()
+    }
+  }
+  
   let navy = Color(red: 48.0 / 255.0, green: 66.0 / 255.0, blue: 105.0 / 255.0)
   let light = Color(red: 252.0 / 255.0, green: 240.0 / 255.0, blue: 237.0 / 255.0)
   let orange = Color(red: 242.0 / 255.0, green: 97.0 / 255.0, blue: 1.0 / 255.0, opacity: 1)
@@ -23,6 +32,8 @@ struct MainView: View {
   let orangeON = Color(red: 240.0 / 255.0, green: 67.0 / 255.0, blue: 67.0 / 255.0, opacity: 1)
   let skyblue = Color(red: 145.0 / 255.0, green: 190.0 / 255.0, blue: 212.0 / 255.0)
   let whiteblue = Color(red: 217.0 / 255.0, green: 232.0 / 255.0, blue: 245.0 / 255.0)
+  
+  private let messageComposeDelegate = MessageComposerDelegate()
   
   struct titleStyle: ViewModifier {
     func body(content: Content) -> some View {
@@ -32,6 +43,7 @@ struct MainView: View {
       
     }
   }
+  
   struct titleBlackStyle: ViewModifier {
     func body(content: Content) -> some View {
       return content
@@ -72,6 +84,7 @@ struct MainView: View {
           //Spacer()
           Text("Watch Out").modifier(titleStyle())
           Spacer()
+          
           if viewModel.isToggled {
             ZStack {
               Circle()
@@ -163,17 +176,33 @@ struct MainView: View {
                 .padding()
                 .background(Color.white)
                 .cornerRadius(23)
-              Button(action: {
-                // action
-                self.viewModel.callNumber(phoneNumber: "119")
-              }) {
-                Text("119에 전화걸기")
-                  .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
-              }.foregroundColor(self.orangeON)
-                .frame(width: 250, height: 30)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(23)
+              if self.viewModel.highlightedCommand == "bulyiya" {
+                Button(action: {
+                  // action
+                  self.viewModel.callNumber(phoneNumber: "119")
+                }) {
+                  Text("119에 전화걸기")
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+                }.foregroundColor(self.orangeON)
+                  .frame(width: 250, height: 30)
+                  .padding()
+                  .background(Color.white)
+                  .cornerRadius(23)
+                
+                Spacer().frame(height:5)
+                
+                Button(action: {
+                  // action
+                  self.presentMessageCompose()
+                }) {
+                  Text("119에 문자하기")
+                    .font(Font.custom("AppleSDGothicNeo-Bold", size: 20))
+                }.foregroundColor(self.orangeON)
+                  .frame(width: 250, height: 30)
+                  .padding()
+                  .background(Color.white)
+                  .cornerRadius(23)
+              }
             }
             
           }.background(
@@ -190,10 +219,28 @@ struct MainView: View {
             
           )
         }
-        
-      } //ZStack End
-    } //Navigation View End
-    
-  }
+      }
+    } //ZStack End
+  } //Navigation View End
 }
 
+extension MainView {
+
+    private class MessageComposerDelegate: NSObject, MFMessageComposeViewControllerDelegate {
+        func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+            // Customize here
+            controller.dismiss(animated: true)
+        }
+    }
+    /// Present an message compose view controller modally in UIKit environment
+    private func presentMessageCompose() {
+        guard MFMessageComposeViewController.canSendText() else {
+            return
+        }
+        let vc = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
+        let composeVC = MFMessageComposeViewController()
+        composeVC.messageComposeDelegate = messageComposeDelegate
+
+        vc?.present(composeVC, animated: true)
+    }
+}
